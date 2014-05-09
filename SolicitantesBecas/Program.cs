@@ -15,7 +15,18 @@ namespace SolicitantesBecas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+
+            frmUsuario frmusuario = new frmUsuario();
+            DialogResult loginresult = frmusuario.ShowDialog();
+
+            if (loginresult == DialogResult.OK) {
+                int? idUsuario = frmusuario.idUsuario;
+
+                frmusuario.Dispose();
+                frmusuario = null;
+
+                Application.Run(new frmMain() { idUsuario = idUsuario });
+            }
         }
     }
 }

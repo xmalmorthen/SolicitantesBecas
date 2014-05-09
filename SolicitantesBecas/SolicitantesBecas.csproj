@@ -44,6 +44,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -59,20 +61,28 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\BdCapturaBECAS.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BdCapturaBECAS.dbml</DependentUpon>
+    <Compile Include="frmUsuario.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getData.cs" />
+    <Compile Include="Models\structures.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\wsSolicitanteBecas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="Models\BdCapturaBECAS.dbml.layout">
-      <DependentUpon>BdCapturaBECAS.dbml</DependentUpon>
-    </None>
+    <EmbeddedResource Include="frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,17 +94,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Models\BdCapturaBECAS.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>BdCapturaBECAS.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\DataSources\SolicitantesBecas.Models.BdCapturaBECASDataContext.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.caEdad.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.caEscuelas.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.caSexo.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.caUsuarios.datasource" />
+    <None Include="Properties\DataSources\SolicitantesBecas.Models.getData.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.maSolicitantes.datasource" />
+    <None Include="Properties\DataSources\SolicitantesBecas.Models.strCaUsuarios.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.tblDomDesc.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -105,6 +112,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\wsSolicitanteBecas\CapturaBECAS.wsdl" />
+    <None Include="Service References\wsSolicitanteBecas\SolicitantesBecas.wsSolicitanteBecas.StcCaEscuelas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSolicitanteBecas\SolicitantesBecas.wsSolicitanteBecas.StcCaUsuarios.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -123,6 +137,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\images\app_window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\images\notepad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\wsSolicitanteBecas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsSolicitanteBecas\CapturaBECAS.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsSolicitanteBecas\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsSolicitanteBecas\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsSolicitanteBecas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\images\checkmark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

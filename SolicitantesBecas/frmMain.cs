@@ -6,29 +6,22 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using SolicitantesBecas.Models;
 
 namespace SolicitantesBecas
 {
     public partial class frmMain : Form
     {
+        public int? idUsuario = null;
+
         public frmMain()
         {
             InitializeComponent();
         }
 
-        private void labelControl4_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void labelControl22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void memoEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-
+            Close();
         }
     }
 }

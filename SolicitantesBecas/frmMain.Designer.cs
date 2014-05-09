@@ -32,20 +32,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.txtCURP = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtEmail = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSexoEdad = new DevExpress.XtraEditors.TextEdit();
             this.txtCel = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtTel = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtAp1Padre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtAp2Padre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.txtNomPadre = new DevExpress.XtraEditors.TextEdit();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -55,62 +55,65 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.txtNomMadre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.txtAp2Madre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
+            this.txtAp1Madre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
-            this.lookUpEdit2 = new DevExpress.XtraEditors.LookUpEdit();
-            this.lookUpEdit3 = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbMpio = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbLoc = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbCol = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.lookUpEdit4 = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbCalle = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit11 = new DevExpress.XtraEditors.TextEdit();
+            this.txtNumExt = new DevExpress.XtraEditors.TextEdit();
+            this.txtNumInt = new DevExpress.XtraEditors.TextEdit();
+            this.txtLet = new DevExpress.XtraEditors.TextEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
-            this.textEdit12 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDomDesc = new DevExpress.XtraEditors.TextEdit();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.lookUpEdit5 = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbPlantel = new DevExpress.XtraEditors.LookUpEdit();
             this.toolTip = new DevExpress.Utils.ToolTipController(this.components);
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLista = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.bsPlanteles = new System.Windows.Forms.BindingSource(this.components);
             this.btnBucarCURP = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCambiarUsuario = new System.Windows.Forms.Button();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtCURP.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSexoEdad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTel.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAp1Padre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAp2Padre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNomPadre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNomMadre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAp2Madre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAp1Madre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMpio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbLoc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCol.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCalle.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumExt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumInt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDomDesc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbPlantel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,25 +147,25 @@
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "CURP";
             // 
-            // textEdit2
+            // txtNombre
             // 
-            this.textEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit2.EditValue = "Nombre completo aqui...";
-            this.textEdit2.Location = new System.Drawing.Point(262, -2);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.AllowFocused = false;
-            this.textEdit2.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold);
-            this.textEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit2.Properties.ReadOnly = true;
-            this.textEdit2.Size = new System.Drawing.Size(365, 22);
-            this.textEdit2.TabIndex = 3;
-            this.textEdit2.TabStop = false;
+            this.txtNombre.EditValue = "Nombre completo aqui...";
+            this.txtNombre.Location = new System.Drawing.Point(262, -2);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Properties.AllowFocused = false;
+            this.txtNombre.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtNombre.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold);
+            this.txtNombre.Properties.Appearance.Options.UseBackColor = true;
+            this.txtNombre.Properties.Appearance.Options.UseFont = true;
+            this.txtNombre.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtNombre.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtNombre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtNombre.Properties.ReadOnly = true;
+            this.txtNombre.Size = new System.Drawing.Size(365, 22);
+            this.txtNombre.TabIndex = 3;
+            this.txtNombre.TabStop = false;
             // 
             // labelControl3
             // 
@@ -197,25 +200,25 @@
             this.txtEmail.Size = new System.Drawing.Size(293, 22);
             this.txtEmail.TabIndex = 2;
             // 
-            // textEdit4
+            // txtSexoEdad
             // 
-            this.textEdit4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtSexoEdad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit4.EditValue = "Sexo - Edad aqui...";
-            this.textEdit4.Location = new System.Drawing.Point(262, 15);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Properties.AllowFocused = false;
-            this.textEdit4.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 9F);
-            this.textEdit4.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit4.Properties.Appearance.Options.UseFont = true;
-            this.textEdit4.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit4.Properties.ReadOnly = true;
-            this.textEdit4.Size = new System.Drawing.Size(365, 20);
-            this.textEdit4.TabIndex = 9;
-            this.textEdit4.TabStop = false;
+            this.txtSexoEdad.EditValue = "Sexo - Edad aqui...";
+            this.txtSexoEdad.Location = new System.Drawing.Point(262, 15);
+            this.txtSexoEdad.Name = "txtSexoEdad";
+            this.txtSexoEdad.Properties.AllowFocused = false;
+            this.txtSexoEdad.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSexoEdad.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 9F);
+            this.txtSexoEdad.Properties.Appearance.Options.UseBackColor = true;
+            this.txtSexoEdad.Properties.Appearance.Options.UseFont = true;
+            this.txtSexoEdad.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtSexoEdad.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtSexoEdad.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtSexoEdad.Properties.ReadOnly = true;
+            this.txtSexoEdad.Size = new System.Drawing.Size(365, 20);
+            this.txtSexoEdad.TabIndex = 9;
+            this.txtSexoEdad.TabStop = false;
             // 
             // txtCel
             // 
@@ -259,7 +262,6 @@
             this.labelControl4.Size = new System.Drawing.Size(165, 22);
             this.labelControl4.TabIndex = 13;
             this.labelControl4.Text = "Tel Particular.";
-            this.labelControl4.Click += new System.EventHandler(this.labelControl4_Click);
             // 
             // txtTel
             // 
@@ -294,25 +296,25 @@
             this.labelControl5.TabIndex = 15;
             this.labelControl5.Text = "Primer Apellido";
             // 
-            // textEdit1
+            // txtAp1Padre
             // 
-            this.textEdit1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textEdit1.EditValue = "";
-            this.textEdit1.Location = new System.Drawing.Point(15, 212);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.textEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit1.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            this.textEdit1.Properties.Mask.BeepOnError = true;
-            this.textEdit1.Properties.Mask.IgnoreMaskBlank = false;
-            this.textEdit1.Properties.Mask.ShowPlaceHolders = false;
-            this.textEdit1.Properties.MaxLength = 50;
-            this.textEdit1.Size = new System.Drawing.Size(207, 22);
-            this.textEdit1.TabIndex = 5;
+            this.txtAp1Padre.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtAp1Padre.EditValue = "";
+            this.txtAp1Padre.Location = new System.Drawing.Point(15, 212);
+            this.txtAp1Padre.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.txtAp1Padre.Name = "txtAp1Padre";
+            this.txtAp1Padre.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtAp1Padre.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.txtAp1Padre.Properties.Appearance.Options.UseBackColor = true;
+            this.txtAp1Padre.Properties.Appearance.Options.UseFont = true;
+            this.txtAp1Padre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtAp1Padre.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtAp1Padre.Properties.Mask.BeepOnError = true;
+            this.txtAp1Padre.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtAp1Padre.Properties.Mask.ShowPlaceHolders = false;
+            this.txtAp1Padre.Properties.MaxLength = 50;
+            this.txtAp1Padre.Size = new System.Drawing.Size(207, 22);
+            this.txtAp1Padre.TabIndex = 5;
             // 
             // labelControl6
             // 
@@ -326,25 +328,25 @@
             this.labelControl6.TabIndex = 17;
             this.labelControl6.Text = "Segundo Apellido";
             // 
-            // textEdit3
+            // txtAp2Padre
             // 
-            this.textEdit3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textEdit3.EditValue = "";
-            this.textEdit3.Location = new System.Drawing.Point(233, 211);
-            this.textEdit3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.textEdit3.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit3.Properties.Appearance.Options.UseFont = true;
-            this.textEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit3.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            this.textEdit3.Properties.Mask.BeepOnError = true;
-            this.textEdit3.Properties.Mask.IgnoreMaskBlank = false;
-            this.textEdit3.Properties.Mask.ShowPlaceHolders = false;
-            this.textEdit3.Properties.MaxLength = 50;
-            this.textEdit3.Size = new System.Drawing.Size(207, 22);
-            this.textEdit3.TabIndex = 6;
+            this.txtAp2Padre.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtAp2Padre.EditValue = "";
+            this.txtAp2Padre.Location = new System.Drawing.Point(233, 211);
+            this.txtAp2Padre.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.txtAp2Padre.Name = "txtAp2Padre";
+            this.txtAp2Padre.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtAp2Padre.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.txtAp2Padre.Properties.Appearance.Options.UseBackColor = true;
+            this.txtAp2Padre.Properties.Appearance.Options.UseFont = true;
+            this.txtAp2Padre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtAp2Padre.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtAp2Padre.Properties.Mask.BeepOnError = true;
+            this.txtAp2Padre.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtAp2Padre.Properties.Mask.ShowPlaceHolders = false;
+            this.txtAp2Padre.Properties.MaxLength = 50;
+            this.txtAp2Padre.Size = new System.Drawing.Size(207, 22);
+            this.txtAp2Padre.TabIndex = 6;
             // 
             // labelControl7
             // 
@@ -358,25 +360,25 @@
             this.labelControl7.TabIndex = 19;
             this.labelControl7.Text = "Nombre(s)";
             // 
-            // textEdit5
+            // txtNomPadre
             // 
-            this.textEdit5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit5.EditValue = "";
-            this.textEdit5.Location = new System.Drawing.Point(451, 211);
-            this.textEdit5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textEdit5.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.textEdit5.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit5.Properties.Appearance.Options.UseFont = true;
-            this.textEdit5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit5.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            this.textEdit5.Properties.Mask.BeepOnError = true;
-            this.textEdit5.Properties.Mask.IgnoreMaskBlank = false;
-            this.textEdit5.Properties.Mask.ShowPlaceHolders = false;
-            this.textEdit5.Properties.MaxLength = 50;
-            this.textEdit5.Size = new System.Drawing.Size(207, 22);
-            this.textEdit5.TabIndex = 7;
+            this.txtNomPadre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNomPadre.EditValue = "";
+            this.txtNomPadre.Location = new System.Drawing.Point(451, 211);
+            this.txtNomPadre.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.txtNomPadre.Name = "txtNomPadre";
+            this.txtNomPadre.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtNomPadre.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.txtNomPadre.Properties.Appearance.Options.UseBackColor = true;
+            this.txtNomPadre.Properties.Appearance.Options.UseFont = true;
+            this.txtNomPadre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtNomPadre.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtNomPadre.Properties.Mask.BeepOnError = true;
+            this.txtNomPadre.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtNomPadre.Properties.Mask.ShowPlaceHolders = false;
+            this.txtNomPadre.Properties.MaxLength = 50;
+            this.txtNomPadre.Size = new System.Drawing.Size(207, 22);
+            this.txtNomPadre.TabIndex = 7;
             // 
             // shapeContainer1
             // 
@@ -478,25 +480,25 @@
             this.labelControl9.TabIndex = 27;
             this.labelControl9.Text = "Nombre(s)";
             // 
-            // textEdit6
+            // txtNomMadre
             // 
-            this.textEdit6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit6.EditValue = "";
-            this.textEdit6.Location = new System.Drawing.Point(450, 285);
-            this.textEdit6.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textEdit6.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.textEdit6.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit6.Properties.Appearance.Options.UseFont = true;
-            this.textEdit6.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit6.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            this.textEdit6.Properties.Mask.BeepOnError = true;
-            this.textEdit6.Properties.Mask.IgnoreMaskBlank = false;
-            this.textEdit6.Properties.Mask.ShowPlaceHolders = false;
-            this.textEdit6.Properties.MaxLength = 50;
-            this.textEdit6.Size = new System.Drawing.Size(207, 22);
-            this.textEdit6.TabIndex = 10;
+            this.txtNomMadre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNomMadre.EditValue = "";
+            this.txtNomMadre.Location = new System.Drawing.Point(450, 285);
+            this.txtNomMadre.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.txtNomMadre.Name = "txtNomMadre";
+            this.txtNomMadre.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtNomMadre.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.txtNomMadre.Properties.Appearance.Options.UseBackColor = true;
+            this.txtNomMadre.Properties.Appearance.Options.UseFont = true;
+            this.txtNomMadre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtNomMadre.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtNomMadre.Properties.Mask.BeepOnError = true;
+            this.txtNomMadre.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtNomMadre.Properties.Mask.ShowPlaceHolders = false;
+            this.txtNomMadre.Properties.MaxLength = 50;
+            this.txtNomMadre.Size = new System.Drawing.Size(207, 22);
+            this.txtNomMadre.TabIndex = 10;
             // 
             // labelControl10
             // 
@@ -510,25 +512,25 @@
             this.labelControl10.TabIndex = 25;
             this.labelControl10.Text = "Segundo Apellido";
             // 
-            // textEdit7
+            // txtAp2Madre
             // 
-            this.textEdit7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textEdit7.EditValue = "";
-            this.textEdit7.Location = new System.Drawing.Point(233, 285);
-            this.textEdit7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textEdit7.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.textEdit7.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit7.Properties.Appearance.Options.UseFont = true;
-            this.textEdit7.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit7.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            this.textEdit7.Properties.Mask.BeepOnError = true;
-            this.textEdit7.Properties.Mask.IgnoreMaskBlank = false;
-            this.textEdit7.Properties.Mask.ShowPlaceHolders = false;
-            this.textEdit7.Properties.MaxLength = 50;
-            this.textEdit7.Size = new System.Drawing.Size(207, 22);
-            this.textEdit7.TabIndex = 9;
+            this.txtAp2Madre.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtAp2Madre.EditValue = "";
+            this.txtAp2Madre.Location = new System.Drawing.Point(233, 285);
+            this.txtAp2Madre.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.txtAp2Madre.Name = "txtAp2Madre";
+            this.txtAp2Madre.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtAp2Madre.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.txtAp2Madre.Properties.Appearance.Options.UseBackColor = true;
+            this.txtAp2Madre.Properties.Appearance.Options.UseFont = true;
+            this.txtAp2Madre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtAp2Madre.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtAp2Madre.Properties.Mask.BeepOnError = true;
+            this.txtAp2Madre.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtAp2Madre.Properties.Mask.ShowPlaceHolders = false;
+            this.txtAp2Madre.Properties.MaxLength = 50;
+            this.txtAp2Madre.Size = new System.Drawing.Size(207, 22);
+            this.txtAp2Madre.TabIndex = 9;
             // 
             // labelControl11
             // 
@@ -542,25 +544,25 @@
             this.labelControl11.TabIndex = 23;
             this.labelControl11.Text = "Primer Apellido";
             // 
-            // textEdit8
+            // txtAp1Madre
             // 
-            this.textEdit8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textEdit8.EditValue = "";
-            this.textEdit8.Location = new System.Drawing.Point(15, 285);
-            this.textEdit8.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textEdit8.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.textEdit8.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit8.Properties.Appearance.Options.UseFont = true;
-            this.textEdit8.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit8.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            this.textEdit8.Properties.Mask.BeepOnError = true;
-            this.textEdit8.Properties.Mask.IgnoreMaskBlank = false;
-            this.textEdit8.Properties.Mask.ShowPlaceHolders = false;
-            this.textEdit8.Properties.MaxLength = 50;
-            this.textEdit8.Size = new System.Drawing.Size(207, 22);
-            this.textEdit8.TabIndex = 8;
+            this.txtAp1Madre.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtAp1Madre.EditValue = "";
+            this.txtAp1Madre.Location = new System.Drawing.Point(15, 285);
+            this.txtAp1Madre.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.txtAp1Madre.Name = "txtAp1Madre";
+            this.txtAp1Madre.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtAp1Madre.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.txtAp1Madre.Properties.Appearance.Options.UseBackColor = true;
+            this.txtAp1Madre.Properties.Appearance.Options.UseFont = true;
+            this.txtAp1Madre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtAp1Madre.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtAp1Madre.Properties.Mask.BeepOnError = true;
+            this.txtAp1Madre.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtAp1Madre.Properties.Mask.ShowPlaceHolders = false;
+            this.txtAp1Madre.Properties.MaxLength = 50;
+            this.txtAp1Madre.Size = new System.Drawing.Size(207, 22);
+            this.txtAp1Madre.TabIndex = 8;
             // 
             // labelControl12
             // 
@@ -598,53 +600,53 @@
             this.labelControl14.TabIndex = 30;
             this.labelControl14.Text = "Información del domicilio del solicitante";
             // 
-            // lookUpEdit1
+            // cmbMpio
             // 
-            this.lookUpEdit1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lookUpEdit1.Location = new System.Drawing.Point(9, 387);
-            this.lookUpEdit1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.lookUpEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
-            this.lookUpEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbMpio.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbMpio.Location = new System.Drawing.Point(9, 387);
+            this.cmbMpio.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.cmbMpio.Name = "cmbMpio";
+            this.cmbMpio.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cmbMpio.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.cmbMpio.Properties.Appearance.Options.UseBackColor = true;
+            this.cmbMpio.Properties.Appearance.Options.UseFont = true;
+            this.cmbMpio.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.cmbMpio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Size = new System.Drawing.Size(214, 22);
-            this.lookUpEdit1.TabIndex = 31;
+            this.cmbMpio.Size = new System.Drawing.Size(214, 22);
+            this.cmbMpio.TabIndex = 31;
             // 
-            // lookUpEdit2
+            // cmbLoc
             // 
-            this.lookUpEdit2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lookUpEdit2.Location = new System.Drawing.Point(229, 387);
-            this.lookUpEdit2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.lookUpEdit2.Name = "lookUpEdit2";
-            this.lookUpEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.lookUpEdit2.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.lookUpEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.lookUpEdit2.Properties.Appearance.Options.UseFont = true;
-            this.lookUpEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbLoc.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbLoc.Location = new System.Drawing.Point(229, 387);
+            this.cmbLoc.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.cmbLoc.Name = "cmbLoc";
+            this.cmbLoc.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cmbLoc.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.cmbLoc.Properties.Appearance.Options.UseBackColor = true;
+            this.cmbLoc.Properties.Appearance.Options.UseFont = true;
+            this.cmbLoc.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.cmbLoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit2.Size = new System.Drawing.Size(214, 22);
-            this.lookUpEdit2.TabIndex = 32;
+            this.cmbLoc.Size = new System.Drawing.Size(214, 22);
+            this.cmbLoc.TabIndex = 32;
             // 
-            // lookUpEdit3
+            // cmbCol
             // 
-            this.lookUpEdit3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lookUpEdit3.Location = new System.Drawing.Point(449, 387);
-            this.lookUpEdit3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.lookUpEdit3.Name = "lookUpEdit3";
-            this.lookUpEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.lookUpEdit3.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.lookUpEdit3.Properties.Appearance.Options.UseBackColor = true;
-            this.lookUpEdit3.Properties.Appearance.Options.UseFont = true;
-            this.lookUpEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbCol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCol.Location = new System.Drawing.Point(449, 387);
+            this.cmbCol.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.cmbCol.Name = "cmbCol";
+            this.cmbCol.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cmbCol.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.cmbCol.Properties.Appearance.Options.UseBackColor = true;
+            this.cmbCol.Properties.Appearance.Options.UseFont = true;
+            this.cmbCol.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.cmbCol.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit3.Size = new System.Drawing.Size(214, 22);
-            this.lookUpEdit3.TabIndex = 33;
+            this.cmbCol.Size = new System.Drawing.Size(214, 22);
+            this.cmbCol.TabIndex = 33;
             // 
             // labelControl15
             // 
@@ -682,21 +684,21 @@
             this.labelControl17.TabIndex = 36;
             this.labelControl17.Text = "Colonia";
             // 
-            // lookUpEdit4
+            // cmbCalle
             // 
-            this.lookUpEdit4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lookUpEdit4.Location = new System.Drawing.Point(9, 435);
-            this.lookUpEdit4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.lookUpEdit4.Name = "lookUpEdit4";
-            this.lookUpEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.lookUpEdit4.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.lookUpEdit4.Properties.Appearance.Options.UseBackColor = true;
-            this.lookUpEdit4.Properties.Appearance.Options.UseFont = true;
-            this.lookUpEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lookUpEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbCalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCalle.Location = new System.Drawing.Point(9, 435);
+            this.cmbCalle.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.cmbCalle.Name = "cmbCalle";
+            this.cmbCalle.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cmbCalle.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.cmbCalle.Properties.Appearance.Options.UseBackColor = true;
+            this.cmbCalle.Properties.Appearance.Options.UseFont = true;
+            this.cmbCalle.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.cmbCalle.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit4.Size = new System.Drawing.Size(434, 22);
-            this.lookUpEdit4.TabIndex = 34;
+            this.cmbCalle.Size = new System.Drawing.Size(434, 22);
+            this.cmbCalle.TabIndex = 34;
             // 
             // labelControl18
             // 
@@ -710,69 +712,69 @@
             this.labelControl18.TabIndex = 38;
             this.labelControl18.Text = "Calle";
             // 
-            // textEdit9
+            // txtNumExt
             // 
-            this.textEdit9.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textEdit9.EditValue = "";
-            this.textEdit9.Location = new System.Drawing.Point(449, 435);
-            this.textEdit9.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.textEdit9.Name = "textEdit9";
-            this.textEdit9.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textEdit9.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.textEdit9.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit9.Properties.Appearance.Options.UseFont = true;
-            this.textEdit9.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit9.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            this.textEdit9.Properties.Mask.BeepOnError = true;
-            this.textEdit9.Properties.Mask.EditMask = "9999";
-            this.textEdit9.Properties.Mask.IgnoreMaskBlank = false;
-            this.textEdit9.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
-            this.textEdit9.Properties.Mask.ShowPlaceHolders = false;
-            this.textEdit9.Properties.MaxLength = 4;
-            this.textEdit9.Size = new System.Drawing.Size(66, 22);
-            this.textEdit9.TabIndex = 35;
+            this.txtNumExt.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtNumExt.EditValue = "";
+            this.txtNumExt.Location = new System.Drawing.Point(449, 435);
+            this.txtNumExt.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.txtNumExt.Name = "txtNumExt";
+            this.txtNumExt.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtNumExt.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.txtNumExt.Properties.Appearance.Options.UseBackColor = true;
+            this.txtNumExt.Properties.Appearance.Options.UseFont = true;
+            this.txtNumExt.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtNumExt.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtNumExt.Properties.Mask.BeepOnError = true;
+            this.txtNumExt.Properties.Mask.EditMask = "9999";
+            this.txtNumExt.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtNumExt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+            this.txtNumExt.Properties.Mask.ShowPlaceHolders = false;
+            this.txtNumExt.Properties.MaxLength = 4;
+            this.txtNumExt.Size = new System.Drawing.Size(66, 22);
+            this.txtNumExt.TabIndex = 35;
             // 
-            // textEdit10
+            // txtNumInt
             // 
-            this.textEdit10.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textEdit10.EditValue = "";
-            this.textEdit10.Location = new System.Drawing.Point(523, 435);
-            this.textEdit10.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.textEdit10.Name = "textEdit10";
-            this.textEdit10.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textEdit10.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.textEdit10.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit10.Properties.Appearance.Options.UseFont = true;
-            this.textEdit10.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit10.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            this.textEdit10.Properties.Mask.BeepOnError = true;
-            this.textEdit10.Properties.Mask.EditMask = "99";
-            this.textEdit10.Properties.Mask.IgnoreMaskBlank = false;
-            this.textEdit10.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
-            this.textEdit10.Properties.Mask.ShowPlaceHolders = false;
-            this.textEdit10.Properties.MaxLength = 2;
-            this.textEdit10.Size = new System.Drawing.Size(66, 22);
-            this.textEdit10.TabIndex = 36;
+            this.txtNumInt.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtNumInt.EditValue = "";
+            this.txtNumInt.Location = new System.Drawing.Point(523, 435);
+            this.txtNumInt.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.txtNumInt.Name = "txtNumInt";
+            this.txtNumInt.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtNumInt.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.txtNumInt.Properties.Appearance.Options.UseBackColor = true;
+            this.txtNumInt.Properties.Appearance.Options.UseFont = true;
+            this.txtNumInt.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtNumInt.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtNumInt.Properties.Mask.BeepOnError = true;
+            this.txtNumInt.Properties.Mask.EditMask = "99";
+            this.txtNumInt.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtNumInt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+            this.txtNumInt.Properties.Mask.ShowPlaceHolders = false;
+            this.txtNumInt.Properties.MaxLength = 2;
+            this.txtNumInt.Size = new System.Drawing.Size(66, 22);
+            this.txtNumInt.TabIndex = 36;
             // 
-            // textEdit11
+            // txtLet
             // 
-            this.textEdit11.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textEdit11.EditValue = "";
-            this.textEdit11.Location = new System.Drawing.Point(597, 435);
-            this.textEdit11.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.textEdit11.Name = "textEdit11";
-            this.textEdit11.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textEdit11.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.textEdit11.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit11.Properties.Appearance.Options.UseFont = true;
-            this.textEdit11.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit11.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            this.textEdit11.Properties.Mask.BeepOnError = true;
-            this.textEdit11.Properties.Mask.IgnoreMaskBlank = false;
-            this.textEdit11.Properties.Mask.ShowPlaceHolders = false;
-            this.textEdit11.Properties.MaxLength = 2;
-            this.textEdit11.Size = new System.Drawing.Size(66, 22);
-            this.textEdit11.TabIndex = 37;
+            this.txtLet.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtLet.EditValue = "";
+            this.txtLet.Location = new System.Drawing.Point(597, 435);
+            this.txtLet.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.txtLet.Name = "txtLet";
+            this.txtLet.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtLet.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.txtLet.Properties.Appearance.Options.UseBackColor = true;
+            this.txtLet.Properties.Appearance.Options.UseFont = true;
+            this.txtLet.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtLet.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtLet.Properties.Mask.BeepOnError = true;
+            this.txtLet.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtLet.Properties.Mask.ShowPlaceHolders = false;
+            this.txtLet.Properties.MaxLength = 2;
+            this.txtLet.Size = new System.Drawing.Size(66, 22);
+            this.txtLet.TabIndex = 37;
             // 
             // labelControl19
             // 
@@ -835,30 +837,29 @@
             this.memoEdit1.ToolTip = "De la Vega 400 Centro";
             this.memoEdit1.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.memoEdit1.ToolTipTitle = "Ejemplo";
-            this.memoEdit1.EditValueChanged += new System.EventHandler(this.memoEdit1_EditValueChanged);
             // 
-            // textEdit12
+            // txtDomDesc
             // 
-            this.textEdit12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit12.EditValue = "";
-            this.textEdit12.Location = new System.Drawing.Point(9, 499);
-            this.textEdit12.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.textEdit12.Name = "textEdit12";
-            this.textEdit12.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textEdit12.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.textEdit12.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit12.Properties.Appearance.Options.UseFont = true;
-            this.textEdit12.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit12.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            this.textEdit12.Properties.Mask.BeepOnError = true;
-            this.textEdit12.Properties.Mask.IgnoreMaskBlank = false;
-            this.textEdit12.Properties.Mask.ShowPlaceHolders = false;
-            this.textEdit12.Properties.MaxLength = 50;
-            this.textEdit12.Size = new System.Drawing.Size(654, 22);
-            this.textEdit12.TabIndex = 38;
-            this.textEdit12.ToolTip = "De la Vega 400 Centro";
-            this.textEdit12.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.textEdit12.ToolTipTitle = "Ejemplo";
+            this.txtDomDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDomDesc.EditValue = "";
+            this.txtDomDesc.Location = new System.Drawing.Point(9, 499);
+            this.txtDomDesc.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.txtDomDesc.Name = "txtDomDesc";
+            this.txtDomDesc.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtDomDesc.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.txtDomDesc.Properties.Appearance.Options.UseBackColor = true;
+            this.txtDomDesc.Properties.Appearance.Options.UseFont = true;
+            this.txtDomDesc.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtDomDesc.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtDomDesc.Properties.Mask.BeepOnError = true;
+            this.txtDomDesc.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtDomDesc.Properties.Mask.ShowPlaceHolders = false;
+            this.txtDomDesc.Properties.MaxLength = 50;
+            this.txtDomDesc.Size = new System.Drawing.Size(654, 22);
+            this.txtDomDesc.TabIndex = 38;
+            this.txtDomDesc.ToolTip = "De la Vega 400 Centro";
+            this.txtDomDesc.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.txtDomDesc.ToolTipTitle = "Ejemplo";
             // 
             // labelControl22
             // 
@@ -884,87 +885,123 @@
             this.labelControl23.TabIndex = 49;
             this.labelControl23.Text = "Centro de estudios";
             // 
-            // lookUpEdit5
+            // cmbPlantel
             // 
-            this.lookUpEdit5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lookUpEdit5.Location = new System.Drawing.Point(9, 597);
-            this.lookUpEdit5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.lookUpEdit5.Name = "lookUpEdit5";
-            this.lookUpEdit5.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.lookUpEdit5.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.lookUpEdit5.Properties.Appearance.Options.UseBackColor = true;
-            this.lookUpEdit5.Properties.Appearance.Options.UseFont = true;
-            this.lookUpEdit5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lookUpEdit5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbPlantel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbPlantel.Location = new System.Drawing.Point(9, 597);
+            this.cmbPlantel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.cmbPlantel.Name = "cmbPlantel";
+            this.cmbPlantel.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cmbPlantel.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.cmbPlantel.Properties.Appearance.Options.UseBackColor = true;
+            this.cmbPlantel.Properties.Appearance.Options.UseFont = true;
+            this.cmbPlantel.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.cmbPlantel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit5.Size = new System.Drawing.Size(654, 22);
-            this.lookUpEdit5.TabIndex = 48;
+            this.cmbPlantel.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 39, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("municipio", "municipio", 82, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("institucion", "institucion", 98, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nivel", "nivel", 50, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("plantel", "plantel", 66, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("usuario", "usuario", 66, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("fIns", "f Ins", 50, DevExpress.Utils.FormatType.DateTime, "dd/MM/yyyy", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("fAct", "f Act", 50, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nombre1", "Nombre1", 66, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.cmbPlantel.Properties.DataSource = this.bsPlanteles;
+            this.cmbPlantel.Properties.DisplayMember = "plantel";
+            this.cmbPlantel.Properties.ValueMember = "id";
+            this.cmbPlantel.Size = new System.Drawing.Size(654, 22);
+            this.cmbPlantel.TabIndex = 48;
             // 
-            // button4
+            // btnLista
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.AutoSize = true;
-            this.button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::SolicitantesBecas.Properties.Resources.app_window;
-            this.button4.Location = new System.Drawing.Point(561, 686);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(22, 22);
-            this.button4.TabIndex = 53;
-            this.toolTip.SetTitle(this.button4, "Limpiar");
-            this.toolTip.SetToolTip(this.button4, "Click para limpiar formulario de captura...");
-            this.toolTip.SetToolTipIconType(this.button4, DevExpress.Utils.ToolTipIconType.Information);
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnLista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLista.AutoSize = true;
+            this.btnLista.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLista.BackColor = System.Drawing.Color.Transparent;
+            this.btnLista.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLista.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnLista.FlatAppearance.BorderSize = 0;
+            this.btnLista.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLista.Image = global::SolicitantesBecas.Properties.Resources.notepad;
+            this.btnLista.Location = new System.Drawing.Point(561, 683);
+            this.btnLista.Name = "btnLista";
+            this.btnLista.Size = new System.Drawing.Size(22, 22);
+            this.btnLista.TabIndex = 54;
+            this.toolTip.SetTitle(this.btnLista, "Registros");
+            this.toolTip.SetToolTip(this.btnLista, "Click para mostrar lista de registros capturados...");
+            this.toolTip.SetToolTipIconType(this.btnLista, DevExpress.Utils.ToolTipIconType.Information);
+            this.btnLista.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnLimpiar
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.AutoSize = true;
-            this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::SolicitantesBecas.Properties.Resources.save;
-            this.button2.Location = new System.Drawing.Point(496, 654);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(54, 54);
-            this.button2.TabIndex = 51;
-            this.toolTip.SetTitle(this.button2, "Guardar");
-            this.toolTip.SetToolTip(this.button2, "Click para guardar la información capturada...");
-            this.toolTip.SetToolTipIconType(this.button2, DevExpress.Utils.ToolTipIconType.Information);
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiar.AutoSize = true;
+            this.btnLimpiar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLimpiar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Image = global::SolicitantesBecas.Properties.Resources.app_window;
+            this.btnLimpiar.Location = new System.Drawing.Point(561, 655);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(22, 22);
+            this.btnLimpiar.TabIndex = 53;
+            this.toolTip.SetTitle(this.btnLimpiar, "Limpiar");
+            this.toolTip.SetToolTip(this.btnLimpiar, "Click para limpiar formulario de captura...");
+            this.toolTip.SetToolTipIconType(this.btnLimpiar, DevExpress.Utils.ToolTipIconType.Information);
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnGuardar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::SolicitantesBecas.Properties.Resources.close;
-            this.button1.Location = new System.Drawing.Point(617, 655);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 54);
-            this.button1.TabIndex = 50;
-            this.toolTip.SetTitle(this.button1, "Cerrar");
-            this.toolTip.SetToolTip(this.button1, "Click para cerrar formulario de captura...");
-            this.toolTip.SetToolTipIconType(this.button1, DevExpress.Utils.ToolTipIconType.Information);
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.AutoSize = true;
+            this.btnGuardar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnGuardar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Image = global::SolicitantesBecas.Properties.Resources.save;
+            this.btnGuardar.Location = new System.Drawing.Point(496, 654);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(54, 54);
+            this.btnGuardar.TabIndex = 51;
+            this.toolTip.SetTitle(this.btnGuardar, "Guardar");
+            this.toolTip.SetToolTip(this.btnGuardar, "Click para guardar la información capturada...");
+            this.toolTip.SetToolTipIconType(this.btnGuardar, DevExpress.Utils.ToolTipIconType.Information);
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.AutoSize = true;
+            this.btnCerrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = global::SolicitantesBecas.Properties.Resources.close;
+            this.btnCerrar.Location = new System.Drawing.Point(617, 655);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(54, 54);
+            this.btnCerrar.TabIndex = 50;
+            this.toolTip.SetTitle(this.btnCerrar, "Cerrar");
+            this.toolTip.SetToolTip(this.btnCerrar, "Click para cerrar formulario de captura...");
+            this.toolTip.SetToolTipIconType(this.btnCerrar, DevExpress.Utils.ToolTipIconType.Information);
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnBucarCURP
             // 
@@ -988,27 +1025,27 @@
             this.toolTip.SetToolTipIconType(this.btnBucarCURP, DevExpress.Utils.ToolTipIconType.Information);
             this.btnBucarCURP.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnCambiarUsuario
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.AutoSize = true;
-            this.button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::SolicitantesBecas.Properties.Resources.users;
-            this.button3.Location = new System.Drawing.Point(389, 650);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(22, 22);
-            this.button3.TabIndex = 52;
-            this.toolTip.SetTitle(this.button3, "Cambiar usuario");
-            this.toolTip.SetToolTip(this.button3, "Click para cambiar de usuario...");
-            this.toolTip.SetToolTipIconType(this.button3, DevExpress.Utils.ToolTipIconType.Information);
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCambiarUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCambiarUsuario.AutoSize = true;
+            this.btnCambiarUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCambiarUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.btnCambiarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCambiarUsuario.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCambiarUsuario.FlatAppearance.BorderSize = 0;
+            this.btnCambiarUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCambiarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCambiarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarUsuario.Image = global::SolicitantesBecas.Properties.Resources.users;
+            this.btnCambiarUsuario.Location = new System.Drawing.Point(389, 650);
+            this.btnCambiarUsuario.Name = "btnCambiarUsuario";
+            this.btnCambiarUsuario.Size = new System.Drawing.Size(22, 22);
+            this.btnCambiarUsuario.TabIndex = 52;
+            this.toolTip.SetTitle(this.btnCambiarUsuario, "Cambiar usuario");
+            this.toolTip.SetToolTip(this.btnCambiarUsuario, "Click para cambiar de usuario...");
+            this.toolTip.SetToolTipIconType(this.btnCambiarUsuario, DevExpress.Utils.ToolTipIconType.Information);
+            this.btnCambiarUsuario.UseVisualStyleBackColor = false;
             // 
             // frmMain
             // 
@@ -1017,83 +1054,85 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(674, 711);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLista);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.labelControl23);
-            this.Controls.Add(this.lookUpEdit5);
+            this.Controls.Add(this.cmbPlantel);
             this.Controls.Add(this.labelControl22);
-            this.Controls.Add(this.textEdit12);
+            this.Controls.Add(this.txtDomDesc);
             this.Controls.Add(this.memoEdit1);
             this.Controls.Add(this.labelControl21);
             this.Controls.Add(this.labelControl20);
             this.Controls.Add(this.labelControl19);
-            this.Controls.Add(this.textEdit11);
-            this.Controls.Add(this.textEdit10);
-            this.Controls.Add(this.textEdit9);
+            this.Controls.Add(this.txtLet);
+            this.Controls.Add(this.txtNumInt);
+            this.Controls.Add(this.txtNumExt);
             this.Controls.Add(this.labelControl18);
-            this.Controls.Add(this.lookUpEdit4);
+            this.Controls.Add(this.cmbCalle);
             this.Controls.Add(this.labelControl17);
             this.Controls.Add(this.labelControl16);
             this.Controls.Add(this.labelControl15);
-            this.Controls.Add(this.lookUpEdit3);
-            this.Controls.Add(this.lookUpEdit2);
-            this.Controls.Add(this.lookUpEdit1);
+            this.Controls.Add(this.cmbCol);
+            this.Controls.Add(this.cmbLoc);
+            this.Controls.Add(this.cmbMpio);
             this.Controls.Add(this.labelControl14);
             this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.labelControl9);
-            this.Controls.Add(this.textEdit6);
+            this.Controls.Add(this.txtNomMadre);
             this.Controls.Add(this.labelControl10);
-            this.Controls.Add(this.textEdit7);
+            this.Controls.Add(this.txtAp2Madre);
             this.Controls.Add(this.labelControl11);
-            this.Controls.Add(this.textEdit8);
+            this.Controls.Add(this.txtAp1Madre);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.labelControl7);
-            this.Controls.Add(this.textEdit5);
+            this.Controls.Add(this.txtNomPadre);
             this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.textEdit3);
+            this.Controls.Add(this.txtAp2Padre);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.txtAp1Padre);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.txtTel);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtCel);
             this.Controls.Add(this.txtCURP);
-            this.Controls.Add(this.textEdit4);
+            this.Controls.Add(this.txtSexoEdad);
             this.Controls.Add(this.btnBucarCURP);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.textEdit2);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnCambiarUsuario);
             this.Controls.Add(this.shapeContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(690, 749);
             this.Name = "frmMain";
-            this.Text = "Formulario de captura de solicitantes";
+            this.Text = "Usuario seleccionado - Formulario de captura de solicitantes";
             ((System.ComponentModel.ISupportInitialize)(this.txtCURP.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSexoEdad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTel.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAp1Padre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAp2Padre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNomPadre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNomMadre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAp2Madre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAp1Madre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMpio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbLoc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCol.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCalle.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumExt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumInt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDomDesc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbPlantel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1105,62 +1144,64 @@
         private System.Windows.Forms.BindingSource bsMain;
         private DevExpress.XtraEditors.TextEdit txtCURP;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txtNombre;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtEmail;
         private System.Windows.Forms.Button btnBucarCURP;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit txtSexoEdad;
         private DevExpress.XtraEditors.TextEdit txtCel;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtTel;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtAp1Padre;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit txtAp2Padre;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.TextEdit txtNomPadre;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape2;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraEditors.TextEdit txtNomMadre;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.TextEdit textEdit7;
+        private DevExpress.XtraEditors.TextEdit txtAp2Madre;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.TextEdit textEdit8;
+        private DevExpress.XtraEditors.TextEdit txtAp1Madre;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit2;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit3;
+        private DevExpress.XtraEditors.LookUpEdit cmbMpio;
+        private DevExpress.XtraEditors.LookUpEdit cmbLoc;
+        private DevExpress.XtraEditors.LookUpEdit cmbCol;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.LabelControl labelControl17;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit4;
+        private DevExpress.XtraEditors.LookUpEdit cmbCalle;
         private DevExpress.XtraEditors.LabelControl labelControl18;
-        private DevExpress.XtraEditors.TextEdit textEdit9;
-        private DevExpress.XtraEditors.TextEdit textEdit10;
-        private DevExpress.XtraEditors.TextEdit textEdit11;
+        private DevExpress.XtraEditors.TextEdit txtNumExt;
+        private DevExpress.XtraEditors.TextEdit txtNumInt;
+        private DevExpress.XtraEditors.TextEdit txtLet;
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraEditors.LabelControl labelControl20;
         private DevExpress.XtraEditors.LabelControl labelControl21;
         private DevExpress.XtraEditors.MemoEdit memoEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit12;
+        private DevExpress.XtraEditors.TextEdit txtDomDesc;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
         private DevExpress.XtraEditors.LabelControl labelControl22;
         private DevExpress.XtraEditors.LabelControl labelControl23;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit5;
+        private DevExpress.XtraEditors.LookUpEdit cmbPlantel;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCambiarUsuario;
         private DevExpress.Utils.ToolTipController toolTip;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnLista;
+        private System.Windows.Forms.BindingSource bsPlanteles;
     }
 }
 

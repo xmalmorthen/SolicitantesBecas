@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SolicitantesBecas.Models
+namespace wsSolicitantesBecas.Modelos
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -33,9 +33,6 @@ namespace SolicitantesBecas.Models
     partial void InsertcaEdad(caEdad instance);
     partial void UpdatecaEdad(caEdad instance);
     partial void DeletecaEdad(caEdad instance);
-    partial void InserttblDomDesc(tblDomDesc instance);
-    partial void UpdatetblDomDesc(tblDomDesc instance);
-    partial void DeletetblDomDesc(tblDomDesc instance);
     partial void InsertcaEscuelas(caEscuelas instance);
     partial void UpdatecaEscuelas(caEscuelas instance);
     partial void DeletecaEscuelas(caEscuelas instance);
@@ -45,13 +42,16 @@ namespace SolicitantesBecas.Models
     partial void InsertcaUsuarios(caUsuarios instance);
     partial void UpdatecaUsuarios(caUsuarios instance);
     partial void DeletecaUsuarios(caUsuarios instance);
+    partial void InserttblDomDesc(tblDomDesc instance);
+    partial void UpdatetblDomDesc(tblDomDesc instance);
+    partial void DeletetblDomDesc(tblDomDesc instance);
     partial void InsertmaSolicitantes(maSolicitantes instance);
     partial void UpdatemaSolicitantes(maSolicitantes instance);
     partial void DeletemaSolicitantes(maSolicitantes instance);
     #endregion
 		
 		public BdCapturaBECASDataContext() : 
-				base(global::SolicitantesBecas.Properties.Settings.Default.BdCapturaBECASConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["BdCapturaBECASConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -88,14 +88,6 @@ namespace SolicitantesBecas.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<tblDomDesc> tblDomDesc
-		{
-			get
-			{
-				return this.GetTable<tblDomDesc>();
-			}
-		}
-		
 		public System.Data.Linq.Table<caEscuelas> caEscuelas
 		{
 			get
@@ -117,6 +109,14 @@ namespace SolicitantesBecas.Models
 			get
 			{
 				return this.GetTable<caUsuarios>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblDomDesc> tblDomDesc
+		{
+			get
+			{
+				return this.GetTable<tblDomDesc>();
 			}
 		}
 		
@@ -205,7 +205,7 @@ namespace SolicitantesBecas.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL", IsDbGenerated=true)]
 		public System.DateTime fIns
 		{
 			get
@@ -291,240 +291,6 @@ namespace SolicitantesBecas.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblDomDesc")]
-	public partial class tblDomDesc : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _municipio;
-		
-		private string _localidad;
-		
-		private string _colonia;
-		
-		private string _calle;
-		
-		private System.DateTime _fIns;
-		
-		private System.Nullable<System.DateTime> _fact;
-		
-		private EntitySet<maSolicitantes> _maSolicitantes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnmunicipioChanging(string value);
-    partial void OnmunicipioChanged();
-    partial void OnlocalidadChanging(string value);
-    partial void OnlocalidadChanged();
-    partial void OncoloniaChanging(string value);
-    partial void OncoloniaChanged();
-    partial void OncalleChanging(string value);
-    partial void OncalleChanged();
-    partial void OnfInsChanging(System.DateTime value);
-    partial void OnfInsChanged();
-    partial void OnfactChanging(System.Nullable<System.DateTime> value);
-    partial void OnfactChanged();
-    #endregion
-		
-		public tblDomDesc()
-		{
-			this._maSolicitantes = new EntitySet<maSolicitantes>(new Action<maSolicitantes>(this.attach_maSolicitantes), new Action<maSolicitantes>(this.detach_maSolicitantes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_municipio", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string municipio
-		{
-			get
-			{
-				return this._municipio;
-			}
-			set
-			{
-				if ((this._municipio != value))
-				{
-					this.OnmunicipioChanging(value);
-					this.SendPropertyChanging();
-					this._municipio = value;
-					this.SendPropertyChanged("municipio");
-					this.OnmunicipioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_localidad", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string localidad
-		{
-			get
-			{
-				return this._localidad;
-			}
-			set
-			{
-				if ((this._localidad != value))
-				{
-					this.OnlocalidadChanging(value);
-					this.SendPropertyChanging();
-					this._localidad = value;
-					this.SendPropertyChanged("localidad");
-					this.OnlocalidadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_colonia", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string colonia
-		{
-			get
-			{
-				return this._colonia;
-			}
-			set
-			{
-				if ((this._colonia != value))
-				{
-					this.OncoloniaChanging(value);
-					this.SendPropertyChanging();
-					this._colonia = value;
-					this.SendPropertyChanged("colonia");
-					this.OncoloniaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_calle", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string calle
-		{
-			get
-			{
-				return this._calle;
-			}
-			set
-			{
-				if ((this._calle != value))
-				{
-					this.OncalleChanging(value);
-					this.SendPropertyChanging();
-					this._calle = value;
-					this.SendPropertyChanged("calle");
-					this.OncalleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL")]
-		public System.DateTime fIns
-		{
-			get
-			{
-				return this._fIns;
-			}
-			set
-			{
-				if ((this._fIns != value))
-				{
-					this.OnfInsChanging(value);
-					this.SendPropertyChanging();
-					this._fIns = value;
-					this.SendPropertyChanged("fIns");
-					this.OnfInsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fact", DbType="DateTime")]
-		public System.Nullable<System.DateTime> fact
-		{
-			get
-			{
-				return this._fact;
-			}
-			set
-			{
-				if ((this._fact != value))
-				{
-					this.OnfactChanging(value);
-					this.SendPropertyChanging();
-					this._fact = value;
-					this.SendPropertyChanged("fact");
-					this.OnfactChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblDomDesc_maSolicitantes", Storage="_maSolicitantes", ThisKey="id", OtherKey="idDomDesc")]
-		public EntitySet<maSolicitantes> maSolicitantes
-		{
-			get
-			{
-				return this._maSolicitantes;
-			}
-			set
-			{
-				this._maSolicitantes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_maSolicitantes(maSolicitantes entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblDomDesc = this;
-		}
-		
-		private void detach_maSolicitantes(maSolicitantes entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblDomDesc = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.caEscuelas")]
 	public partial class caEscuelas : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -540,8 +306,6 @@ namespace SolicitantesBecas.Models
 		private string _nivel;
 		
 		private string _plantel;
-		
-		private string _usuario;
 		
 		private System.DateTime _fIns;
 		
@@ -563,8 +327,6 @@ namespace SolicitantesBecas.Models
     partial void OnnivelChanged();
     partial void OnplantelChanging(string value);
     partial void OnplantelChanged();
-    partial void OnusuarioChanging(string value);
-    partial void OnusuarioChanged();
     partial void OnfInsChanging(System.DateTime value);
     partial void OnfInsChanged();
     partial void OnfActChanging(System.Nullable<System.DateTime> value);
@@ -677,27 +439,7 @@ namespace SolicitantesBecas.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuario", DbType="VarChar(50)")]
-		public string usuario
-		{
-			get
-			{
-				return this._usuario;
-			}
-			set
-			{
-				if ((this._usuario != value))
-				{
-					this.OnusuarioChanging(value);
-					this.SendPropertyChanging();
-					this._usuario = value;
-					this.SendPropertyChanged("usuario");
-					this.OnusuarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL", IsDbGenerated=true)]
 		public System.DateTime fIns
 		{
 			get
@@ -859,7 +601,7 @@ namespace SolicitantesBecas.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL", IsDbGenerated=true)]
 		public System.DateTime fIns
 		{
 			get
@@ -1045,7 +787,7 @@ namespace SolicitantesBecas.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL", IsDbGenerated=true)]
 		public System.DateTime fIns
 		{
 			get
@@ -1131,6 +873,240 @@ namespace SolicitantesBecas.Models
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblDomDesc")]
+	public partial class tblDomDesc : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _municipio;
+		
+		private string _localidad;
+		
+		private string _colonia;
+		
+		private string _calle;
+		
+		private System.DateTime _fIns;
+		
+		private System.Nullable<System.DateTime> _fact;
+		
+		private EntitySet<maSolicitantes> _maSolicitantes;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnmunicipioChanging(string value);
+    partial void OnmunicipioChanged();
+    partial void OnlocalidadChanging(string value);
+    partial void OnlocalidadChanged();
+    partial void OncoloniaChanging(string value);
+    partial void OncoloniaChanged();
+    partial void OncalleChanging(string value);
+    partial void OncalleChanged();
+    partial void OnfInsChanging(System.DateTime value);
+    partial void OnfInsChanged();
+    partial void OnfactChanging(System.Nullable<System.DateTime> value);
+    partial void OnfactChanged();
+    #endregion
+		
+		public tblDomDesc()
+		{
+			this._maSolicitantes = new EntitySet<maSolicitantes>(new Action<maSolicitantes>(this.attach_maSolicitantes), new Action<maSolicitantes>(this.detach_maSolicitantes));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_municipio", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string municipio
+		{
+			get
+			{
+				return this._municipio;
+			}
+			set
+			{
+				if ((this._municipio != value))
+				{
+					this.OnmunicipioChanging(value);
+					this.SendPropertyChanging();
+					this._municipio = value;
+					this.SendPropertyChanged("municipio");
+					this.OnmunicipioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_localidad", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string localidad
+		{
+			get
+			{
+				return this._localidad;
+			}
+			set
+			{
+				if ((this._localidad != value))
+				{
+					this.OnlocalidadChanging(value);
+					this.SendPropertyChanging();
+					this._localidad = value;
+					this.SendPropertyChanged("localidad");
+					this.OnlocalidadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_colonia", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string colonia
+		{
+			get
+			{
+				return this._colonia;
+			}
+			set
+			{
+				if ((this._colonia != value))
+				{
+					this.OncoloniaChanging(value);
+					this.SendPropertyChanging();
+					this._colonia = value;
+					this.SendPropertyChanged("colonia");
+					this.OncoloniaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_calle", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string calle
+		{
+			get
+			{
+				return this._calle;
+			}
+			set
+			{
+				if ((this._calle != value))
+				{
+					this.OncalleChanging(value);
+					this.SendPropertyChanging();
+					this._calle = value;
+					this.SendPropertyChanged("calle");
+					this.OncalleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL", IsDbGenerated=true)]
+		public System.DateTime fIns
+		{
+			get
+			{
+				return this._fIns;
+			}
+			set
+			{
+				if ((this._fIns != value))
+				{
+					this.OnfInsChanging(value);
+					this.SendPropertyChanging();
+					this._fIns = value;
+					this.SendPropertyChanged("fIns");
+					this.OnfInsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fact", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fact
+		{
+			get
+			{
+				return this._fact;
+			}
+			set
+			{
+				if ((this._fact != value))
+				{
+					this.OnfactChanging(value);
+					this.SendPropertyChanging();
+					this._fact = value;
+					this.SendPropertyChanged("fact");
+					this.OnfactChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblDomDesc_maSolicitantes", Storage="_maSolicitantes", ThisKey="id", OtherKey="idDomDesc")]
+		public EntitySet<maSolicitantes> maSolicitantes
+		{
+			get
+			{
+				return this._maSolicitantes;
+			}
+			set
+			{
+				this._maSolicitantes.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_maSolicitantes(maSolicitantes entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblDomDesc = this;
+		}
+		
+		private void detach_maSolicitantes(maSolicitantes entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblDomDesc = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.maSolicitantes")]
 	public partial class maSolicitantes : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1188,6 +1164,10 @@ namespace SolicitantesBecas.Models
 		private System.Nullable<int> _idDomDesc;
 		
 		private int _idUsuario;
+		
+		private System.DateTime _fIns;
+		
+		private System.Nullable<System.DateTime> _fAct;
 		
 		private EntityRef<caEdad> _caEdad;
 		
@@ -1255,6 +1235,10 @@ namespace SolicitantesBecas.Models
     partial void OnidDomDescChanged();
     partial void OnidUsuarioChanging(int value);
     partial void OnidUsuarioChanged();
+    partial void OnfInsChanging(System.DateTime value);
+    partial void OnfInsChanged();
+    partial void OnfActChanging(System.Nullable<System.DateTime> value);
+    partial void OnfActChanged();
     #endregion
 		
 		public maSolicitantes()
@@ -1267,7 +1251,7 @@ namespace SolicitantesBecas.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int id
 		{
 			get
@@ -1803,6 +1787,46 @@ namespace SolicitantesBecas.Models
 					this._idUsuario = value;
 					this.SendPropertyChanged("idUsuario");
 					this.OnidUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL", IsDbGenerated=true)]
+		public System.DateTime fIns
+		{
+			get
+			{
+				return this._fIns;
+			}
+			set
+			{
+				if ((this._fIns != value))
+				{
+					this.OnfInsChanging(value);
+					this.SendPropertyChanging();
+					this._fIns = value;
+					this.SendPropertyChanged("fIns");
+					this.OnfInsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fAct", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fAct
+		{
+			get
+			{
+				return this._fAct;
+			}
+			set
+			{
+				if ((this._fAct != value))
+				{
+					this.OnfActChanging(value);
+					this.SendPropertyChanging();
+					this._fAct = value;
+					this.SendPropertyChanged("fAct");
+					this.OnfActChanged();
 				}
 			}
 		}

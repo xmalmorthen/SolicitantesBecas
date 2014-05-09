@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="caEscuelas">
+        <s:complexType />
+      </s:element>
+      <s:element name="caEscuelasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="caEscuelasResult" type="tns:StcCaEscuelas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StcCaEscuelas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="statusResponse" type="tns:structBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ArrayOfCaEscuelas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="structBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="statusOper" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCaEscuelas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="caEscuelas" nillable="true" type="tns:caEscuelas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="caEscuelas">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="municipio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="institucion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nivel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="plantel" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fIns" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fAct" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="maSolicitantes" type="tns:ArrayOfMaSolicitantes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMaSolicitantes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="maSolicitantes" nillable="true" type="tns:maSolicitantes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="maSolicitantes">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="curp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="primerApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="segundoApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombres" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="edad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="idSexo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="telCel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="telPart" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="domIdMpio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="domIdLocalidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="domIdColonia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="domIdCalle" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="domNumExt" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="domNumInt" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="domLetra" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idEscuela" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="papaPrimerApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="papaSegundoApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="papaNombres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mamaPrimerApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mamaSegundoApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mamaNombres" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idDomDesc" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="idUsuario" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fIns" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fAct" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="caEdad" type="tns:caEdad" />
+          <s:element minOccurs="0" maxOccurs="1" name="caEscuelas" type="tns:caEscuelas" />
+          <s:element minOccurs="0" maxOccurs="1" name="caSexo" type="tns:caSexo" />
+          <s:element minOccurs="0" maxOccurs="1" name="caUsuarios" type="tns:caUsuarios" />
+          <s:element minOccurs="0" maxOccurs="1" name="tblDomDesc" type="tns:tblDomDesc" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="caEdad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="edad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fIns" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fAct" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="maSolicitantes" type="tns:ArrayOfMaSolicitantes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="caSexo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sexo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fIns" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fAct" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="maSolicitantes" type="tns:ArrayOfMaSolicitantes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="caUsuarios">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cveUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fIns" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fAct" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="maSolicitantes" type="tns:ArrayOfMaSolicitantes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="tblDomDesc">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="municipio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="localidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="colonia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="calle" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fIns" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fact" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="maSolicitantes" type="tns:ArrayOfMaSolicitantes" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="caUsuarios">
+        <s:complexType />
+      </s:element>
+      <s:element name="caUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="caUsuariosResult" type="tns:StcCaUsuarios" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StcCaUsuarios">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="statusResponse" type="tns:structBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ArrayOfCaUsuarios" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCaUsuarios">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="caUsuarios" nillable="true" type="tns:caUsuarios" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="caEscuelasSoapIn">
+    <wsdl:part name="parameters" element="tns:caEscuelas" />
+  </wsdl:message>
+  <wsdl:message name="caEscuelasSoapOut">
+    <wsdl:part name="parameters" element="tns:caEscuelasResponse" />
+  </wsdl:message>
+  <wsdl:message name="caUsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:caUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="caUsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:caUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SolicitantesBecasSoap">
+    <wsdl:operation name="caEscuelas">
+      <wsdl:input message="tns:caEscuelasSoapIn" />
+      <wsdl:output message="tns:caEscuelasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="caUsuarios">
+      <wsdl:input message="tns:caUsuariosSoapIn" />
+      <wsdl:output message="tns:caUsuariosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SolicitantesBecasSoap" type="tns:SolicitantesBecasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="caEscuelas">
+      <soap:operation soapAction="http://tempuri.org/caEscuelas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="caUsuarios">
+      <soap:operation soapAction="http://tempuri.org/caUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SolicitantesBecasSoap12" type="tns:SolicitantesBecasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="caEscuelas">
+      <soap12:operation soapAction="http://tempuri.org/caEscuelas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="caUsuarios">
+      <soap12:operation soapAction="http://tempuri.org/caUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SolicitantesBecas">
+    <wsdl:port name="SolicitantesBecasSoap" binding="tns:SolicitantesBecasSoap">
+      <soap:address location="http://localhost:3313/CapturaBECAS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SolicitantesBecasSoap12" binding="tns:SolicitantesBecasSoap12">
+      <soap12:address location="http://localhost:3313/CapturaBECAS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
