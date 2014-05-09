@@ -30,5 +30,30 @@ namespace SolicitantesBecas.Models
             }
             return Lista;
         }
+
+        public static List<strCaEscuelas> caEscuelas()
+        {
+            
+            var request = servicio.caEscuelas();
+
+            if (request.statusResponse.statusOper == false) {
+                return null;
+            }
+
+            List<strCaEscuelas> Lista = new List<strCaEscuelas>();
+            foreach (var item in request.data)
+            {
+                Lista.Add(new strCaEscuelas()
+                {
+                    id = item.id,
+                    institucion = item.institucion,
+                    municipio = item.municipio,
+                    nivel = item.nivel,
+                    plantel = item.plantel
+                });
+            }
+            return Lista;
+        }
+
     }
 }

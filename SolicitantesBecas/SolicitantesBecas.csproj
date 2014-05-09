@@ -101,6 +101,7 @@
     <None Include="Properties\DataSources\SolicitantesBecas.Models.caUsuarios.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.getData.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.maSolicitantes.datasource" />
+    <None Include="Properties\DataSources\SolicitantesBecas.Models.strCaEscuelas.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.strCaUsuarios.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.tblDomDesc.datasource" />
     <None Include="Properties\Settings.settings">

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.txtCURP = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -81,16 +82,21 @@
             this.txtDomDesc = new DevExpress.XtraEditors.TextEdit();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.cmbPlantel = new DevExpress.XtraEditors.LookUpEdit();
             this.toolTip = new DevExpress.Utils.ToolTipController(this.components);
             this.btnLista = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.bsPlanteles = new System.Windows.Forms.BindingSource(this.components);
             this.btnBucarCURP = new System.Windows.Forms.Button();
             this.btnCambiarUsuario = new System.Windows.Forms.Button();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
+            this.cmbEscuelas = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmunicipio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colinstitucion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnivel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colplantel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bsPlanteles = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtCURP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
@@ -112,9 +118,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDomDesc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbPlantel.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbEscuelas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCURP
@@ -885,35 +892,6 @@
             this.labelControl23.TabIndex = 49;
             this.labelControl23.Text = "Centro de estudios";
             // 
-            // cmbPlantel
-            // 
-            this.cmbPlantel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbPlantel.Location = new System.Drawing.Point(9, 597);
-            this.cmbPlantel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.cmbPlantel.Name = "cmbPlantel";
-            this.cmbPlantel.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.cmbPlantel.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
-            this.cmbPlantel.Properties.Appearance.Options.UseBackColor = true;
-            this.cmbPlantel.Properties.Appearance.Options.UseFont = true;
-            this.cmbPlantel.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.cmbPlantel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbPlantel.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 39, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("municipio", "municipio", 82, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("institucion", "institucion", 98, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nivel", "nivel", 50, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("plantel", "plantel", 66, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("usuario", "usuario", 66, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("fIns", "f Ins", 50, DevExpress.Utils.FormatType.DateTime, "dd/MM/yyyy", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("fAct", "f Act", 50, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nombre1", "Nombre1", 66, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.cmbPlantel.Properties.DataSource = this.bsPlanteles;
-            this.cmbPlantel.Properties.DisplayMember = "plantel";
-            this.cmbPlantel.Properties.ValueMember = "id";
-            this.cmbPlantel.Size = new System.Drawing.Size(654, 22);
-            this.cmbPlantel.TabIndex = 48;
-            // 
             // btnLista
             // 
             this.btnLista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -979,6 +957,7 @@
             this.toolTip.SetToolTip(this.btnGuardar, "Click para guardar la información capturada...");
             this.toolTip.SetToolTipIconType(this.btnGuardar, DevExpress.Utils.ToolTipIconType.Information);
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCerrar
             // 
@@ -1047,6 +1026,79 @@
             this.toolTip.SetToolTipIconType(this.btnCambiarUsuario, DevExpress.Utils.ToolTipIconType.Information);
             this.btnCambiarUsuario.UseVisualStyleBackColor = false;
             // 
+            // cmbEscuelas
+            // 
+            this.cmbEscuelas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbEscuelas.Location = new System.Drawing.Point(9, 600);
+            this.cmbEscuelas.Name = "cmbEscuelas";
+            this.cmbEscuelas.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cmbEscuelas.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 10F);
+            this.cmbEscuelas.Properties.Appearance.Options.UseBackColor = true;
+            this.cmbEscuelas.Properties.Appearance.Options.UseFont = true;
+            this.cmbEscuelas.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Courier New", 10F);
+            this.cmbEscuelas.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.cmbEscuelas.Properties.AppearanceFocused.Font = new System.Drawing.Font("Courier New", 10F);
+            this.cmbEscuelas.Properties.AppearanceFocused.Options.UseFont = true;
+            this.cmbEscuelas.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+            this.cmbEscuelas.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            serializableAppearanceObject1.Font = new System.Drawing.Font("Courier New", 10F);
+            serializableAppearanceObject1.Options.UseFont = true;
+            this.cmbEscuelas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            this.cmbEscuelas.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.cmbEscuelas.Properties.DataSource = this.bsPlanteles;
+            this.cmbEscuelas.Properties.DisplayMember = "plantel";
+            this.cmbEscuelas.Properties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.Simple;
+            this.cmbEscuelas.Properties.ValueMember = "id";
+            this.cmbEscuelas.Properties.View = this.searchLookUpEdit1View;
+            this.cmbEscuelas.Size = new System.Drawing.Size(655, 22);
+            this.cmbEscuelas.TabIndex = 55;
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colmunicipio,
+            this.colinstitucion,
+            this.colnivel,
+            this.colplantel});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colmunicipio
+            // 
+            this.colmunicipio.FieldName = "municipio";
+            this.colmunicipio.Name = "colmunicipio";
+            this.colmunicipio.Visible = true;
+            this.colmunicipio.VisibleIndex = 0;
+            // 
+            // colinstitucion
+            // 
+            this.colinstitucion.FieldName = "institucion";
+            this.colinstitucion.Name = "colinstitucion";
+            this.colinstitucion.Visible = true;
+            this.colinstitucion.VisibleIndex = 1;
+            // 
+            // colnivel
+            // 
+            this.colnivel.FieldName = "nivel";
+            this.colnivel.Name = "colnivel";
+            this.colnivel.Visible = true;
+            this.colnivel.VisibleIndex = 2;
+            // 
+            // colplantel
+            // 
+            this.colplantel.FieldName = "plantel";
+            this.colplantel.Name = "colplantel";
+            this.colplantel.Visible = true;
+            this.colplantel.VisibleIndex = 3;
+            // 
+            // bsPlanteles
+            // 
+            this.bsPlanteles.DataSource = typeof(SolicitantesBecas.Models.strCaEscuelas);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1054,12 +1106,12 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(674, 711);
+            this.Controls.Add(this.cmbEscuelas);
             this.Controls.Add(this.btnLista);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.labelControl23);
-            this.Controls.Add(this.cmbPlantel);
             this.Controls.Add(this.labelControl22);
             this.Controls.Add(this.txtDomDesc);
             this.Controls.Add(this.memoEdit1);
@@ -1109,6 +1161,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(690, 749);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuario seleccionado - Formulario de captura de solicitantes";
             ((System.ComponentModel.ISupportInitialize)(this.txtCURP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
@@ -1131,9 +1184,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDomDesc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbPlantel.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbEscuelas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1193,7 +1247,6 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
         private DevExpress.XtraEditors.LabelControl labelControl22;
         private DevExpress.XtraEditors.LabelControl labelControl23;
-        private DevExpress.XtraEditors.LookUpEdit cmbPlantel;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnGuardar;
@@ -1202,6 +1255,12 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnLista;
         private System.Windows.Forms.BindingSource bsPlanteles;
+        private DevExpress.XtraEditors.SearchLookUpEdit cmbEscuelas;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn colmunicipio;
+        private DevExpress.XtraGrid.Columns.GridColumn colinstitucion;
+        private DevExpress.XtraGrid.Columns.GridColumn colnivel;
+        private DevExpress.XtraGrid.Columns.GridColumn colplantel;
     }
 }
 
