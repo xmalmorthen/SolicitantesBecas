@@ -586,4 +586,93 @@ namespace SolicitantesBecas.Models
         }
     }
 
+    public class strCURPResponse {
+        private string _statusOper;
+        public string statusOper { get { return _statusOper; } set { _statusOper = value; } }
+
+        private string _message;
+        public string message { get { return _message; } set { _message = value; } }
+
+        private string _TipoError;
+        public string TipoError { get { return _TipoError; } set { _TipoError = value; } }
+
+        private string _CodigoError;
+        public string CodigoError { get { return _CodigoError; } set { _CodigoError = value; } }
+
+        private string _SessionID;
+        public string SessionID { get { return _SessionID; } set { _SessionID = value; } }
+
+        private string _Fuente;
+        public string Fuente { get { return _Fuente; } set { _Fuente = value; } }
+
+    }
+
+    public class strCURP {
+        private strCURPResponse _Response = new strCURPResponse();
+        public strCURPResponse Response { get { return _Response; } set { _Response = value; } }
+
+        private string _CURP;
+        public string CURP { get { return _CURP; } set { _CURP = value; } }
+
+        private string _Nombre;
+        public string Nombre { get { return _Nombre; } set { _Nombre = value; } }
+
+        private string _Apellido1;
+        public string Apellido1 { get { return _Apellido1; } set { _Apellido1 = value; } }
+
+        private string _Apellido2;
+        public string Apellido2 { get { return _Apellido2; } set { _Apellido2 = value; } }
+
+        private string _Entidad;
+        public string Entidad { get { return _Entidad; } set { _Entidad = value; } }
+
+        private string _Fecha_Nac;
+        public string Fecha_Nac { get { return _Fecha_Nac; } set { _Fecha_Nac = value; } }
+
+        private string _Sexo;
+        public string Sexo { get { return _Sexo; } set { _Sexo = value; } }
+
+        private string _Nacionalidad;
+        public string Nacionalidad { get { return _Nacionalidad; } set { _Nacionalidad = value; } }
+
+        private string _CveDP;
+        public string CveDP { get { return _CveDP; } set { _CveDP = value; } }
+
+        private string _DOCUMPROBANIOREGISTRO;
+        public string DOCUMPROBANIOREGISTRO { get { return _DOCUMPROBANIOREGISTRO; } set { _DOCUMPROBANIOREGISTRO = value; } }
+
+        private string _DOCUMPROBACTAFOJA;
+        public string DOCUMPROBACTAFOJA { get { return _DOCUMPROBACTAFOJA; } set { _DOCUMPROBACTAFOJA = value; } }
+
+        private string _DOCUMPROBACTATOMO;
+        public string DOCUMPROBACTATOMO { get { return _DOCUMPROBACTATOMO; } set { _DOCUMPROBACTATOMO = value; } }
+
+        private string _DOCUMPROBACTALIBRO;
+        public string DOCUMPROBACTALIBRO { get { return _DOCUMPROBACTALIBRO; } set { _DOCUMPROBACTALIBRO = value; } }
+
+        private string _DOCUMPROBNUM;
+        public string DOCUMPROBNUM { get { return _DOCUMPROBNUM; } set { _DOCUMPROBNUM = value; } }
+
+        private string _DOCUMPROBACTACRIP;
+        public string DOCUMPROBACTACRIP { get { return _DOCUMPROBACTACRIP; } set { _DOCUMPROBACTACRIP = value; } }
+
+        private string _DOCUMPROBACTAENTIDREGIS;
+        public string DOCUMPROBACTAENTIDREGIS { get { return _DOCUMPROBACTAENTIDREGIS; } set { _DOCUMPROBACTAENTIDREGIS = value; } }
+
+        private string _DOCUMPROBACTAMUNICREGIS;
+        public string DOCUMPROBACTAMUNICREGIS { get { return _DOCUMPROBACTAMUNICREGIS; } set { _DOCUMPROBACTAMUNICREGIS = value; } }
+
+        private string _Folio;
+        public string Folio { get { return _Folio; } set { _Folio = value; } }
+
+        private string _FechaAlta;
+        public string FechaAlta { get { return _FechaAlta; } set { _FechaAlta = value; } }
+
+        private string _Estatus;
+        public string Estatus { get { return _Estatus; } set { _Estatus = value; } }
+
+
+
+    }
+
 }

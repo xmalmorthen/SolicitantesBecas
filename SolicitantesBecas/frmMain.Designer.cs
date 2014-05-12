@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.txtCURP = new DevExpress.XtraEditors.TextEdit();
@@ -82,21 +81,21 @@
             this.txtDomDesc = new DevExpress.XtraEditors.TextEdit();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.toolTip = new DevExpress.Utils.ToolTipController(this.components);
+            this.toolTip = new DevExpress.Utils.ToolTipController();
             this.btnLista = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnBucarCURP = new System.Windows.Forms.Button();
             this.btnCambiarUsuario = new System.Windows.Forms.Button();
-            this.bsMain = new System.Windows.Forms.BindingSource(this.components);
+            this.bsMain = new System.Windows.Forms.BindingSource();
             this.cmbEscuelas = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmunicipio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colinstitucion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnivel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colplantel = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bsPlanteles = new System.Windows.Forms.BindingSource(this.components);
+            this.bsPlanteles = new System.Windows.Forms.BindingSource();
             ((System.ComponentModel.ISupportInitialize)(this.txtCURP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
@@ -136,6 +135,8 @@
             this.txtCURP.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 18F);
             this.txtCURP.Properties.Appearance.Options.UseBackColor = true;
             this.txtCURP.Properties.Appearance.Options.UseFont = true;
+            this.txtCURP.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtCURP.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtCURP.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtCURP.Properties.Mask.BeepOnError = true;
             this.txtCURP.Properties.Mask.EditMask = ">LLLL000000LLLLLL00";
@@ -143,6 +144,7 @@
             this.txtCURP.Properties.MaxLength = 18;
             this.txtCURP.Size = new System.Drawing.Size(619, 34);
             this.txtCURP.TabIndex = 0;
+            this.txtCURP.Leave += new System.EventHandler(this.txtCURP_Leave);
             // 
             // labelControl1
             // 
@@ -1003,6 +1005,7 @@
             this.toolTip.SetToolTip(this.btnBucarCURP, "Click para buscar los datos de la CURP...");
             this.toolTip.SetToolTipIconType(this.btnBucarCURP, DevExpress.Utils.ToolTipIconType.Information);
             this.btnBucarCURP.UseVisualStyleBackColor = false;
+            this.btnBucarCURP.Click += new System.EventHandler(this.btnBucarCURP_Click);
             // 
             // btnCambiarUsuario
             // 

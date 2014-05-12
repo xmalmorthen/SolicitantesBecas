@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuario));
             this.cmbUsuarios = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsUsuarios = new System.Windows.Forms.BindingSource(this.components);
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.toolTip = new DevExpress.Utils.ToolTipController(this.components);
-            this.bsUsuarios = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cmbUsuarios.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -63,11 +63,16 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("usuario", "Usuario", 66, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.cmbUsuarios.Properties.DataSource = this.bsUsuarios;
             this.cmbUsuarios.Properties.DisplayMember = "usuario";
+            this.cmbUsuarios.Properties.NullText = "Seleccione usuario...";
             this.cmbUsuarios.Properties.ShowFooter = false;
             this.cmbUsuarios.Properties.ShowHeader = false;
             this.cmbUsuarios.Properties.ValueMember = "id";
             this.cmbUsuarios.Size = new System.Drawing.Size(543, 36);
             this.cmbUsuarios.TabIndex = 56;
+            // 
+            // bsUsuarios
+            // 
+            this.bsUsuarios.DataSource = typeof(SolicitantesBecas.Models.strCaUsuarios);
             // 
             // lineShape4
             // 
@@ -137,10 +142,6 @@
             this.toolTip.SetToolTipIconType(this.btnCancelar, DevExpress.Utils.ToolTipIconType.Information);
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // bsUsuarios
-            // 
-            this.bsUsuarios.DataSource = typeof(SolicitantesBecas.Models.strCaUsuarios);
             // 
             // frmUsuario
             // 

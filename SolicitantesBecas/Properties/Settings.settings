@@ -10,5 +10,35 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=10.10.20.17;Initial Catalog=BdCapturaBECAS;Persist Security Info=True;User ID=sa;Password=Server1</Value>
     </Setting>
+    <Setting Name="smtpAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">smtp.gmail.com</Value>
+    </Setting>
+    <Setting Name="portNumber" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">587</Value>
+    </Setting>
+    <Setting Name="enableSSL" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="emailFrom" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xmal.morthen@gmail.com</Value>
+    </Setting>
+    <Setting Name="password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">malditamater</Value>
+    </Setting>
+    <Setting Name="emailTo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xmal.morthen@gmail.com</Value>
+    </Setting>
+    <Setting Name="numErrAntesdeEnviarCorreo" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="CURPBaseURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://wsrenapo.col.gob.mx/curp2/CURP</Value>
+    </Setting>
+    <Setting Name="usuarioCURP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xmalmorthen</Value>
+    </Setting>
+    <Setting Name="contraseniaCURP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">b16f550d147bf92e9455074d9edfe013</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

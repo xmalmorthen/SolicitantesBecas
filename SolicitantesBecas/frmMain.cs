@@ -74,5 +74,19 @@ namespace SolicitantesBecas
 
 
         }
+
+        private void btnBucarCURP_Click(object sender, EventArgs e)
+        {
+            string CURP = txtCURP.Text.Trim('_');
+
+            if (string.IsNullOrEmpty(CURP)) return;
+
+            getData.getInfoCURP(txtCURP.Text);
+        }   
+
+        private void txtCURP_Leave(object sender, EventArgs e)
+        {
+            btnBucarCURP_Click(null, null);
+        }
     }
 }

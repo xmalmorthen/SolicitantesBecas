@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SolicitantesBecas</RootNamespace>
     <AssemblyName>SolicitantesBecas</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -41,6 +42,13 @@
     <Reference Include="DevExpress.XtraLayout.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -67,6 +75,7 @@
     <Compile Include="frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\err.cs" />
     <Compile Include="Models\getData.cs" />
     <Compile Include="Models\structures.cs" />
     <Compile Include="Program.cs" />
@@ -94,6 +103,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.BdCapturaBECASDataContext.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.caEdad.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.caEscuelas.datasource" />
@@ -165,6 +175,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\images\checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libs\RestSharp.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

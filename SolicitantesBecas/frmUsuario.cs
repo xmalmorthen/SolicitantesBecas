@@ -18,8 +18,10 @@ namespace SolicitantesBecas
         public frmUsuario()
         {
             InitializeComponent();
-
             bsUsuarios.DataSource = getData.caUsuarios();
+            if (bsUsuarios.Count == 0) {
+                MessageBox.Show("Ocurrió un problema al intentar obtener la información de la base de datos, favor de ponerse en contacto con el administrador del sistema...", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2);
+            }
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -47,5 +49,6 @@ namespace SolicitantesBecas
                 if (idUsuario == null) e.Cancel = true;
             }
         }
+
     }
 }
