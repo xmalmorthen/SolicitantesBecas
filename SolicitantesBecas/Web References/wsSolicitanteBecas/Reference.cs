@@ -8,20 +8,146 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+// 
+// Microsoft.VSDesigner generó automáticamente este código fuente, versión=4.0.30319.18444.
+// 
+#pragma warning disable 1591
+
 namespace SolicitantesBecas.wsSolicitanteBecas {
+    using System;
+    using System.Web.Services;
+    using System.Diagnostics;
+    using System.Web.Services.Protocols;
+    using System.Xml.Serialization;
+    using System.ComponentModel;
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="wsSolicitanteBecas.SolicitantesBecasSoap")]
-    public interface SolicitantesBecasSoap {
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Web.Services.WebServiceBindingAttribute(Name="SolicitantesBecasSoap", Namespace="http://tempuri.org/")]
+    public partial class SolicitantesBecas : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/caEscuelas", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SolicitantesBecas.wsSolicitanteBecas.StcCaEscuelas caEscuelas();
+        private System.Threading.SendOrPostCallback caEscuelasOperationCompleted;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/caUsuarios", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SolicitantesBecas.wsSolicitanteBecas.StcCaUsuarios caUsuarios();
+        private System.Threading.SendOrPostCallback caUsuariosOperationCompleted;
+        
+        private bool useDefaultCredentialsSetExplicitly;
+        
+        /// <remarks/>
+        public SolicitantesBecas() {
+            this.Url = global::SolicitantesBecas.Properties.Settings.Default.wsSolicitantesBecas;
+            if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
+                this.UseDefaultCredentials = true;
+                this.useDefaultCredentialsSetExplicitly = false;
+            }
+            else {
+                this.useDefaultCredentialsSetExplicitly = true;
+            }
+        }
+        
+        public new string Url {
+            get {
+                return base.Url;
+            }
+            set {
+                if ((((this.IsLocalFileSystemWebService(base.Url) == true) 
+                            && (this.useDefaultCredentialsSetExplicitly == false)) 
+                            && (this.IsLocalFileSystemWebService(value) == false))) {
+                    base.UseDefaultCredentials = false;
+                }
+                base.Url = value;
+            }
+        }
+        
+        public new bool UseDefaultCredentials {
+            get {
+                return base.UseDefaultCredentials;
+            }
+            set {
+                base.UseDefaultCredentials = value;
+                this.useDefaultCredentialsSetExplicitly = true;
+            }
+        }
+        
+        /// <remarks/>
+        public event caEscuelasCompletedEventHandler caEscuelasCompleted;
+        
+        /// <remarks/>
+        public event caUsuariosCompletedEventHandler caUsuariosCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/caEscuelas", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public StcCaEscuelas caEscuelas() {
+            object[] results = this.Invoke("caEscuelas", new object[0]);
+            return ((StcCaEscuelas)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void caEscuelasAsync() {
+            this.caEscuelasAsync(null);
+        }
+        
+        /// <remarks/>
+        public void caEscuelasAsync(object userState) {
+            if ((this.caEscuelasOperationCompleted == null)) {
+                this.caEscuelasOperationCompleted = new System.Threading.SendOrPostCallback(this.OncaEscuelasOperationCompleted);
+            }
+            this.InvokeAsync("caEscuelas", new object[0], this.caEscuelasOperationCompleted, userState);
+        }
+        
+        private void OncaEscuelasOperationCompleted(object arg) {
+            if ((this.caEscuelasCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.caEscuelasCompleted(this, new caEscuelasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/caUsuarios", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public StcCaUsuarios caUsuarios() {
+            object[] results = this.Invoke("caUsuarios", new object[0]);
+            return ((StcCaUsuarios)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void caUsuariosAsync() {
+            this.caUsuariosAsync(null);
+        }
+        
+        /// <remarks/>
+        public void caUsuariosAsync(object userState) {
+            if ((this.caUsuariosOperationCompleted == null)) {
+                this.caUsuariosOperationCompleted = new System.Threading.SendOrPostCallback(this.OncaUsuariosOperationCompleted);
+            }
+            this.InvokeAsync("caUsuarios", new object[0], this.caUsuariosOperationCompleted, userState);
+        }
+        
+        private void OncaUsuariosOperationCompleted(object arg) {
+            if ((this.caUsuariosCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.caUsuariosCompleted(this, new caUsuariosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        public new void CancelAsync(object userState) {
+            base.CancelAsync(userState);
+        }
+        
+        private bool IsLocalFileSystemWebService(string url) {
+            if (((url == null) 
+                        || (url == string.Empty))) {
+                return false;
+            }
+            System.Uri wsUri = new System.Uri(url);
+            if (((wsUri.Port >= 1024) 
+                        && (string.Compare(wsUri.Host, "localHost", System.StringComparison.OrdinalIgnoreCase) == 0))) {
+                return true;
+            }
+            return false;
+        }
     }
     
     /// <comentarios/>
@@ -30,42 +156,29 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class StcCaEscuelas : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class StcCaEscuelas {
         
         private structBase statusResponseField;
         
         private caEscuelas[] dataField;
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public structBase statusResponse {
             get {
                 return this.statusResponseField;
             }
             set {
                 this.statusResponseField = value;
-                this.RaisePropertyChanged("statusResponse");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
         public caEscuelas[] data {
             get {
                 return this.dataField;
             }
             set {
                 this.dataField = value;
-                this.RaisePropertyChanged("data");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -76,42 +189,29 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class structBase : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class structBase {
         
         private bool statusOperField;
         
         private string messageField;
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool statusOper {
             get {
                 return this.statusOperField;
             }
             set {
                 this.statusOperField = value;
-                this.RaisePropertyChanged("statusOper");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string message {
             get {
                 return this.messageField;
             }
             set {
                 this.messageField = value;
-                this.RaisePropertyChanged("message");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -122,42 +222,29 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class StcCaUsuarios : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class StcCaUsuarios {
         
         private structBase statusResponseField;
         
         private caUsuarios[] dataField;
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public structBase statusResponse {
             get {
                 return this.statusResponseField;
             }
             set {
                 this.statusResponseField = value;
-                this.RaisePropertyChanged("statusResponse");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
         public caUsuarios[] data {
             get {
                 return this.dataField;
             }
             set {
                 this.dataField = value;
-                this.RaisePropertyChanged("data");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -168,7 +255,7 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class caUsuarios : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class caUsuarios {
         
         private int idField;
         
@@ -183,83 +270,63 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         private maSolicitantes[] maSolicitantesField;
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int id {
             get {
                 return this.idField;
             }
             set {
                 this.idField = value;
-                this.RaisePropertyChanged("id");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string cveUsuario {
             get {
                 return this.cveUsuarioField;
             }
             set {
                 this.cveUsuarioField = value;
-                this.RaisePropertyChanged("cveUsuario");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string usuario {
             get {
                 return this.usuarioField;
             }
             set {
                 this.usuarioField = value;
-                this.RaisePropertyChanged("usuario");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public System.DateTime fIns {
             get {
                 return this.fInsField;
             }
             set {
                 this.fInsField = value;
-                this.RaisePropertyChanged("fIns");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public System.Nullable<System.DateTime> fAct {
             get {
                 return this.fActField;
             }
             set {
                 this.fActField = value;
-                this.RaisePropertyChanged("fAct");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=5)]
         public maSolicitantes[] maSolicitantes {
             get {
                 return this.maSolicitantesField;
             }
             set {
                 this.maSolicitantesField = value;
-                this.RaisePropertyChanged("maSolicitantes");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -270,7 +337,7 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class maSolicitantes : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class maSolicitantes {
         
         private int idField;
         
@@ -339,407 +406,336 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         private tblDomDesc tblDomDescField;
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int id {
             get {
                 return this.idField;
             }
             set {
                 this.idField = value;
-                this.RaisePropertyChanged("id");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string curp {
             get {
                 return this.curpField;
             }
             set {
                 this.curpField = value;
-                this.RaisePropertyChanged("curp");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string primerApellido {
             get {
                 return this.primerApellidoField;
             }
             set {
                 this.primerApellidoField = value;
-                this.RaisePropertyChanged("primerApellido");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string segundoApellido {
             get {
                 return this.segundoApellidoField;
             }
             set {
                 this.segundoApellidoField = value;
-                this.RaisePropertyChanged("segundoApellido");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string nombres {
             get {
                 return this.nombresField;
             }
             set {
                 this.nombresField = value;
-                this.RaisePropertyChanged("nombres");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public int edad {
             get {
                 return this.edadField;
             }
             set {
                 this.edadField = value;
-                this.RaisePropertyChanged("edad");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public int idSexo {
             get {
                 return this.idSexoField;
             }
             set {
                 this.idSexoField = value;
-                this.RaisePropertyChanged("idSexo");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string correo {
             get {
                 return this.correoField;
             }
             set {
                 this.correoField = value;
-                this.RaisePropertyChanged("correo");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string telCel {
             get {
                 return this.telCelField;
             }
             set {
                 this.telCelField = value;
-                this.RaisePropertyChanged("telCel");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string telPart {
             get {
                 return this.telPartField;
             }
             set {
                 this.telPartField = value;
-                this.RaisePropertyChanged("telPart");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public string domIdMpio {
             get {
                 return this.domIdMpioField;
             }
             set {
                 this.domIdMpioField = value;
-                this.RaisePropertyChanged("domIdMpio");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public string domIdLocalidad {
             get {
                 return this.domIdLocalidadField;
             }
             set {
                 this.domIdLocalidadField = value;
-                this.RaisePropertyChanged("domIdLocalidad");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string domIdColonia {
             get {
                 return this.domIdColoniaField;
             }
             set {
                 this.domIdColoniaField = value;
-                this.RaisePropertyChanged("domIdColonia");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public string domIdCalle {
             get {
                 return this.domIdCalleField;
             }
             set {
                 this.domIdCalleField = value;
-                this.RaisePropertyChanged("domIdCalle");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public System.Nullable<int> domNumExt {
             get {
                 return this.domNumExtField;
             }
             set {
                 this.domNumExtField = value;
-                this.RaisePropertyChanged("domNumExt");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public System.Nullable<int> domNumInt {
             get {
                 return this.domNumIntField;
             }
             set {
                 this.domNumIntField = value;
-                this.RaisePropertyChanged("domNumInt");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
         public string domLetra {
             get {
                 return this.domLetraField;
             }
             set {
                 this.domLetraField = value;
-                this.RaisePropertyChanged("domLetra");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
         public int idEscuela {
             get {
                 return this.idEscuelaField;
             }
             set {
                 this.idEscuelaField = value;
-                this.RaisePropertyChanged("idEscuela");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public string papaPrimerApellido {
             get {
                 return this.papaPrimerApellidoField;
             }
             set {
                 this.papaPrimerApellidoField = value;
-                this.RaisePropertyChanged("papaPrimerApellido");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
         public string papaSegundoApellido {
             get {
                 return this.papaSegundoApellidoField;
             }
             set {
                 this.papaSegundoApellidoField = value;
-                this.RaisePropertyChanged("papaSegundoApellido");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
         public string papaNombres {
             get {
                 return this.papaNombresField;
             }
             set {
                 this.papaNombresField = value;
-                this.RaisePropertyChanged("papaNombres");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
         public string mamaPrimerApellido {
             get {
                 return this.mamaPrimerApellidoField;
             }
             set {
                 this.mamaPrimerApellidoField = value;
-                this.RaisePropertyChanged("mamaPrimerApellido");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
         public string mamaSegundoApellido {
             get {
                 return this.mamaSegundoApellidoField;
             }
             set {
                 this.mamaSegundoApellidoField = value;
-                this.RaisePropertyChanged("mamaSegundoApellido");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
         public string mamaNombres {
             get {
                 return this.mamaNombresField;
             }
             set {
                 this.mamaNombresField = value;
-                this.RaisePropertyChanged("mamaNombres");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public System.Nullable<int> idDomDesc {
             get {
                 return this.idDomDescField;
             }
             set {
                 this.idDomDescField = value;
-                this.RaisePropertyChanged("idDomDesc");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
         public int idUsuario {
             get {
                 return this.idUsuarioField;
             }
             set {
                 this.idUsuarioField = value;
-                this.RaisePropertyChanged("idUsuario");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
         public System.DateTime fIns {
             get {
                 return this.fInsField;
             }
             set {
                 this.fInsField = value;
-                this.RaisePropertyChanged("fIns");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=27)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public System.Nullable<System.DateTime> fAct {
             get {
                 return this.fActField;
             }
             set {
                 this.fActField = value;
-                this.RaisePropertyChanged("fAct");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
         public caEdad caEdad {
             get {
                 return this.caEdadField;
             }
             set {
                 this.caEdadField = value;
-                this.RaisePropertyChanged("caEdad");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
         public caEscuelas caEscuelas {
             get {
                 return this.caEscuelasField;
             }
             set {
                 this.caEscuelasField = value;
-                this.RaisePropertyChanged("caEscuelas");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
         public caSexo caSexo {
             get {
                 return this.caSexoField;
             }
             set {
                 this.caSexoField = value;
-                this.RaisePropertyChanged("caSexo");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
         public caUsuarios caUsuarios {
             get {
                 return this.caUsuariosField;
             }
             set {
                 this.caUsuariosField = value;
-                this.RaisePropertyChanged("caUsuarios");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
         public tblDomDesc tblDomDesc {
             get {
                 return this.tblDomDescField;
             }
             set {
                 this.tblDomDescField = value;
-                this.RaisePropertyChanged("tblDomDesc");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -750,7 +746,7 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class caEdad : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class caEdad {
         
         private int idField;
         
@@ -763,71 +759,53 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         private maSolicitantes[] maSolicitantesField;
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int id {
             get {
                 return this.idField;
             }
             set {
                 this.idField = value;
-                this.RaisePropertyChanged("id");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public int edad {
             get {
                 return this.edadField;
             }
             set {
                 this.edadField = value;
-                this.RaisePropertyChanged("edad");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public System.DateTime fIns {
             get {
                 return this.fInsField;
             }
             set {
                 this.fInsField = value;
-                this.RaisePropertyChanged("fIns");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public System.Nullable<System.DateTime> fAct {
             get {
                 return this.fActField;
             }
             set {
                 this.fActField = value;
-                this.RaisePropertyChanged("fAct");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=4)]
         public maSolicitantes[] maSolicitantes {
             get {
                 return this.maSolicitantesField;
             }
             set {
                 this.maSolicitantesField = value;
-                this.RaisePropertyChanged("maSolicitantes");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -838,7 +816,7 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class caEscuelas : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class caEscuelas {
         
         private int idField;
         
@@ -857,107 +835,83 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         private maSolicitantes[] maSolicitantesField;
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int id {
             get {
                 return this.idField;
             }
             set {
                 this.idField = value;
-                this.RaisePropertyChanged("id");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string municipio {
             get {
                 return this.municipioField;
             }
             set {
                 this.municipioField = value;
-                this.RaisePropertyChanged("municipio");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string institucion {
             get {
                 return this.institucionField;
             }
             set {
                 this.institucionField = value;
-                this.RaisePropertyChanged("institucion");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string nivel {
             get {
                 return this.nivelField;
             }
             set {
                 this.nivelField = value;
-                this.RaisePropertyChanged("nivel");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string plantel {
             get {
                 return this.plantelField;
             }
             set {
                 this.plantelField = value;
-                this.RaisePropertyChanged("plantel");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public System.DateTime fIns {
             get {
                 return this.fInsField;
             }
             set {
                 this.fInsField = value;
-                this.RaisePropertyChanged("fIns");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public System.Nullable<System.DateTime> fAct {
             get {
                 return this.fActField;
             }
             set {
                 this.fActField = value;
-                this.RaisePropertyChanged("fAct");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
         public maSolicitantes[] maSolicitantes {
             get {
                 return this.maSolicitantesField;
             }
             set {
                 this.maSolicitantesField = value;
-                this.RaisePropertyChanged("maSolicitantes");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -968,7 +922,7 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class caSexo : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class caSexo {
         
         private int idField;
         
@@ -981,71 +935,53 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         private maSolicitantes[] maSolicitantesField;
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int id {
             get {
                 return this.idField;
             }
             set {
                 this.idField = value;
-                this.RaisePropertyChanged("id");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string sexo {
             get {
                 return this.sexoField;
             }
             set {
                 this.sexoField = value;
-                this.RaisePropertyChanged("sexo");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public System.DateTime fIns {
             get {
                 return this.fInsField;
             }
             set {
                 this.fInsField = value;
-                this.RaisePropertyChanged("fIns");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public System.Nullable<System.DateTime> fAct {
             get {
                 return this.fActField;
             }
             set {
                 this.fActField = value;
-                this.RaisePropertyChanged("fAct");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=4)]
         public maSolicitantes[] maSolicitantes {
             get {
                 return this.maSolicitantesField;
             }
             set {
                 this.maSolicitantesField = value;
-                this.RaisePropertyChanged("maSolicitantes");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -1056,7 +992,7 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class tblDomDesc : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class tblDomDesc {
         
         private int idField;
         
@@ -1075,144 +1011,138 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         private maSolicitantes[] maSolicitantesField;
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int id {
             get {
                 return this.idField;
             }
             set {
                 this.idField = value;
-                this.RaisePropertyChanged("id");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string municipio {
             get {
                 return this.municipioField;
             }
             set {
                 this.municipioField = value;
-                this.RaisePropertyChanged("municipio");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string localidad {
             get {
                 return this.localidadField;
             }
             set {
                 this.localidadField = value;
-                this.RaisePropertyChanged("localidad");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string colonia {
             get {
                 return this.coloniaField;
             }
             set {
                 this.coloniaField = value;
-                this.RaisePropertyChanged("colonia");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string calle {
             get {
                 return this.calleField;
             }
             set {
                 this.calleField = value;
-                this.RaisePropertyChanged("calle");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public System.DateTime fIns {
             get {
                 return this.fInsField;
             }
             set {
                 this.fInsField = value;
-                this.RaisePropertyChanged("fIns");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public System.Nullable<System.DateTime> fact {
             get {
                 return this.factField;
             }
             set {
                 this.factField = value;
-                this.RaisePropertyChanged("fact");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
         public maSolicitantes[] maSolicitantes {
             get {
                 return this.maSolicitantesField;
             }
             set {
                 this.maSolicitantesField = value;
-                this.RaisePropertyChanged("maSolicitantes");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface SolicitantesBecasSoapChannel : SolicitantesBecas.wsSolicitanteBecas.SolicitantesBecasSoap, System.ServiceModel.IClientChannel {
-    }
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void caEscuelasCompletedEventHandler(object sender, caEscuelasCompletedEventArgs e);
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SolicitantesBecasSoapClient : System.ServiceModel.ClientBase<SolicitantesBecas.wsSolicitanteBecas.SolicitantesBecasSoap>, SolicitantesBecas.wsSolicitanteBecas.SolicitantesBecasSoap {
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class caEscuelasCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
-        public SolicitantesBecasSoapClient() {
+        private object[] results;
+        
+        internal caEscuelasCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
         }
         
-        public SolicitantesBecasSoapClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+        /// <remarks/>
+        public StcCaEscuelas Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((StcCaEscuelas)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void caUsuariosCompletedEventHandler(object sender, caUsuariosCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class caUsuariosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal caUsuariosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
         }
         
-        public SolicitantesBecasSoapClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public SolicitantesBecasSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public SolicitantesBecasSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
-        
-        public SolicitantesBecas.wsSolicitanteBecas.StcCaEscuelas caEscuelas() {
-            return base.Channel.caEscuelas();
-        }
-        
-        public SolicitantesBecas.wsSolicitanteBecas.StcCaUsuarios caUsuarios() {
-            return base.Channel.caUsuarios();
+        /// <remarks/>
+        public StcCaUsuarios Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((StcCaUsuarios)(this.results[0]));
+            }
         }
     }
 }
+
+#pragma warning restore 1591

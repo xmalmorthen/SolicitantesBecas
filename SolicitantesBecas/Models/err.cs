@@ -45,8 +45,8 @@ namespace SolicitantesBecas.Models
                 smtp.Send(mail);
             }
             catch (Exception e)
-            {                
-            }            
+            {
+            }
         }
     }
 }

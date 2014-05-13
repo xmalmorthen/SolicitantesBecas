@@ -108,7 +108,7 @@ namespace SolicitantesBecas.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public int numErrAntesdeEnviarCorreo {
             get {
                 return ((int)(this["numErrAntesdeEnviarCorreo"]));
@@ -121,12 +121,12 @@ namespace SolicitantesBecas.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("http://wsrenapo.col.gob.mx/curp2/CURP")]
-        public string CURPBaseURL {
+        public string wsCURP {
             get {
-                return ((string)(this["CURPBaseURL"]));
+                return ((string)(this["wsCURP"]));
             }
             set {
-                this["CURPBaseURL"] = value;
+                this["wsCURP"] = value;
             }
         }
         
@@ -151,6 +151,89 @@ namespace SolicitantesBecas.Properties {
             }
             set {
                 this["contraseniaCURP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ocurrió un problema relacionado a")]
+        public string errGeneral {
+            get {
+                return ((string)(this["errGeneral"]));
+            }
+            set {
+                this["errGeneral"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Base de datos")]
+        public string errBD {
+            get {
+                return ((string)(this["errBD"]));
+            }
+            set {
+                this["errBD"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("favor de ponerse en contacto con el administrador del sistema...")]
+        public string errAdmin {
+            get {
+                return ((string)(this["errAdmin"]));
+            }
+            set {
+                this["errAdmin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Servicio de CURP")]
+        public string errWSCURP {
+            get {
+                return ((string)(this["errWSCURP"]));
+            }
+            set {
+                this["errWSCURP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:3313/CapturaBECAS.asmx")]
+        public string wsSolicitantesBecas {
+            get {
+                return ((string)(this["wsSolicitantesBecas"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://proveedores.col.gob.mx/REST_Services/FrameWork/index.php/localizacion/serv" +
+            "erlocalizacion")]
+        public string wsFwrkDom {
+            get {
+                return ((string)(this["wsFwrkDom"]));
+            }
+            set {
+                this["wsFwrkDom"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Servicio de Framework de Domicilios")]
+        public string errWSFwrkDomicilios {
+            get {
+                return ((string)(this["errWSFwrkDomicilios"]));
+            }
+            set {
+                this["errWSFwrkDomicilios"] = value;
             }
         }
     }

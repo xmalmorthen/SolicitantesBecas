@@ -29,9 +29,9 @@
       <Value Profile="(Default)">xmal.morthen@gmail.com</Value>
     </Setting>
     <Setting Name="numErrAntesdeEnviarCorreo" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">3</Value>
+      <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="CURPBaseURL" Type="System.String" Scope="User">
+    <Setting Name="wsCURP" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://wsrenapo.col.gob.mx/curp2/CURP</Value>
     </Setting>
     <Setting Name="usuarioCURP" Type="System.String" Scope="User">
@@ -39,6 +39,27 @@
     </Setting>
     <Setting Name="contraseniaCURP" Type="System.String" Scope="User">
       <Value Profile="(Default)">b16f550d147bf92e9455074d9edfe013</Value>
+    </Setting>
+    <Setting Name="errGeneral" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Ocurrió un problema relacionado a</Value>
+    </Setting>
+    <Setting Name="errBD" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Base de datos</Value>
+    </Setting>
+    <Setting Name="errAdmin" Type="System.String" Scope="User">
+      <Value Profile="(Default)">favor de ponerse en contacto con el administrador del sistema...</Value>
+    </Setting>
+    <Setting Name="errWSCURP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Servicio de CURP</Value>
+    </Setting>
+    <Setting Name="wsSolicitantesBecas" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:3313/CapturaBECAS.asmx</Value>
+    </Setting>
+    <Setting Name="wsFwrkDom" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://proveedores.col.gob.mx/REST_Services/FrameWork/index.php/localizacion/serverlocalizacion</Value>
+    </Setting>
+    <Setting Name="errWSFwrkDomicilios" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Servicio de Framework de Domicilios</Value>
     </Setting>
   </Settings>
 </SettingsFile>

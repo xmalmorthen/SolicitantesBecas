@@ -20,7 +20,9 @@ namespace SolicitantesBecas
             InitializeComponent();
             bsUsuarios.DataSource = getData.caUsuarios();
             if (bsUsuarios.Count == 0) {
-                MessageBox.Show("Ocurrió un problema al intentar obtener la información de la base de datos, favor de ponerse en contacto con el administrador del sistema...", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2);
+                MessageBox.Show(SolicitantesBecas.Properties.Settings.Default.errGeneral + " " + Environment.NewLine +
+                                SolicitantesBecas.Properties.Settings.Default.errBD + " " + Environment.NewLine +
+                                SolicitantesBecas.Properties.Settings.Default.errAdmin, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -39,7 +41,7 @@ namespace SolicitantesBecas
             }
             catch (Exception)
             {
-                MessageBox.Show(this, "Debe seleccionar un usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dxErrorProvider.SetError(cmbUsuarios, "Debe seleccionar un usuario");
             }
         }
 

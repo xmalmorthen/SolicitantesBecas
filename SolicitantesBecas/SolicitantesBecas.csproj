@@ -52,8 +52,10 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -80,10 +82,10 @@
     <Compile Include="Models\structures.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\wsSolicitanteBecas\Reference.cs">
+    <Compile Include="Web References\wsSolicitanteBecas\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -112,7 +114,11 @@
     <None Include="Properties\DataSources\SolicitantesBecas.Models.getData.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.maSolicitantes.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.strCaEscuelas.datasource" />
+    <None Include="Properties\DataSources\SolicitantesBecas.Models.strCall.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.strCaUsuarios.datasource" />
+    <None Include="Properties\DataSources\SolicitantesBecas.Models.strCol.datasource" />
+    <None Include="Properties\DataSources\SolicitantesBecas.Models.strLoc.datasource" />
+    <None Include="Properties\DataSources\SolicitantesBecas.Models.strMpios.datasource" />
     <None Include="Properties\DataSources\SolicitantesBecas.Models.tblDomDesc.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -123,12 +129,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\wsSolicitanteBecas\CapturaBECAS.wsdl" />
-    <None Include="Service References\wsSolicitanteBecas\SolicitantesBecas.wsSolicitanteBecas.StcCaEscuelas.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="Web References\wsSolicitanteBecas\CapturaBECAS.wsdl" />
+    <None Include="Web References\wsSolicitanteBecas\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\wsSolicitanteBecas\SolicitantesBecas.wsSolicitanteBecas.StcCaUsuarios.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="Web References\wsSolicitanteBecas\StcCaEscuelas1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsSolicitanteBecas\StcCaUsuarios1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -156,28 +166,28 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\wsSolicitanteBecas\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\wsSolicitanteBecas\CapturaBECAS.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\wsSolicitanteBecas\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\wsSolicitanteBecas\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\wsSolicitanteBecas\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="assets\images\checkmark.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Web References\wsSolicitanteBecas\CapturaBECAS.disco" />
+    <None Include="assets\images\clock.png" />
     <Content Include="Libs\RestSharp.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:3313/CapturaBECAS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsSolicitanteBecas\</RelPath>
+      <UpdateFromURL>http://localhost:3313/CapturaBECAS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>wsSolicitantesBecas</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

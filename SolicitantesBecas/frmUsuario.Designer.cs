@@ -37,8 +37,10 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.toolTip = new DevExpress.Utils.ToolTipController(this.components);
+            this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cmbUsuarios.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbUsuarios
@@ -143,6 +145,10 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dxErrorProvider
+            // 
+            this.dxErrorProvider.ContainerControl = this;
+            // 
             // frmUsuario
             // 
             this.AcceptButton = this.btnAceptar;
@@ -165,6 +171,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmUsuario_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.cmbUsuarios.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,5 +186,6 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private System.Windows.Forms.BindingSource bsUsuarios;
         private DevExpress.Utils.ToolTipController toolTip;
+        private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider;
     }
 }

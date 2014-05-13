@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.txtCURP = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtNombre = new DevExpress.XtraEditors.TextEdit();
@@ -81,21 +82,30 @@
             this.txtDomDesc = new DevExpress.XtraEditors.TextEdit();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.toolTip = new DevExpress.Utils.ToolTipController();
+            this.toolTip = new DevExpress.Utils.ToolTipController(this.components);
             this.btnLista = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnBucarCURP = new System.Windows.Forms.Button();
             this.btnCambiarUsuario = new System.Windows.Forms.Button();
-            this.bsMain = new System.Windows.Forms.BindingSource();
             this.cmbEscuelas = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmunicipio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colinstitucion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnivel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colplantel = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bsPlanteles = new System.Windows.Forms.BindingSource();
+            this.bsMain = new System.Windows.Forms.BindingSource(this.components);
+            this.pnlProc = new System.Windows.Forms.Panel();
+            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.bsPlanteles = new System.Windows.Forms.BindingSource(this.components);
+            this.bsCall = new System.Windows.Forms.BindingSource(this.components);
+            this.bsCol = new System.Windows.Forms.BindingSource(this.components);
+            this.bsLoc = new System.Windows.Forms.BindingSource(this.components);
+            this.bsMpios = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtCURP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
@@ -117,10 +127,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDomDesc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbEscuelas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
+            this.pnlProc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCall)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCol)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsLoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMpios)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCURP
@@ -144,7 +161,7 @@
             this.txtCURP.Properties.MaxLength = 18;
             this.txtCURP.Size = new System.Drawing.Size(619, 34);
             this.txtCURP.TabIndex = 0;
-            this.txtCURP.Leave += new System.EventHandler(this.txtCURP_Leave);
+            this.txtCURP.Validated += new System.EventHandler(this.txtCURP_Validated);
             // 
             // labelControl1
             // 
@@ -160,7 +177,7 @@
             // 
             this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNombre.EditValue = "Nombre completo aqui...";
+            this.txtNombre.EditValue = "";
             this.txtNombre.Location = new System.Drawing.Point(262, -2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Properties.AllowFocused = false;
@@ -213,14 +230,16 @@
             // 
             this.txtSexoEdad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSexoEdad.EditValue = "Sexo - Edad aqui...";
+            this.txtSexoEdad.EditValue = "";
             this.txtSexoEdad.Location = new System.Drawing.Point(262, 15);
             this.txtSexoEdad.Name = "txtSexoEdad";
             this.txtSexoEdad.Properties.AllowFocused = false;
             this.txtSexoEdad.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtSexoEdad.Properties.Appearance.Font = new System.Drawing.Font("Courier New", 9F);
+            this.txtSexoEdad.Properties.Appearance.ForeColor = System.Drawing.Color.DimGray;
             this.txtSexoEdad.Properties.Appearance.Options.UseBackColor = true;
             this.txtSexoEdad.Properties.Appearance.Options.UseFont = true;
+            this.txtSexoEdad.Properties.Appearance.Options.UseForeColor = true;
             this.txtSexoEdad.Properties.Appearance.Options.UseTextOptions = true;
             this.txtSexoEdad.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtSexoEdad.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -622,8 +641,18 @@
             this.cmbMpio.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cmbMpio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbMpio.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cve_Municipios", "cve_Municipios", 135, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("descrip_Municipios", "Municipio", 154, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cveEntidades_Municipios", "cve Entidades_Municipios", 202, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("descrip_Entidades", "descrip_Entidades", 146, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near)});
+            this.cmbMpio.Properties.DataSource = this.bsMpios;
+            this.cmbMpio.Properties.DisplayMember = "descrip_Municipios";
+            this.cmbMpio.Properties.NullText = "Seleccione municipio";
+            this.cmbMpio.Properties.ValueMember = "cve_Municipios";
             this.cmbMpio.Size = new System.Drawing.Size(214, 22);
             this.cmbMpio.TabIndex = 31;
+            this.cmbMpio.EditValueChanged += new System.EventHandler(this.cmbMpio_EditValueChanged);
             // 
             // cmbLoc
             // 
@@ -638,8 +667,17 @@
             this.cmbLoc.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cmbLoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbLoc.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cve_Localidades", "cve_Localidades", 143, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cveMunicipios_Localidades", "cve Municipios_Localidades", 218, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre_Localidades", "Localidad", 154, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.cmbLoc.Properties.DataSource = this.bsLoc;
+            this.cmbLoc.Properties.DisplayMember = "nombre_Localidades";
+            this.cmbLoc.Properties.NullText = "Seleccione localidad";
+            this.cmbLoc.Properties.ValueMember = "cve_Localidades";
             this.cmbLoc.Size = new System.Drawing.Size(214, 22);
             this.cmbLoc.TabIndex = 32;
+            this.cmbLoc.EditValueChanged += new System.EventHandler(this.cmbLoc_EditValueChanged);
             // 
             // cmbCol
             // 
@@ -654,8 +692,20 @@
             this.cmbCol.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cmbCol.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbCol.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cve_Colonias", "cve_Colonias", 119, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cveLocalidad_Colonias", "cve Localidad_Colonias", 186, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cveNombreColonias_Colonias", "", 234, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre_NombresColonias", "Colonia", 194, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre_Localidades", "nombre_Localidades", 154, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cp_Colonias", "cp_Colonias", 98, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near)});
+            this.cmbCol.Properties.DataSource = this.bsCol;
+            this.cmbCol.Properties.DisplayMember = "nombre_NombresColonias";
+            this.cmbCol.Properties.NullText = "Seleccione colonia";
+            this.cmbCol.Properties.ValueMember = "cve_Colonias";
             this.cmbCol.Size = new System.Drawing.Size(214, 22);
             this.cmbCol.TabIndex = 33;
+            this.cmbCol.EditValueChanged += new System.EventHandler(this.cmbCol_EditValueChanged);
             // 
             // labelControl15
             // 
@@ -706,6 +756,16 @@
             this.cmbCalle.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cmbCalle.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbCalle.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cve_Calles", "cve_Calles", 103, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cveColonias_Calles", "cve Colonias_Calles", 162, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cveNombresCalles_Calles", "cve Nombres Calles_Calles", 210, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cp_Colonias", "cp_Colonias", 98, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre_NombresCalles", "Calle", 178, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.cmbCalle.Properties.DataSource = this.bsCall;
+            this.cmbCalle.Properties.DisplayMember = "nombre_NombresCalles";
+            this.cmbCalle.Properties.NullText = "Seleccione calle";
+            this.cmbCalle.Properties.ValueMember = "cve_Calles";
             this.cmbCalle.Size = new System.Drawing.Size(434, 22);
             this.cmbCalle.TabIndex = 34;
             // 
@@ -824,8 +884,7 @@
             // memoEdit1
             // 
             this.memoEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.memoEdit1.EditValue = "NOTA: Si el nombre de la Calle o la Colonia no aparecen en los catalogos, favor d" +
-    "e teclear tu domicilio en el recuadro de abajo.";
+            this.memoEdit1.EditValue = resources.GetString("memoEdit1.EditValue");
             this.memoEdit1.Location = new System.Drawing.Point(8, 466);
             this.memoEdit1.Name = "memoEdit1";
             this.memoEdit1.Properties.AcceptsReturn = false;
@@ -866,7 +925,7 @@
             this.txtDomDesc.Properties.MaxLength = 50;
             this.txtDomDesc.Size = new System.Drawing.Size(654, 22);
             this.txtDomDesc.TabIndex = 38;
-            this.txtDomDesc.ToolTip = "De la Vega 400 Centro";
+            this.txtDomDesc.ToolTip = "Bosque Alpino 80 Villas del Bosque";
             this.txtDomDesc.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.txtDomDesc.ToolTipTitle = "Ejemplo";
             // 
@@ -1051,6 +1110,7 @@
             this.cmbEscuelas.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.cmbEscuelas.Properties.DataSource = this.bsPlanteles;
             this.cmbEscuelas.Properties.DisplayMember = "plantel";
+            this.cmbEscuelas.Properties.NullText = "Seleccionar centro de estudios";
             this.cmbEscuelas.Properties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.Simple;
             this.cmbEscuelas.Properties.ValueMember = "id";
             this.cmbEscuelas.Properties.View = this.searchLookUpEdit1View;
@@ -1098,9 +1158,72 @@
             this.colplantel.Visible = true;
             this.colplantel.VisibleIndex = 3;
             // 
+            // pnlProc
+            // 
+            this.pnlProc.Controls.Add(this.labelControl25);
+            this.pnlProc.Controls.Add(this.labelControl24);
+            this.pnlProc.Controls.Add(this.pictureBox1);
+            this.pnlProc.Location = new System.Drawing.Point(8, 646);
+            this.pnlProc.Name = "pnlProc";
+            this.pnlProc.Size = new System.Drawing.Size(309, 59);
+            this.pnlProc.TabIndex = 57;
+            this.pnlProc.Visible = false;
+            // 
+            // labelControl25
+            // 
+            this.labelControl25.Appearance.Font = new System.Drawing.Font("Courier New", 12F);
+            this.labelControl25.Location = new System.Drawing.Point(61, 32);
+            this.labelControl25.Margin = new System.Windows.Forms.Padding(1);
+            this.labelControl25.Name = "labelControl25";
+            this.labelControl25.Size = new System.Drawing.Size(190, 18);
+            this.labelControl25.TabIndex = 59;
+            this.labelControl25.Text = "Favor de esperar...";
+            // 
+            // labelControl24
+            // 
+            this.labelControl24.Appearance.Font = new System.Drawing.Font("Courier New", 14F, System.Drawing.FontStyle.Bold);
+            this.labelControl24.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl24.Location = new System.Drawing.Point(61, 11);
+            this.labelControl24.Margin = new System.Windows.Forms.Padding(1);
+            this.labelControl24.Name = "labelControl24";
+            this.labelControl24.Size = new System.Drawing.Size(242, 22);
+            this.labelControl24.TabIndex = 58;
+            this.labelControl24.Text = "Procesando información";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SolicitantesBecas.Properties.Resources.clock;
+            this.pictureBox1.Location = new System.Drawing.Point(7, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 57;
+            this.pictureBox1.TabStop = false;
+            // 
+            // dxErrorProvider
+            // 
+            this.dxErrorProvider.ContainerControl = this;
+            // 
             // bsPlanteles
             // 
             this.bsPlanteles.DataSource = typeof(SolicitantesBecas.Models.strCaEscuelas);
+            // 
+            // bsCall
+            // 
+            this.bsCall.DataSource = typeof(SolicitantesBecas.Models.strCall);
+            // 
+            // bsCol
+            // 
+            this.bsCol.DataSource = typeof(SolicitantesBecas.Models.strCol);
+            // 
+            // bsLoc
+            // 
+            this.bsLoc.DataSource = typeof(SolicitantesBecas.Models.strLoc);
+            // 
+            // bsMpios
+            // 
+            this.bsMpios.DataSource = typeof(SolicitantesBecas.Models.strMpios);
             // 
             // frmMain
             // 
@@ -1109,6 +1232,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(674, 711);
+            this.Controls.Add(this.pnlProc);
             this.Controls.Add(this.cmbEscuelas);
             this.Controls.Add(this.btnLista);
             this.Controls.Add(this.btnLimpiar);
@@ -1187,10 +1311,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDomDesc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbEscuelas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
+            this.pnlProc.ResumeLayout(false);
+            this.pnlProc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCall)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCol)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsLoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMpios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1264,6 +1396,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn colinstitucion;
         private DevExpress.XtraGrid.Columns.GridColumn colnivel;
         private DevExpress.XtraGrid.Columns.GridColumn colplantel;
+        private System.Windows.Forms.Panel pnlProc;
+        private DevExpress.XtraEditors.LabelControl labelControl25;
+        private DevExpress.XtraEditors.LabelControl labelControl24;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider;
+        private System.Windows.Forms.BindingSource bsMpios;
+        private System.Windows.Forms.BindingSource bsLoc;
+        private System.Windows.Forms.BindingSource bsCol;
+        private System.Windows.Forms.BindingSource bsCall;
     }
 }
 

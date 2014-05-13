@@ -623,6 +623,8 @@ namespace SolicitantesBecas.Models
         private string _Apellido2;
         public string Apellido2 { get { return _Apellido2; } set { _Apellido2 = value; } }
 
+        public string NombreCompleto { get { return Apellido1.Trim() + " " + Apellido2.Trim() + " " + Nombre.Trim(); } }
+
         private string _Entidad;
         public string Entidad { get { return _Entidad; } set { _Entidad = value; } }
 
@@ -631,6 +633,29 @@ namespace SolicitantesBecas.Models
 
         private string _Sexo;
         public string Sexo { get { return _Sexo; } set { _Sexo = value; } }
+
+        public string SexoCompleto { get {
+            if (Sexo.ToLower() == "h")
+            {
+                return "Hombre";
+            }
+            else {
+                return "Mujer";
+            }
+            } 
+        }
+
+        public int Edad { get { 
+                int anio = Convert.ToInt16(CURP.Substring(4,2)) + 1900;
+                int mes = Convert.ToInt16(CURP.Substring(6,2));
+                int dia = Convert.ToInt16(CURP.Substring(8,2));
+
+                DateTime nacimiento = new DateTime(anio,mes,dia);
+                int edad = DateTime.Today.AddTicks(-nacimiento.Ticks).Year - 1;
+                
+                return edad;
+            } 
+        }
 
         private string _Nacionalidad;
         public string Nacionalidad { get { return _Nacionalidad; } set { _Nacionalidad = value; } }
@@ -673,6 +698,70 @@ namespace SolicitantesBecas.Models
 
 
 
+    }
+
+    public class strMpios { 
+        private string _cve_Municipios;
+        public string cve_Municipios { get { return _cve_Municipios; } set { _cve_Municipios = value; } }
+
+        private string _descrip_Municipios;
+        public string descrip_Municipios { get { return _descrip_Municipios; } set { _descrip_Municipios = value; } }
+
+        private string _cveEntidades_Municipios;
+        public string cveEntidades_Municipios { get { return _cveEntidades_Municipios; } set { _cveEntidades_Municipios = value; } }
+
+        private string _descrip_Entidades;
+        public string descrip_Entidades { get { return _descrip_Entidades; } set { _descrip_Entidades = value; } }
+    }
+
+    public class strLoc { 
+        private string _cve_Localidades;
+        public string cve_Localidades { get { return _cve_Localidades; } set { _cve_Localidades = value; } }
+
+        private string _cveMunicipios_Localidades;
+        public string cveMunicipios_Localidades { get { return _cveMunicipios_Localidades; } set { _cveMunicipios_Localidades = value; } }
+
+        private string _nombre_Localidades;
+        public string nombre_Localidades { get { return _nombre_Localidades; } set { _nombre_Localidades = value; } }
+    }
+
+    public class strCol
+    {
+        private string _cve_Colonias;
+        public string cve_Colonias { get { return _cve_Colonias; } set { _cve_Colonias = value; } }
+
+        private string _cveLocalidad_Colonias;
+        public string cveLocalidad_Colonias { get { return _cveLocalidad_Colonias; } set { _cveLocalidad_Colonias = value; } }
+
+        private string _cveNombreColonias_Colonias;
+        public string cveNombreColonias_Colonias { get { return _cveNombreColonias_Colonias; } set { _cveNombreColonias_Colonias = value; } }
+
+        private string _nombre_NombresColonias;
+        public string  nombre_NombresColonias{ get { return _nombre_NombresColonias; } set { _nombre_NombresColonias = value; } }
+
+        private string _nombre_Localidades;
+        public string  nombre_Localidades{ get { return _nombre_Localidades; } set { _nombre_Localidades = value; } }
+
+        private string _cp_Colonias;
+        public string  cp_Colonias{ get { return _cp_Colonias; } set { _cp_Colonias = value; } }
+    }
+
+    public class strCall
+    {
+        private string _cve_Calles;
+        public string cve_Calles { get { return _cve_Calles; } set { _cve_Calles = value; } }
+
+        private string _cveColonias_Calles;
+        public string cveColonias_Calles { get { return _cveColonias_Calles; } set { _cveColonias_Calles = value; } }
+
+        private string _cveNombresCalles_Calles;
+        public string cveNombresCalles_Calles { get { return _cveNombresCalles_Calles; } set { _cveNombresCalles_Calles = value; } }
+
+        private string _cp_Colonias;
+        public string cp_Colonias { get { return _cp_Colonias; } set { _cp_Colonias = value; } }
+
+        private string _nombre_NombresCalles;
+        public string nombre_NombresCalles { get { return _nombre_NombresCalles; } set { _nombre_NombresCalles = value; } }
     }
 
 }
