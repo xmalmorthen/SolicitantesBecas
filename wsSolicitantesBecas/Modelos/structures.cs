@@ -534,4 +534,23 @@ namespace wsSolicitantesBecas.Modelos
         public structBase statusResponse { get { return _statusResponse; } set { _statusResponse = value; } }
     }
 
+    public class StcListaRegistrosReducida {
+        private structBase _statusResponse = new structBase();
+        public structBase statusResponse { get { return _statusResponse; } set { _statusResponse = value; } }
+
+        private List<paListaRegistrosReducidaResult> _data = new List<paListaRegistrosReducidaResult>();
+        public List<paListaRegistrosReducidaResult> data { get { return _data; } set { _data = value; } }    
+    }
+
+    public class StcListaRegistrosExtendida
+    {
+        private structBase _statusResponse = new structBase();
+        public structBase statusResponse { get { return _statusResponse; } set { _statusResponse = value; } }
+
+        private List<paListaRegistrosExtendidaResult> _data = new List<paListaRegistrosExtendidaResult>();
+        public List<paListaRegistrosExtendidaResult> data { get { return _data; } set { _data = value; } }
+    }
+
+
+
 }

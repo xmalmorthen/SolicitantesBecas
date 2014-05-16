@@ -90,5 +90,59 @@ namespace wsSolicitantesBecas.Modelos
             }
 
         }
+
+        public static StcListaRegistrosReducida getListaReducida(int idUsuario)
+        {
+            BdCapturaBECASDataContext bd = new BdCapturaBECASDataContext();
+
+            StcListaRegistrosReducida response = new StcListaRegistrosReducida();
+
+            response.statusResponse.statusOper = false;
+            response.statusResponse.message = messages.fallo;
+            response.data = null;
+
+            try
+            {
+                List<paListaRegistrosReducidaResult> query = bd.paListaRegistrosReducida(idUsuario).ToList();
+
+                response.statusResponse.statusOper = query.Count > 0 ? true : false;
+                response.statusResponse.message = query.Count > 0 ? messages.exito : messages.fallo;
+                response.data = query.Count > 0 ? query : null;
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;
+            }
+        }
+
+        public static StcListaRegistrosExtendida getListaExtendida(int idUsuario)
+        {
+            BdCapturaBECASDataContext bd = new BdCapturaBECASDataContext();
+
+            StcListaRegistrosExtendida response = new StcListaRegistrosExtendida();
+
+            response.statusResponse.statusOper = false;
+            response.statusResponse.message = messages.fallo;
+            response.data = null;
+
+            try
+            {
+                List<paListaRegistrosExtendidaResult> query = bd.paListaRegistrosExtendida(idUsuario).ToList();
+
+                response.statusResponse.statusOper = query.Count > 0 ? true : false;
+                response.statusResponse.message = query.Count > 0 ? messages.exito : messages.fallo;
+                response.data = query.Count > 0 ? query : null;
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;
+            }
+        }
+
+
     }
 }

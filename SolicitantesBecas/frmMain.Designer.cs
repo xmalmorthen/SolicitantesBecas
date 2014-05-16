@@ -449,8 +449,8 @@
             this.lineShape3.Name = "lineShape3";
             this.lineShape3.X1 = -4;
             this.lineShape3.X2 = 610;
-            this.lineShape3.Y1 = 570;
-            this.lineShape3.Y2 = 570;
+            this.lineShape3.Y1 = 569;
+            this.lineShape3.Y2 = 569;
             // 
             // lineShape2
             // 
@@ -459,8 +459,8 @@
             this.lineShape2.Name = "lineShape2";
             this.lineShape2.X1 = -4;
             this.lineShape2.X2 = 607;
-            this.lineShape2.Y1 = 362;
-            this.lineShape2.Y2 = 362;
+            this.lineShape2.Y1 = 361;
+            this.lineShape2.Y2 = 361;
             // 
             // rectangleShape2
             // 
@@ -468,7 +468,7 @@
             this.rectangleShape2.BackColor = System.Drawing.Color.Transparent;
             this.rectangleShape2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.rectangleShape2.BorderColor = System.Drawing.Color.DimGray;
-            this.rectangleShape2.Location = new System.Drawing.Point(9, 253);
+            this.rectangleShape2.Location = new System.Drawing.Point(9, 252);
             this.rectangleShape2.Name = "rectangleShape2";
             this.rectangleShape2.Size = new System.Drawing.Size(653, 58);
             // 
@@ -478,7 +478,7 @@
             this.rectangleShape1.BackColor = System.Drawing.Color.Transparent;
             this.rectangleShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.rectangleShape1.BorderColor = System.Drawing.Color.DimGray;
-            this.rectangleShape1.Location = new System.Drawing.Point(9, 180);
+            this.rectangleShape1.Location = new System.Drawing.Point(9, 179);
             this.rectangleShape1.Name = "rectangleShape1";
             this.rectangleShape1.Size = new System.Drawing.Size(653, 58);
             // 
@@ -489,8 +489,8 @@
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = -4;
             this.lineShape1.X2 = 607;
-            this.lineShape1.Y1 = 162;
-            this.lineShape1.Y2 = 162;
+            this.lineShape1.Y1 = 161;
+            this.lineShape1.Y2 = 161;
             // 
             // labelControl8
             // 
@@ -1009,6 +1009,7 @@
             this.toolTip.SetToolTip(this.btnLista, "Click para mostrar lista de registros capturados...");
             this.toolTip.SetToolTipIconType(this.btnLista, DevExpress.Utils.ToolTipIconType.Information);
             this.btnLista.UseVisualStyleBackColor = false;
+            this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
             // 
             // btnLimpiar
             // 
@@ -1212,6 +1213,7 @@
             // 
             // pnlProc
             // 
+            this.pnlProc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlProc.Controls.Add(this.labelControl25);
             this.pnlProc.Controls.Add(this.labelControl24);
             this.pnlProc.Controls.Add(this.pictureBox1);
@@ -1264,6 +1266,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(674, 711);
             this.Controls.Add(this.pnlProc);
             this.Controls.Add(this.cmbEscuelas);
@@ -1318,6 +1321,7 @@
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnCambiarUsuario);
             this.Controls.Add(this.shapeContainer1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(690, 749);
             this.Name = "frmMain";

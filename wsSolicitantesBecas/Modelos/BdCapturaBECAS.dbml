@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BdCapturaBECAS" Class="BdCapturaBECASDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=XMALMORTHEN\MSSQLSERVER12;Initial Catalog=BdCapturaBECAS;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BdCapturaBECASConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=xmalmorthen.sytes.net;Initial Catalog=BdCapturaBECAS;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BdCapturaBECASConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.caCalles" Member="caCalles">
     <Type Name="caCalles">
       <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="calles" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="caCalles_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="domIdCalle" Type="maSolicitantes" />
     </Type>
   </Table>
   <Table Name="dbo.maSolicitantes" Member="maSolicitantes">
@@ -38,12 +37,6 @@
       <Column Name="domDesc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="caCalles_maSolicitantes" Member="caCalles" ThisKey="domIdCalle" OtherKey="id" Type="caCalles" IsForeignKey="true" />
-      <Association Name="caColonias_maSolicitantes" Member="caColonias" ThisKey="domIdColonia" OtherKey="id" Type="caColonias" IsForeignKey="true" />
-      <Association Name="caEscuelas_maSolicitantes" Member="caEscuelas" ThisKey="idEscuela" OtherKey="id" Type="caEscuelas" IsForeignKey="true" />
-      <Association Name="caLocalidades_maSolicitantes" Member="caLocalidades" ThisKey="domIdLocalidad" OtherKey="id" Type="caLocalidades" IsForeignKey="true" />
-      <Association Name="caMunicipios_maSolicitantes" Member="caMunicipios" ThisKey="domIdMpio" OtherKey="id" Type="caMunicipios" IsForeignKey="true" />
-      <Association Name="caUsuarios_maSolicitantes" Member="caUsuarios" ThisKey="idUsuario" OtherKey="id" Type="caUsuarios" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.caColonias" Member="caColonias">
@@ -52,7 +45,6 @@
       <Column Name="colonia" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="caColonias_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="domIdColonia" Type="maSolicitantes" />
     </Type>
   </Table>
   <Table Name="dbo.caEscuelas" Member="caEscuelas">
@@ -62,9 +54,8 @@
       <Column Name="institucion" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
       <Column Name="nivel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="plantel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fIns" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="caEscuelas_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="idEscuela" Type="maSolicitantes" />
     </Type>
   </Table>
   <Table Name="dbo.caLocalidades" Member="caLocalidades">
@@ -73,7 +64,6 @@
       <Column Name="localidad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="caLocalidades_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="domIdLocalidad" Type="maSolicitantes" />
     </Type>
   </Table>
   <Table Name="dbo.caMunicipios" Member="caMunicipios">
@@ -82,7 +72,6 @@
       <Column Name="municipio" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="caMunicipios_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="domIdMpio" Type="maSolicitantes" />
     </Type>
   </Table>
   <Table Name="dbo.caUsuarios" Member="caUsuarios">
@@ -92,7 +81,49 @@
       <Column Name="usuario" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="caUsuarios_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="idUsuario" Type="maSolicitantes" />
     </Type>
   </Table>
+  <Function Name="dbo.paListaRegistrosExtendida" Method="paListaRegistrosExtendida">
+    <Parameter Name="idUsuario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="paListaRegistrosExtendidaResult">
+      <Column Name="curp" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="primerApellido" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segundoApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nombres" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idEscuela" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="municipio" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="institucion" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="nivel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="plantel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="domDesc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="edad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sexo" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="telCel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="telPart" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="domIdMpio" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="domIdLocalidad" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="domIdColonia" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="domIdCalle" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="domNumExt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="domNumInt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="domLetra" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="fIns" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.paListaRegistrosReducida" Method="paListaRegistrosReducida">
+    <Parameter Name="idUsuario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="paListaRegistrosReducidaResult">
+      <Column Name="curp" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="primerApellido" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segundoApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nombres" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idEscuela" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fIns" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="municipio" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="institucion" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="nivel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="plantel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

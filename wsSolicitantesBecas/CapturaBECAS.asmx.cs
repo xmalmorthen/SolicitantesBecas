@@ -10,8 +10,8 @@ namespace wsSolicitantesBecas
     /// <summary>
     /// Servicio para el formulario de registro de solicitantes
     /// </summary>
-    [WebService(Namespace = "http://tempuri.org/")]
-    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+    [WebService(Namespace = "http://wsSolicitantesBecas.net/")]
+    [WebServiceBinding(ConformsTo = WsiProfiles.None)]
     [System.ComponentModel.ToolboxItem(false)]
     // Para permitir que se llame a este servicio Web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
     // [System.Web.Script.Services.ScriptService]
@@ -40,6 +40,21 @@ namespace wsSolicitantesBecas
         {
             return insertData.Solicitud(idUsuario, xmlData);
         }
+
+        [WebMethod]
+        public StcListaRegistrosReducida listaReducida(int idUsuario)
+        {
+            return getData.getListaReducida(idUsuario);
+        }
+
+        [WebMethod]
+        public StcListaRegistrosExtendida listaExtendida(int idUsuario)
+        {
+            return getData.getListaExtendida(idUsuario);
+        }
+
+
+        
 
     }
 }

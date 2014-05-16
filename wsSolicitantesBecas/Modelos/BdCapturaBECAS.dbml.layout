@@ -2,89 +2,47 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 18.375" name="BdCapturaBECAS">
   <DataContextMoniker Name="/BdCapturaBECASDataContext" />
   <nestedChildShapes>
-    <classShape Id="6372ef94-fbaa-45d0-b48d-ac4ad4cf0cc4" absoluteBounds="0.75, 3.375, 2, 1.5785953776041666">
+    <classShape Id="c94d013e-0494-4c5f-b259-f6fd3e8203ae" absoluteBounds="0.75, 3.375, 2, 1.5785953776041666">
       <DataClassMoniker Name="/BdCapturaBECASDataContext/caCalles" />
       <nestedChildShapes>
-        <elementListCompartment Id="cf2e5798-b66f-49fe-b6dd-df0e5d38c933" absoluteBounds="0.765, 3.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5b8e1139-f83e-4a5a-8537-1d3e02905a0d" absoluteBounds="0.765, 3.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="048f38e4-8c5c-40ba-8f7b-8c0b7b927206" absoluteBounds="6.25, 7.25, 2, 6.0015283203124987">
+    <classShape Id="88912ccd-3d42-4ec7-aac9-3ef0c1c4ba5d" absoluteBounds="5.25, 6.375, 2, 6.0015283203124987">
       <DataClassMoniker Name="/BdCapturaBECASDataContext/maSolicitantes" />
       <nestedChildShapes>
-        <elementListCompartment Id="2f365602-2e78-413c-975a-dfc43a4a2c05" absoluteBounds="6.2650000000000006, 7.71, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="88931991-0593-4e5b-aa83-212a66016000" absoluteBounds="5.2650000000000006, 6.835, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="24b24895-8914-47a4-ab74-5c8151f304cd" absoluteBounds="0.75, 6.5, 2, 1.5785953776041666">
+    <classShape Id="2fcee3b6-56fb-4d2a-b843-4c48b7c1fb12" absoluteBounds="0.75, 6.5, 2, 1.5785953776041666">
       <DataClassMoniker Name="/BdCapturaBECASDataContext/caColonias" />
       <nestedChildShapes>
-        <elementListCompartment Id="b00ae94f-ae4e-4504-9eca-8255f7370653" absoluteBounds="0.765, 6.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5b98b154-18e3-4843-86f7-1599d7c2656f" absoluteBounds="0.765, 6.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="818767c4-89b9-4244-aca0-7fb907cb7467" absoluteBounds="0.75, 16, 2, 2.1554996744791666">
+    <classShape Id="a652420e-9b08-4cfd-9a62-45f434a3ef9b" absoluteBounds="0.75, 16, 2, 2.1554996744791666">
       <DataClassMoniker Name="/BdCapturaBECASDataContext/caEscuelas" />
       <nestedChildShapes>
-        <elementListCompartment Id="28bb7ddc-491d-4ea2-bc08-12451331bfce" absoluteBounds="0.765, 16.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3b8d4e1a-f6b2-486a-bbd3-d0b2c1c739e1" absoluteBounds="0.765, 16.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2c049828-cf7a-498e-8a61-48b1b21891cb" absoluteBounds="0.75, 8.75, 2, 1.5785953776041666">
+    <classShape Id="f17abbd1-679b-4318-b3d9-334b5dbc204d" absoluteBounds="0.75, 8.75, 2, 1.5785953776041666">
       <DataClassMoniker Name="/BdCapturaBECASDataContext/caLocalidades" />
       <nestedChildShapes>
-        <elementListCompartment Id="afb2500b-5dbd-4565-b51b-303d3dfb7259" absoluteBounds="0.765, 9.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="dce2f3c6-c66a-4996-8421-b3fba0d1fd9f" absoluteBounds="0.765, 9.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b4e80000-87a0-4e20-9f7d-72b49863e6dd" absoluteBounds="0.75, 11.125, 2, 1.5785953776041666">
+    <classShape Id="08a6bf1e-07c5-424d-aef7-b485b53389c0" absoluteBounds="0.75, 11.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/BdCapturaBECASDataContext/caMunicipios" />
       <nestedChildShapes>
-        <elementListCompartment Id="5aec1c8e-6f04-4c01-b57d-d95466764527" absoluteBounds="0.765, 11.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ebadf2e1-5b19-4be1-baa5-d79bcf5c3dd5" absoluteBounds="0.765, 11.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e329a8bf-4322-4724-8de0-4288429bc02a" absoluteBounds="0.75, 13.5, 2, 1.7708968098958344">
+    <classShape Id="8791f056-3ea8-4c87-a6e1-080967950e11" absoluteBounds="0.75, 13.5, 2, 1.7708968098958344">
       <DataClassMoniker Name="/BdCapturaBECASDataContext/caUsuarios" />
       <nestedChildShapes>
-        <elementListCompartment Id="e307225b-8f75-45f5-a702-4cc8e6b88891" absoluteBounds="0.765, 13.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a2f69764-ab20-489b-b81d-a50b52be088c" absoluteBounds="0.765, 13.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 4.16429768880208); (7.25 : 4.16429768880208); (7.25 : 7.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/BdCapturaBECASDataContext/caCalles/caCalles_maSolicitantes" />
-      <nodes>
-        <classShapeMoniker Id="6372ef94-fbaa-45d0-b48d-ac4ad4cf0cc4" />
-        <classShapeMoniker Id="048f38e4-8c5c-40ba-8f7b-8c0b7b927206" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.66429768880208); (6.25 : 7.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/BdCapturaBECASDataContext/caColonias/caColonias_maSolicitantes" />
-      <nodes>
-        <classShapeMoniker Id="24b24895-8914-47a4-ab74-5c8151f304cd" />
-        <classShapeMoniker Id="048f38e4-8c5c-40ba-8f7b-8c0b7b927206" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 17.0777498372396); (7.25 : 17.0777498372396); (7.25 : 13.2515283203125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/BdCapturaBECASDataContext/caEscuelas/caEscuelas_maSolicitantes" />
-      <nodes>
-        <classShapeMoniker Id="818767c4-89b9-4244-aca0-7fb907cb7467" />
-        <classShapeMoniker Id="048f38e4-8c5c-40ba-8f7b-8c0b7b927206" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 9.53929768880208); (6.25 : 9.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/BdCapturaBECASDataContext/caLocalidades/caLocalidades_maSolicitantes" />
-      <nodes>
-        <classShapeMoniker Id="2c049828-cf7a-498e-8a61-48b1b21891cb" />
-        <classShapeMoniker Id="048f38e4-8c5c-40ba-8f7b-8c0b7b927206" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 11.9142976888021); (6.25 : 11.9142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/BdCapturaBECASDataContext/caMunicipios/caMunicipios_maSolicitantes" />
-      <nodes>
-        <classShapeMoniker Id="b4e80000-87a0-4e20-9f7d-72b49863e6dd" />
-        <classShapeMoniker Id="048f38e4-8c5c-40ba-8f7b-8c0b7b927206" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 14.3854484049479); (6.7187475 : 14.3854484049479); (6.7187475 : 13.2515283203125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/BdCapturaBECASDataContext/caUsuarios/caUsuarios_maSolicitantes" />
-      <nodes>
-        <classShapeMoniker Id="e329a8bf-4322-4724-8de0-4288429bc02a" />
-        <classShapeMoniker Id="048f38e4-8c5c-40ba-8f7b-8c0b7b927206" />
-      </nodes>
-    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -843,4 +843,168 @@ namespace SolicitantesBecas.Models
         public string nombre_NombresCalles { get { return _nombre_NombresCalles; } set { _nombre_NombresCalles = value; } }
     }
 
+    public class strPaListaRegistrosReducida
+    {
+        private string _curp;
+        private string _primerApellido;
+        private string _segundoApellido;
+        private string _nombres;
+        private int _idEscuela;
+        private System.DateTime _fIns;
+        private string _municipio;
+        private string _institucion;
+        private string _nivel;
+        private string _plantel;
+
+        public string curp
+        {
+            get
+            {
+                return this._curp;
+            }
+            set
+            {
+                if ((this._curp != value))
+                {
+                    this._curp = value;
+                }
+            }
+        }
+
+        public string primerApellido
+        {
+            get
+            {
+                return this._primerApellido;
+            }
+            set
+            {
+                if ((this._primerApellido != value))
+                {
+                    this._primerApellido = value;
+                }
+            }
+        }
+
+        public string segundoApellido
+        {
+            get
+            {
+                return this._segundoApellido;
+            }
+            set
+            {
+                if ((this._segundoApellido != value))
+                {
+                    this._segundoApellido = value;
+                }
+            }
+        }
+
+        public string nombres
+        {
+            get
+            {
+                return this._nombres;
+            }
+            set
+            {
+                if ((this._nombres != value))
+                {
+                    this._nombres = value;
+                }
+            }
+        }
+
+        public int idEscuela
+        {
+            get
+            {
+                return this._idEscuela;
+            }
+            set
+            {
+                if ((this._idEscuela != value))
+                {
+                    this._idEscuela = value;
+                }
+            }
+        }
+
+        public System.DateTime fIns
+        {
+            get
+            {
+                return this._fIns;
+            }
+            set
+            {
+                if ((this._fIns != value))
+                {
+                    this._fIns = value;
+                }
+            }
+        }
+
+        public string municipio
+        {
+            get
+            {
+                return this._municipio;
+            }
+            set
+            {
+                if ((this._municipio != value))
+                {
+                    this._municipio = value;
+                }
+            }
+        }
+
+        public string institucion
+        {
+            get
+            {
+                return this._institucion;
+            }
+            set
+            {
+                if ((this._institucion != value))
+                {
+                    this._institucion = value;
+                }
+            }
+        }
+
+        public string nivel
+        {
+            get
+            {
+                return this._nivel;
+            }
+            set
+            {
+                if ((this._nivel != value))
+                {
+                    this._nivel = value;
+                }
+            }
+        }
+
+        public string plantel
+        {
+            get
+            {
+                return this._plantel;
+            }
+            set
+            {
+                if ((this._plantel != value))
+                {
+                    this._plantel = value;
+                }
+            }
+        }
+    }
+
 }

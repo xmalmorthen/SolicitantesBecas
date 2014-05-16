@@ -80,6 +80,46 @@ namespace SolicitantesBecas.Models
             }            
         }
 
+        public static List<strPaListaRegistrosReducida> ListaReducida(int idUsuario)
+        {
+            try
+            {
+                servicio.Url = SolicitantesBecas.Properties.Settings.Default.wsSolicitantesBecas;
+
+                var request = servicio.listaReducida(idUsuario);
+
+                if (request.statusResponse.statusOper == false)
+                {
+                    err.setError = "SolicitantesBecas.Models.getData.ListaReducida() - " + request.statusResponse.message;
+                    return null;
+                }
+
+                List<strPaListaRegistrosReducida> Lista = new List<strPaListaRegistrosReducida>();
+                foreach (var item in request.data)
+                {
+                    Lista.Add(new strPaListaRegistrosReducida()
+                    {
+                        curp = item.curp,
+                        fIns = item.fIns,
+                        idEscuela = item.idEscuela,
+                        institucion = item.institucion,
+                        municipio = item.municipio,
+                        nivel = item.nivel,
+                        nombres = item.nombres,
+                        plantel = item.plantel,
+                        primerApellido = item.primerApellido,
+                        segundoApellido = item.primerApellido
+                    });
+                }
+                return Lista;
+            }
+            catch (Exception e)
+            {
+                err.setError = "SolicitantesBecas.Models.getData.ListaReducida() - " + e.Message;
+                return null;
+            }
+        }
+
         public static Boolean? isCURPInserted(int idUsuario, string CURP)
         {
             try

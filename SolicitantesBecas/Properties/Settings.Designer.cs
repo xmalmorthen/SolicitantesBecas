@@ -241,18 +241,6 @@ namespace SolicitantesBecas.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:3313/CapturaBECAS.asmx")]
-        public string wsSolicitantesBecas {
-            get {
-                return ((string)(this["wsSolicitantesBecas"]));
-            }
-            set {
-                this["wsSolicitantesBecas"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Servicio de Solicitantes de Becas")]
         public string errWSSolicitantesBecas {
             get {
@@ -272,6 +260,28 @@ namespace SolicitantesBecas.Properties {
             }
             set {
                 this["sendEmailErrors"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Lista de registros capturados")]
+        public string tituloVentanaLista {
+            get {
+                return ((string)(this["tituloVentanaLista"]));
+            }
+            set {
+                this["tituloVentanaLista"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:4866/CapturaBECAS.asmx")]
+        public string wsSolicitantesBecas {
+            get {
+                return ((string)(this["wsSolicitantesBecas"]));
             }
         }
     }

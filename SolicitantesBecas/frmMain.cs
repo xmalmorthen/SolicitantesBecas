@@ -481,5 +481,18 @@ namespace SolicitantesBecas
             }
         }
 
+        private void btnLista_Click(object sender, EventArgs e)
+        {
+            Proc();
+            Application.DoEvents();
+                
+                frmRegistros FrmRegistros = new frmRegistros((int)idUsuario,usuario);
+            
+            Application.DoEvents();
+            Proc(false);
+
+            FrmRegistros.ShowDialog(this);
+        }
+
     }
 }
