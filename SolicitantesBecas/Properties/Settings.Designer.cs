@@ -202,16 +202,6 @@ namespace SolicitantesBecas.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:3313/CapturaBECAS.asmx")]
-        public string wsSolicitantesBecas {
-            get {
-                return ((string)(this["wsSolicitantesBecas"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("http://proveedores.col.gob.mx/REST_Services/FrameWork/index.php/localizacion/serv" +
@@ -234,6 +224,54 @@ namespace SolicitantesBecas.Properties {
             }
             set {
                 this["errWSFwrkDomicilios"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Formulario de captura de solicitantes")]
+        public string tituloVentana {
+            get {
+                return ((string)(this["tituloVentana"]));
+            }
+            set {
+                this["tituloVentana"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:3313/CapturaBECAS.asmx")]
+        public string wsSolicitantesBecas {
+            get {
+                return ((string)(this["wsSolicitantesBecas"]));
+            }
+            set {
+                this["wsSolicitantesBecas"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Servicio de Solicitantes de Becas")]
+        public string errWSSolicitantesBecas {
+            get {
+                return ((string)(this["errWSSolicitantesBecas"]));
+            }
+            set {
+                this["errWSSolicitantesBecas"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool sendEmailErrors {
+            get {
+                return ((bool)(this["sendEmailErrors"]));
+            }
+            set {
+                this["sendEmailErrors"] = value;
             }
         }
     }

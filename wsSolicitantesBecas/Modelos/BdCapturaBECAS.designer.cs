@@ -30,28 +30,31 @@ namespace wsSolicitantesBecas.Modelos
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnCreated();
-    partial void InsertcaEdad(caEdad instance);
-    partial void UpdatecaEdad(caEdad instance);
-    partial void DeletecaEdad(caEdad instance);
-    partial void InsertcaEscuelas(caEscuelas instance);
-    partial void UpdatecaEscuelas(caEscuelas instance);
-    partial void DeletecaEscuelas(caEscuelas instance);
-    partial void InsertcaSexo(caSexo instance);
-    partial void UpdatecaSexo(caSexo instance);
-    partial void DeletecaSexo(caSexo instance);
-    partial void InsertcaUsuarios(caUsuarios instance);
-    partial void UpdatecaUsuarios(caUsuarios instance);
-    partial void DeletecaUsuarios(caUsuarios instance);
-    partial void InserttblDomDesc(tblDomDesc instance);
-    partial void UpdatetblDomDesc(tblDomDesc instance);
-    partial void DeletetblDomDesc(tblDomDesc instance);
+    partial void InsertcaCalles(caCalles instance);
+    partial void UpdatecaCalles(caCalles instance);
+    partial void DeletecaCalles(caCalles instance);
     partial void InsertmaSolicitantes(maSolicitantes instance);
     partial void UpdatemaSolicitantes(maSolicitantes instance);
     partial void DeletemaSolicitantes(maSolicitantes instance);
+    partial void InsertcaColonias(caColonias instance);
+    partial void UpdatecaColonias(caColonias instance);
+    partial void DeletecaColonias(caColonias instance);
+    partial void InsertcaEscuelas(caEscuelas instance);
+    partial void UpdatecaEscuelas(caEscuelas instance);
+    partial void DeletecaEscuelas(caEscuelas instance);
+    partial void InsertcaLocalidades(caLocalidades instance);
+    partial void UpdatecaLocalidades(caLocalidades instance);
+    partial void DeletecaLocalidades(caLocalidades instance);
+    partial void InsertcaMunicipios(caMunicipios instance);
+    partial void UpdatecaMunicipios(caMunicipios instance);
+    partial void DeletecaMunicipios(caMunicipios instance);
+    partial void InsertcaUsuarios(caUsuarios instance);
+    partial void UpdatecaUsuarios(caUsuarios instance);
+    partial void DeletecaUsuarios(caUsuarios instance);
     #endregion
 		
 		public BdCapturaBECASDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["BdCapturaBECASConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["BdCapturaBECASConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -80,11 +83,27 @@ namespace wsSolicitantesBecas.Modelos
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<caEdad> caEdad
+		public System.Data.Linq.Table<caCalles> caCalles
 		{
 			get
 			{
-				return this.GetTable<caEdad>();
+				return this.GetTable<caCalles>();
+			}
+		}
+		
+		public System.Data.Linq.Table<maSolicitantes> maSolicitantes
+		{
+			get
+			{
+				return this.GetTable<maSolicitantes>();
+			}
+		}
+		
+		public System.Data.Linq.Table<caColonias> caColonias
+		{
+			get
+			{
+				return this.GetTable<caColonias>();
 			}
 		}
 		
@@ -96,11 +115,19 @@ namespace wsSolicitantesBecas.Modelos
 			}
 		}
 		
-		public System.Data.Linq.Table<caSexo> caSexo
+		public System.Data.Linq.Table<caLocalidades> caLocalidades
 		{
 			get
 			{
-				return this.GetTable<caSexo>();
+				return this.GetTable<caLocalidades>();
+			}
+		}
+		
+		public System.Data.Linq.Table<caMunicipios> caMunicipios
+		{
+			get
+			{
+				return this.GetTable<caMunicipios>();
 			}
 		}
 		
@@ -111,33 +138,17 @@ namespace wsSolicitantesBecas.Modelos
 				return this.GetTable<caUsuarios>();
 			}
 		}
-		
-		public System.Data.Linq.Table<tblDomDesc> tblDomDesc
-		{
-			get
-			{
-				return this.GetTable<tblDomDesc>();
-			}
-		}
-		
-		public System.Data.Linq.Table<maSolicitantes> maSolicitantes
-		{
-			get
-			{
-				return this.GetTable<maSolicitantes>();
-			}
-		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.caEdad")]
-	public partial class caEdad : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.caCalles")]
+	public partial class caCalles : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _id;
+		private System.Guid _id;
 		
-		private int _edad;
+		private string _calles;
 		
 		private System.DateTime _fIns;
 		
@@ -149,24 +160,24 @@ namespace wsSolicitantesBecas.Modelos
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnidChanging(int value);
+    partial void OnidChanging(System.Guid value);
     partial void OnidChanged();
-    partial void OnedadChanging(int value);
-    partial void OnedadChanged();
+    partial void OncallesChanging(string value);
+    partial void OncallesChanged();
     partial void OnfInsChanging(System.DateTime value);
     partial void OnfInsChanged();
     partial void OnfActChanging(System.Nullable<System.DateTime> value);
     partial void OnfActChanged();
     #endregion
 		
-		public caEdad()
+		public caCalles()
 		{
 			this._maSolicitantes = new EntitySet<maSolicitantes>(new Action<maSolicitantes>(this.attach_maSolicitantes), new Action<maSolicitantes>(this.detach_maSolicitantes));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid id
 		{
 			get
 			{
@@ -185,22 +196,22 @@ namespace wsSolicitantesBecas.Modelos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edad", DbType="Int NOT NULL")]
-		public int edad
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_calles", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string calles
 		{
 			get
 			{
-				return this._edad;
+				return this._calles;
 			}
 			set
 			{
-				if ((this._edad != value))
+				if ((this._calles != value))
 				{
-					this.OnedadChanging(value);
+					this.OncallesChanging(value);
 					this.SendPropertyChanging();
-					this._edad = value;
-					this.SendPropertyChanged("edad");
-					this.OnedadChanged();
+					this._calles = value;
+					this.SendPropertyChanged("calles");
+					this.OncallesChanged();
 				}
 			}
 		}
@@ -245,7 +256,7 @@ namespace wsSolicitantesBecas.Modelos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caEdad_maSolicitantes", Storage="_maSolicitantes", ThisKey="id", OtherKey="edad")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caCalles_maSolicitantes", Storage="_maSolicitantes", ThisKey="id", OtherKey="domIdCalle")]
 		public EntitySet<maSolicitantes> maSolicitantes
 		{
 			get
@@ -281,13 +292,1107 @@ namespace wsSolicitantesBecas.Modelos
 		private void attach_maSolicitantes(maSolicitantes entity)
 		{
 			this.SendPropertyChanging();
-			entity.caEdad = this;
+			entity.caCalles = this;
 		}
 		
 		private void detach_maSolicitantes(maSolicitantes entity)
 		{
 			this.SendPropertyChanging();
-			entity.caEdad = null;
+			entity.caCalles = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.maSolicitantes")]
+	public partial class maSolicitantes : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _curp;
+		
+		private int _idUsuario;
+		
+		private string _primerApellido;
+		
+		private string _segundoApellido;
+		
+		private string _nombres;
+		
+		private int _edad;
+		
+		private string _sexo;
+		
+		private string _correo;
+		
+		private string _telCel;
+		
+		private string _telPart;
+		
+		private System.Nullable<System.Guid> _domIdMpio;
+		
+		private System.Nullable<System.Guid> _domIdLocalidad;
+		
+		private System.Nullable<System.Guid> _domIdColonia;
+		
+		private System.Nullable<System.Guid> _domIdCalle;
+		
+		private System.Nullable<int> _domNumExt;
+		
+		private System.Nullable<int> _domNumInt;
+		
+		private string _domLetra;
+		
+		private int _idEscuela;
+		
+		private string _papaPrimerApellido;
+		
+		private string _papaSegundoApellido;
+		
+		private string _papaNombres;
+		
+		private string _mamaPrimerApellido;
+		
+		private string _mamaSegundoApellido;
+		
+		private string _mamaNombres;
+		
+		private string _domDesc;
+		
+		private System.DateTime _fIns;
+		
+		private System.Nullable<System.DateTime> _fAct;
+		
+		private EntityRef<caCalles> _caCalles;
+		
+		private EntityRef<caColonias> _caColonias;
+		
+		private EntityRef<caEscuelas> _caEscuelas;
+		
+		private EntityRef<caLocalidades> _caLocalidades;
+		
+		private EntityRef<caMunicipios> _caMunicipios;
+		
+		private EntityRef<caUsuarios> _caUsuarios;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OncurpChanging(string value);
+    partial void OncurpChanged();
+    partial void OnidUsuarioChanging(int value);
+    partial void OnidUsuarioChanged();
+    partial void OnprimerApellidoChanging(string value);
+    partial void OnprimerApellidoChanged();
+    partial void OnsegundoApellidoChanging(string value);
+    partial void OnsegundoApellidoChanged();
+    partial void OnnombresChanging(string value);
+    partial void OnnombresChanged();
+    partial void OnedadChanging(int value);
+    partial void OnedadChanged();
+    partial void OnsexoChanging(string value);
+    partial void OnsexoChanged();
+    partial void OncorreoChanging(string value);
+    partial void OncorreoChanged();
+    partial void OntelCelChanging(string value);
+    partial void OntelCelChanged();
+    partial void OntelPartChanging(string value);
+    partial void OntelPartChanged();
+    partial void OndomIdMpioChanging(System.Nullable<System.Guid> value);
+    partial void OndomIdMpioChanged();
+    partial void OndomIdLocalidadChanging(System.Nullable<System.Guid> value);
+    partial void OndomIdLocalidadChanged();
+    partial void OndomIdColoniaChanging(System.Nullable<System.Guid> value);
+    partial void OndomIdColoniaChanged();
+    partial void OndomIdCalleChanging(System.Nullable<System.Guid> value);
+    partial void OndomIdCalleChanged();
+    partial void OndomNumExtChanging(System.Nullable<int> value);
+    partial void OndomNumExtChanged();
+    partial void OndomNumIntChanging(System.Nullable<int> value);
+    partial void OndomNumIntChanged();
+    partial void OndomLetraChanging(string value);
+    partial void OndomLetraChanged();
+    partial void OnidEscuelaChanging(int value);
+    partial void OnidEscuelaChanged();
+    partial void OnpapaPrimerApellidoChanging(string value);
+    partial void OnpapaPrimerApellidoChanged();
+    partial void OnpapaSegundoApellidoChanging(string value);
+    partial void OnpapaSegundoApellidoChanged();
+    partial void OnpapaNombresChanging(string value);
+    partial void OnpapaNombresChanged();
+    partial void OnmamaPrimerApellidoChanging(string value);
+    partial void OnmamaPrimerApellidoChanged();
+    partial void OnmamaSegundoApellidoChanging(string value);
+    partial void OnmamaSegundoApellidoChanged();
+    partial void OnmamaNombresChanging(string value);
+    partial void OnmamaNombresChanged();
+    partial void OndomDescChanging(string value);
+    partial void OndomDescChanged();
+    partial void OnfInsChanging(System.DateTime value);
+    partial void OnfInsChanged();
+    partial void OnfActChanging(System.Nullable<System.DateTime> value);
+    partial void OnfActChanged();
+    #endregion
+		
+		public maSolicitantes()
+		{
+			this._caCalles = default(EntityRef<caCalles>);
+			this._caColonias = default(EntityRef<caColonias>);
+			this._caEscuelas = default(EntityRef<caEscuelas>);
+			this._caLocalidades = default(EntityRef<caLocalidades>);
+			this._caMunicipios = default(EntityRef<caMunicipios>);
+			this._caUsuarios = default(EntityRef<caUsuarios>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_curp", DbType="VarChar(18) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string curp
+		{
+			get
+			{
+				return this._curp;
+			}
+			set
+			{
+				if ((this._curp != value))
+				{
+					this.OncurpChanging(value);
+					this.SendPropertyChanging();
+					this._curp = value;
+					this.SendPropertyChanged("curp");
+					this.OncurpChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUsuario", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int idUsuario
+		{
+			get
+			{
+				return this._idUsuario;
+			}
+			set
+			{
+				if ((this._idUsuario != value))
+				{
+					if (this._caUsuarios.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidUsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._idUsuario = value;
+					this.SendPropertyChanged("idUsuario");
+					this.OnidUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_primerApellido", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string primerApellido
+		{
+			get
+			{
+				return this._primerApellido;
+			}
+			set
+			{
+				if ((this._primerApellido != value))
+				{
+					this.OnprimerApellidoChanging(value);
+					this.SendPropertyChanging();
+					this._primerApellido = value;
+					this.SendPropertyChanged("primerApellido");
+					this.OnprimerApellidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_segundoApellido", DbType="VarChar(50)")]
+		public string segundoApellido
+		{
+			get
+			{
+				return this._segundoApellido;
+			}
+			set
+			{
+				if ((this._segundoApellido != value))
+				{
+					this.OnsegundoApellidoChanging(value);
+					this.SendPropertyChanging();
+					this._segundoApellido = value;
+					this.SendPropertyChanged("segundoApellido");
+					this.OnsegundoApellidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombres", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string nombres
+		{
+			get
+			{
+				return this._nombres;
+			}
+			set
+			{
+				if ((this._nombres != value))
+				{
+					this.OnnombresChanging(value);
+					this.SendPropertyChanging();
+					this._nombres = value;
+					this.SendPropertyChanged("nombres");
+					this.OnnombresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edad", DbType="Int NOT NULL")]
+		public int edad
+		{
+			get
+			{
+				return this._edad;
+			}
+			set
+			{
+				if ((this._edad != value))
+				{
+					this.OnedadChanging(value);
+					this.SendPropertyChanging();
+					this._edad = value;
+					this.SendPropertyChanged("edad");
+					this.OnedadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sexo", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string sexo
+		{
+			get
+			{
+				return this._sexo;
+			}
+			set
+			{
+				if ((this._sexo != value))
+				{
+					this.OnsexoChanging(value);
+					this.SendPropertyChanging();
+					this._sexo = value;
+					this.SendPropertyChanged("sexo");
+					this.OnsexoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_correo", DbType="VarChar(50)")]
+		public string correo
+		{
+			get
+			{
+				return this._correo;
+			}
+			set
+			{
+				if ((this._correo != value))
+				{
+					this.OncorreoChanging(value);
+					this.SendPropertyChanging();
+					this._correo = value;
+					this.SendPropertyChanged("correo");
+					this.OncorreoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telCel", DbType="VarChar(50)")]
+		public string telCel
+		{
+			get
+			{
+				return this._telCel;
+			}
+			set
+			{
+				if ((this._telCel != value))
+				{
+					this.OntelCelChanging(value);
+					this.SendPropertyChanging();
+					this._telCel = value;
+					this.SendPropertyChanged("telCel");
+					this.OntelCelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telPart", DbType="VarChar(50)")]
+		public string telPart
+		{
+			get
+			{
+				return this._telPart;
+			}
+			set
+			{
+				if ((this._telPart != value))
+				{
+					this.OntelPartChanging(value);
+					this.SendPropertyChanging();
+					this._telPart = value;
+					this.SendPropertyChanged("telPart");
+					this.OntelPartChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domIdMpio", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> domIdMpio
+		{
+			get
+			{
+				return this._domIdMpio;
+			}
+			set
+			{
+				if ((this._domIdMpio != value))
+				{
+					if (this._caMunicipios.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OndomIdMpioChanging(value);
+					this.SendPropertyChanging();
+					this._domIdMpio = value;
+					this.SendPropertyChanged("domIdMpio");
+					this.OndomIdMpioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domIdLocalidad", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> domIdLocalidad
+		{
+			get
+			{
+				return this._domIdLocalidad;
+			}
+			set
+			{
+				if ((this._domIdLocalidad != value))
+				{
+					if (this._caLocalidades.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OndomIdLocalidadChanging(value);
+					this.SendPropertyChanging();
+					this._domIdLocalidad = value;
+					this.SendPropertyChanged("domIdLocalidad");
+					this.OndomIdLocalidadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domIdColonia", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> domIdColonia
+		{
+			get
+			{
+				return this._domIdColonia;
+			}
+			set
+			{
+				if ((this._domIdColonia != value))
+				{
+					if (this._caColonias.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OndomIdColoniaChanging(value);
+					this.SendPropertyChanging();
+					this._domIdColonia = value;
+					this.SendPropertyChanged("domIdColonia");
+					this.OndomIdColoniaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domIdCalle", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> domIdCalle
+		{
+			get
+			{
+				return this._domIdCalle;
+			}
+			set
+			{
+				if ((this._domIdCalle != value))
+				{
+					if (this._caCalles.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OndomIdCalleChanging(value);
+					this.SendPropertyChanging();
+					this._domIdCalle = value;
+					this.SendPropertyChanged("domIdCalle");
+					this.OndomIdCalleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domNumExt", DbType="Int")]
+		public System.Nullable<int> domNumExt
+		{
+			get
+			{
+				return this._domNumExt;
+			}
+			set
+			{
+				if ((this._domNumExt != value))
+				{
+					this.OndomNumExtChanging(value);
+					this.SendPropertyChanging();
+					this._domNumExt = value;
+					this.SendPropertyChanged("domNumExt");
+					this.OndomNumExtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domNumInt", DbType="Int")]
+		public System.Nullable<int> domNumInt
+		{
+			get
+			{
+				return this._domNumInt;
+			}
+			set
+			{
+				if ((this._domNumInt != value))
+				{
+					this.OndomNumIntChanging(value);
+					this.SendPropertyChanging();
+					this._domNumInt = value;
+					this.SendPropertyChanged("domNumInt");
+					this.OndomNumIntChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domLetra", DbType="NVarChar(2)")]
+		public string domLetra
+		{
+			get
+			{
+				return this._domLetra;
+			}
+			set
+			{
+				if ((this._domLetra != value))
+				{
+					this.OndomLetraChanging(value);
+					this.SendPropertyChanging();
+					this._domLetra = value;
+					this.SendPropertyChanged("domLetra");
+					this.OndomLetraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idEscuela", DbType="Int NOT NULL")]
+		public int idEscuela
+		{
+			get
+			{
+				return this._idEscuela;
+			}
+			set
+			{
+				if ((this._idEscuela != value))
+				{
+					if (this._caEscuelas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidEscuelaChanging(value);
+					this.SendPropertyChanging();
+					this._idEscuela = value;
+					this.SendPropertyChanged("idEscuela");
+					this.OnidEscuelaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_papaPrimerApellido", DbType="VarChar(50)")]
+		public string papaPrimerApellido
+		{
+			get
+			{
+				return this._papaPrimerApellido;
+			}
+			set
+			{
+				if ((this._papaPrimerApellido != value))
+				{
+					this.OnpapaPrimerApellidoChanging(value);
+					this.SendPropertyChanging();
+					this._papaPrimerApellido = value;
+					this.SendPropertyChanged("papaPrimerApellido");
+					this.OnpapaPrimerApellidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_papaSegundoApellido", DbType="VarChar(50)")]
+		public string papaSegundoApellido
+		{
+			get
+			{
+				return this._papaSegundoApellido;
+			}
+			set
+			{
+				if ((this._papaSegundoApellido != value))
+				{
+					this.OnpapaSegundoApellidoChanging(value);
+					this.SendPropertyChanging();
+					this._papaSegundoApellido = value;
+					this.SendPropertyChanged("papaSegundoApellido");
+					this.OnpapaSegundoApellidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_papaNombres", DbType="VarChar(50)")]
+		public string papaNombres
+		{
+			get
+			{
+				return this._papaNombres;
+			}
+			set
+			{
+				if ((this._papaNombres != value))
+				{
+					this.OnpapaNombresChanging(value);
+					this.SendPropertyChanging();
+					this._papaNombres = value;
+					this.SendPropertyChanged("papaNombres");
+					this.OnpapaNombresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mamaPrimerApellido", DbType="VarChar(50)")]
+		public string mamaPrimerApellido
+		{
+			get
+			{
+				return this._mamaPrimerApellido;
+			}
+			set
+			{
+				if ((this._mamaPrimerApellido != value))
+				{
+					this.OnmamaPrimerApellidoChanging(value);
+					this.SendPropertyChanging();
+					this._mamaPrimerApellido = value;
+					this.SendPropertyChanged("mamaPrimerApellido");
+					this.OnmamaPrimerApellidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mamaSegundoApellido", DbType="VarChar(50)")]
+		public string mamaSegundoApellido
+		{
+			get
+			{
+				return this._mamaSegundoApellido;
+			}
+			set
+			{
+				if ((this._mamaSegundoApellido != value))
+				{
+					this.OnmamaSegundoApellidoChanging(value);
+					this.SendPropertyChanging();
+					this._mamaSegundoApellido = value;
+					this.SendPropertyChanged("mamaSegundoApellido");
+					this.OnmamaSegundoApellidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mamaNombres", DbType="VarChar(50)")]
+		public string mamaNombres
+		{
+			get
+			{
+				return this._mamaNombres;
+			}
+			set
+			{
+				if ((this._mamaNombres != value))
+				{
+					this.OnmamaNombresChanging(value);
+					this.SendPropertyChanging();
+					this._mamaNombres = value;
+					this.SendPropertyChanged("mamaNombres");
+					this.OnmamaNombresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domDesc", DbType="VarChar(MAX)")]
+		public string domDesc
+		{
+			get
+			{
+				return this._domDesc;
+			}
+			set
+			{
+				if ((this._domDesc != value))
+				{
+					this.OndomDescChanging(value);
+					this.SendPropertyChanging();
+					this._domDesc = value;
+					this.SendPropertyChanged("domDesc");
+					this.OndomDescChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL", IsDbGenerated=true)]
+		public System.DateTime fIns
+		{
+			get
+			{
+				return this._fIns;
+			}
+			set
+			{
+				if ((this._fIns != value))
+				{
+					this.OnfInsChanging(value);
+					this.SendPropertyChanging();
+					this._fIns = value;
+					this.SendPropertyChanged("fIns");
+					this.OnfInsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fAct", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fAct
+		{
+			get
+			{
+				return this._fAct;
+			}
+			set
+			{
+				if ((this._fAct != value))
+				{
+					this.OnfActChanging(value);
+					this.SendPropertyChanging();
+					this._fAct = value;
+					this.SendPropertyChanged("fAct");
+					this.OnfActChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caCalles_maSolicitantes", Storage="_caCalles", ThisKey="domIdCalle", OtherKey="id", IsForeignKey=true)]
+		public caCalles caCalles
+		{
+			get
+			{
+				return this._caCalles.Entity;
+			}
+			set
+			{
+				caCalles previousValue = this._caCalles.Entity;
+				if (((previousValue != value) 
+							|| (this._caCalles.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._caCalles.Entity = null;
+						previousValue.maSolicitantes.Remove(this);
+					}
+					this._caCalles.Entity = value;
+					if ((value != null))
+					{
+						value.maSolicitantes.Add(this);
+						this._domIdCalle = value.id;
+					}
+					else
+					{
+						this._domIdCalle = default(Nullable<System.Guid>);
+					}
+					this.SendPropertyChanged("caCalles");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caColonias_maSolicitantes", Storage="_caColonias", ThisKey="domIdColonia", OtherKey="id", IsForeignKey=true)]
+		public caColonias caColonias
+		{
+			get
+			{
+				return this._caColonias.Entity;
+			}
+			set
+			{
+				caColonias previousValue = this._caColonias.Entity;
+				if (((previousValue != value) 
+							|| (this._caColonias.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._caColonias.Entity = null;
+						previousValue.maSolicitantes.Remove(this);
+					}
+					this._caColonias.Entity = value;
+					if ((value != null))
+					{
+						value.maSolicitantes.Add(this);
+						this._domIdColonia = value.id;
+					}
+					else
+					{
+						this._domIdColonia = default(Nullable<System.Guid>);
+					}
+					this.SendPropertyChanged("caColonias");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caEscuelas_maSolicitantes", Storage="_caEscuelas", ThisKey="idEscuela", OtherKey="id", IsForeignKey=true)]
+		public caEscuelas caEscuelas
+		{
+			get
+			{
+				return this._caEscuelas.Entity;
+			}
+			set
+			{
+				caEscuelas previousValue = this._caEscuelas.Entity;
+				if (((previousValue != value) 
+							|| (this._caEscuelas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._caEscuelas.Entity = null;
+						previousValue.maSolicitantes.Remove(this);
+					}
+					this._caEscuelas.Entity = value;
+					if ((value != null))
+					{
+						value.maSolicitantes.Add(this);
+						this._idEscuela = value.id;
+					}
+					else
+					{
+						this._idEscuela = default(int);
+					}
+					this.SendPropertyChanged("caEscuelas");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caLocalidades_maSolicitantes", Storage="_caLocalidades", ThisKey="domIdLocalidad", OtherKey="id", IsForeignKey=true)]
+		public caLocalidades caLocalidades
+		{
+			get
+			{
+				return this._caLocalidades.Entity;
+			}
+			set
+			{
+				caLocalidades previousValue = this._caLocalidades.Entity;
+				if (((previousValue != value) 
+							|| (this._caLocalidades.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._caLocalidades.Entity = null;
+						previousValue.maSolicitantes.Remove(this);
+					}
+					this._caLocalidades.Entity = value;
+					if ((value != null))
+					{
+						value.maSolicitantes.Add(this);
+						this._domIdLocalidad = value.id;
+					}
+					else
+					{
+						this._domIdLocalidad = default(Nullable<System.Guid>);
+					}
+					this.SendPropertyChanged("caLocalidades");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caMunicipios_maSolicitantes", Storage="_caMunicipios", ThisKey="domIdMpio", OtherKey="id", IsForeignKey=true)]
+		public caMunicipios caMunicipios
+		{
+			get
+			{
+				return this._caMunicipios.Entity;
+			}
+			set
+			{
+				caMunicipios previousValue = this._caMunicipios.Entity;
+				if (((previousValue != value) 
+							|| (this._caMunicipios.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._caMunicipios.Entity = null;
+						previousValue.maSolicitantes.Remove(this);
+					}
+					this._caMunicipios.Entity = value;
+					if ((value != null))
+					{
+						value.maSolicitantes.Add(this);
+						this._domIdMpio = value.id;
+					}
+					else
+					{
+						this._domIdMpio = default(Nullable<System.Guid>);
+					}
+					this.SendPropertyChanged("caMunicipios");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caUsuarios_maSolicitantes", Storage="_caUsuarios", ThisKey="idUsuario", OtherKey="id", IsForeignKey=true)]
+		public caUsuarios caUsuarios
+		{
+			get
+			{
+				return this._caUsuarios.Entity;
+			}
+			set
+			{
+				caUsuarios previousValue = this._caUsuarios.Entity;
+				if (((previousValue != value) 
+							|| (this._caUsuarios.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._caUsuarios.Entity = null;
+						previousValue.maSolicitantes.Remove(this);
+					}
+					this._caUsuarios.Entity = value;
+					if ((value != null))
+					{
+						value.maSolicitantes.Add(this);
+						this._idUsuario = value.id;
+					}
+					else
+					{
+						this._idUsuario = default(int);
+					}
+					this.SendPropertyChanged("caUsuarios");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.caColonias")]
+	public partial class caColonias : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Guid _id;
+		
+		private string _colonia;
+		
+		private System.DateTime _fIns;
+		
+		private System.Nullable<System.DateTime> _fAct;
+		
+		private EntitySet<maSolicitantes> _maSolicitantes;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(System.Guid value);
+    partial void OnidChanged();
+    partial void OncoloniaChanging(string value);
+    partial void OncoloniaChanged();
+    partial void OnfInsChanging(System.DateTime value);
+    partial void OnfInsChanged();
+    partial void OnfActChanging(System.Nullable<System.DateTime> value);
+    partial void OnfActChanged();
+    #endregion
+		
+		public caColonias()
+		{
+			this._maSolicitantes = new EntitySet<maSolicitantes>(new Action<maSolicitantes>(this.attach_maSolicitantes), new Action<maSolicitantes>(this.detach_maSolicitantes));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_colonia", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string colonia
+		{
+			get
+			{
+				return this._colonia;
+			}
+			set
+			{
+				if ((this._colonia != value))
+				{
+					this.OncoloniaChanging(value);
+					this.SendPropertyChanging();
+					this._colonia = value;
+					this.SendPropertyChanged("colonia");
+					this.OncoloniaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL", IsDbGenerated=true)]
+		public System.DateTime fIns
+		{
+			get
+			{
+				return this._fIns;
+			}
+			set
+			{
+				if ((this._fIns != value))
+				{
+					this.OnfInsChanging(value);
+					this.SendPropertyChanging();
+					this._fIns = value;
+					this.SendPropertyChanged("fIns");
+					this.OnfInsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fAct", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fAct
+		{
+			get
+			{
+				return this._fAct;
+			}
+			set
+			{
+				if ((this._fAct != value))
+				{
+					this.OnfActChanging(value);
+					this.SendPropertyChanging();
+					this._fAct = value;
+					this.SendPropertyChanged("fAct");
+					this.OnfActChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caColonias_maSolicitantes", Storage="_maSolicitantes", ThisKey="id", OtherKey="domIdColonia")]
+		public EntitySet<maSolicitantes> maSolicitantes
+		{
+			get
+			{
+				return this._maSolicitantes;
+			}
+			set
+			{
+				this._maSolicitantes.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_maSolicitantes(maSolicitantes entity)
+		{
+			this.SendPropertyChanging();
+			entity.caColonias = this;
+		}
+		
+		private void detach_maSolicitantes(maSolicitantes entity)
+		{
+			this.SendPropertyChanging();
+			entity.caColonias = null;
 		}
 	}
 	
@@ -525,15 +1630,15 @@ namespace wsSolicitantesBecas.Modelos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.caSexo")]
-	public partial class caSexo : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.caLocalidades")]
+	public partial class caLocalidades : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _id;
+		private System.Guid _id;
 		
-		private string _sexo;
+		private string _localidad;
 		
 		private System.DateTime _fIns;
 		
@@ -545,24 +1650,24 @@ namespace wsSolicitantesBecas.Modelos
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnidChanging(int value);
+    partial void OnidChanging(System.Guid value);
     partial void OnidChanged();
-    partial void OnsexoChanging(string value);
-    partial void OnsexoChanged();
+    partial void OnlocalidadChanging(string value);
+    partial void OnlocalidadChanged();
     partial void OnfInsChanging(System.DateTime value);
     partial void OnfInsChanged();
     partial void OnfActChanging(System.Nullable<System.DateTime> value);
     partial void OnfActChanged();
     #endregion
 		
-		public caSexo()
+		public caLocalidades()
 		{
 			this._maSolicitantes = new EntitySet<maSolicitantes>(new Action<maSolicitantes>(this.attach_maSolicitantes), new Action<maSolicitantes>(this.detach_maSolicitantes));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid id
 		{
 			get
 			{
@@ -581,22 +1686,22 @@ namespace wsSolicitantesBecas.Modelos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sexo", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string sexo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_localidad", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string localidad
 		{
 			get
 			{
-				return this._sexo;
+				return this._localidad;
 			}
 			set
 			{
-				if ((this._sexo != value))
+				if ((this._localidad != value))
 				{
-					this.OnsexoChanging(value);
+					this.OnlocalidadChanging(value);
 					this.SendPropertyChanging();
-					this._sexo = value;
-					this.SendPropertyChanged("sexo");
-					this.OnsexoChanged();
+					this._localidad = value;
+					this.SendPropertyChanged("localidad");
+					this.OnlocalidadChanged();
 				}
 			}
 		}
@@ -641,7 +1746,7 @@ namespace wsSolicitantesBecas.Modelos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caSexo_maSolicitantes", Storage="_maSolicitantes", ThisKey="id", OtherKey="idSexo")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caLocalidades_maSolicitantes", Storage="_maSolicitantes", ThisKey="id", OtherKey="domIdLocalidad")]
 		public EntitySet<maSolicitantes> maSolicitantes
 		{
 			get
@@ -677,13 +1782,175 @@ namespace wsSolicitantesBecas.Modelos
 		private void attach_maSolicitantes(maSolicitantes entity)
 		{
 			this.SendPropertyChanging();
-			entity.caSexo = this;
+			entity.caLocalidades = this;
 		}
 		
 		private void detach_maSolicitantes(maSolicitantes entity)
 		{
 			this.SendPropertyChanging();
-			entity.caSexo = null;
+			entity.caLocalidades = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.caMunicipios")]
+	public partial class caMunicipios : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Guid _id;
+		
+		private string _municipio;
+		
+		private System.DateTime _fIns;
+		
+		private System.Nullable<System.DateTime> _fAct;
+		
+		private EntitySet<maSolicitantes> _maSolicitantes;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(System.Guid value);
+    partial void OnidChanged();
+    partial void OnmunicipioChanging(string value);
+    partial void OnmunicipioChanged();
+    partial void OnfInsChanging(System.DateTime value);
+    partial void OnfInsChanged();
+    partial void OnfActChanging(System.Nullable<System.DateTime> value);
+    partial void OnfActChanged();
+    #endregion
+		
+		public caMunicipios()
+		{
+			this._maSolicitantes = new EntitySet<maSolicitantes>(new Action<maSolicitantes>(this.attach_maSolicitantes), new Action<maSolicitantes>(this.detach_maSolicitantes));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_municipio", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string municipio
+		{
+			get
+			{
+				return this._municipio;
+			}
+			set
+			{
+				if ((this._municipio != value))
+				{
+					this.OnmunicipioChanging(value);
+					this.SendPropertyChanging();
+					this._municipio = value;
+					this.SendPropertyChanged("municipio");
+					this.OnmunicipioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL", IsDbGenerated=true)]
+		public System.DateTime fIns
+		{
+			get
+			{
+				return this._fIns;
+			}
+			set
+			{
+				if ((this._fIns != value))
+				{
+					this.OnfInsChanging(value);
+					this.SendPropertyChanging();
+					this._fIns = value;
+					this.SendPropertyChanged("fIns");
+					this.OnfInsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fAct", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fAct
+		{
+			get
+			{
+				return this._fAct;
+			}
+			set
+			{
+				if ((this._fAct != value))
+				{
+					this.OnfActChanging(value);
+					this.SendPropertyChanging();
+					this._fAct = value;
+					this.SendPropertyChanged("fAct");
+					this.OnfActChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caMunicipios_maSolicitantes", Storage="_maSolicitantes", ThisKey="id", OtherKey="domIdMpio")]
+		public EntitySet<maSolicitantes> maSolicitantes
+		{
+			get
+			{
+				return this._maSolicitantes;
+			}
+			set
+			{
+				this._maSolicitantes.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_maSolicitantes(maSolicitantes entity)
+		{
+			this.SendPropertyChanging();
+			entity.caMunicipios = this;
+		}
+		
+		private void detach_maSolicitantes(maSolicitantes entity)
+		{
+			this.SendPropertyChanging();
+			entity.caMunicipios = null;
 		}
 	}
 	
@@ -870,1155 +2137,6 @@ namespace wsSolicitantesBecas.Modelos
 		{
 			this.SendPropertyChanging();
 			entity.caUsuarios = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblDomDesc")]
-	public partial class tblDomDesc : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _municipio;
-		
-		private string _localidad;
-		
-		private string _colonia;
-		
-		private string _calle;
-		
-		private System.DateTime _fIns;
-		
-		private System.Nullable<System.DateTime> _fact;
-		
-		private EntitySet<maSolicitantes> _maSolicitantes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnmunicipioChanging(string value);
-    partial void OnmunicipioChanged();
-    partial void OnlocalidadChanging(string value);
-    partial void OnlocalidadChanged();
-    partial void OncoloniaChanging(string value);
-    partial void OncoloniaChanged();
-    partial void OncalleChanging(string value);
-    partial void OncalleChanged();
-    partial void OnfInsChanging(System.DateTime value);
-    partial void OnfInsChanged();
-    partial void OnfactChanging(System.Nullable<System.DateTime> value);
-    partial void OnfactChanged();
-    #endregion
-		
-		public tblDomDesc()
-		{
-			this._maSolicitantes = new EntitySet<maSolicitantes>(new Action<maSolicitantes>(this.attach_maSolicitantes), new Action<maSolicitantes>(this.detach_maSolicitantes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_municipio", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string municipio
-		{
-			get
-			{
-				return this._municipio;
-			}
-			set
-			{
-				if ((this._municipio != value))
-				{
-					this.OnmunicipioChanging(value);
-					this.SendPropertyChanging();
-					this._municipio = value;
-					this.SendPropertyChanged("municipio");
-					this.OnmunicipioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_localidad", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string localidad
-		{
-			get
-			{
-				return this._localidad;
-			}
-			set
-			{
-				if ((this._localidad != value))
-				{
-					this.OnlocalidadChanging(value);
-					this.SendPropertyChanging();
-					this._localidad = value;
-					this.SendPropertyChanged("localidad");
-					this.OnlocalidadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_colonia", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string colonia
-		{
-			get
-			{
-				return this._colonia;
-			}
-			set
-			{
-				if ((this._colonia != value))
-				{
-					this.OncoloniaChanging(value);
-					this.SendPropertyChanging();
-					this._colonia = value;
-					this.SendPropertyChanged("colonia");
-					this.OncoloniaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_calle", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string calle
-		{
-			get
-			{
-				return this._calle;
-			}
-			set
-			{
-				if ((this._calle != value))
-				{
-					this.OncalleChanging(value);
-					this.SendPropertyChanging();
-					this._calle = value;
-					this.SendPropertyChanged("calle");
-					this.OncalleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL", IsDbGenerated=true)]
-		public System.DateTime fIns
-		{
-			get
-			{
-				return this._fIns;
-			}
-			set
-			{
-				if ((this._fIns != value))
-				{
-					this.OnfInsChanging(value);
-					this.SendPropertyChanging();
-					this._fIns = value;
-					this.SendPropertyChanged("fIns");
-					this.OnfInsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fact", DbType="DateTime")]
-		public System.Nullable<System.DateTime> fact
-		{
-			get
-			{
-				return this._fact;
-			}
-			set
-			{
-				if ((this._fact != value))
-				{
-					this.OnfactChanging(value);
-					this.SendPropertyChanging();
-					this._fact = value;
-					this.SendPropertyChanged("fact");
-					this.OnfactChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblDomDesc_maSolicitantes", Storage="_maSolicitantes", ThisKey="id", OtherKey="idDomDesc")]
-		public EntitySet<maSolicitantes> maSolicitantes
-		{
-			get
-			{
-				return this._maSolicitantes;
-			}
-			set
-			{
-				this._maSolicitantes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_maSolicitantes(maSolicitantes entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblDomDesc = this;
-		}
-		
-		private void detach_maSolicitantes(maSolicitantes entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblDomDesc = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.maSolicitantes")]
-	public partial class maSolicitantes : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _curp;
-		
-		private string _primerApellido;
-		
-		private string _segundoApellido;
-		
-		private string _nombres;
-		
-		private int _edad;
-		
-		private int _idSexo;
-		
-		private string _correo;
-		
-		private string _telCel;
-		
-		private string _telPart;
-		
-		private string _domIdMpio;
-		
-		private string _domIdLocalidad;
-		
-		private string _domIdColonia;
-		
-		private string _domIdCalle;
-		
-		private System.Nullable<int> _domNumExt;
-		
-		private System.Nullable<int> _domNumInt;
-		
-		private string _domLetra;
-		
-		private int _idEscuela;
-		
-		private string _papaPrimerApellido;
-		
-		private string _papaSegundoApellido;
-		
-		private string _papaNombres;
-		
-		private string _mamaPrimerApellido;
-		
-		private string _mamaSegundoApellido;
-		
-		private string _mamaNombres;
-		
-		private System.Nullable<int> _idDomDesc;
-		
-		private int _idUsuario;
-		
-		private System.DateTime _fIns;
-		
-		private System.Nullable<System.DateTime> _fAct;
-		
-		private EntityRef<caEdad> _caEdad;
-		
-		private EntityRef<caEscuelas> _caEscuelas;
-		
-		private EntityRef<caSexo> _caSexo;
-		
-		private EntityRef<caUsuarios> _caUsuarios;
-		
-		private EntityRef<tblDomDesc> _tblDomDesc;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OncurpChanging(string value);
-    partial void OncurpChanged();
-    partial void OnprimerApellidoChanging(string value);
-    partial void OnprimerApellidoChanged();
-    partial void OnsegundoApellidoChanging(string value);
-    partial void OnsegundoApellidoChanged();
-    partial void OnnombresChanging(string value);
-    partial void OnnombresChanged();
-    partial void OnedadChanging(int value);
-    partial void OnedadChanged();
-    partial void OnidSexoChanging(int value);
-    partial void OnidSexoChanged();
-    partial void OncorreoChanging(string value);
-    partial void OncorreoChanged();
-    partial void OntelCelChanging(string value);
-    partial void OntelCelChanged();
-    partial void OntelPartChanging(string value);
-    partial void OntelPartChanged();
-    partial void OndomIdMpioChanging(string value);
-    partial void OndomIdMpioChanged();
-    partial void OndomIdLocalidadChanging(string value);
-    partial void OndomIdLocalidadChanged();
-    partial void OndomIdColoniaChanging(string value);
-    partial void OndomIdColoniaChanged();
-    partial void OndomIdCalleChanging(string value);
-    partial void OndomIdCalleChanged();
-    partial void OndomNumExtChanging(System.Nullable<int> value);
-    partial void OndomNumExtChanged();
-    partial void OndomNumIntChanging(System.Nullable<int> value);
-    partial void OndomNumIntChanged();
-    partial void OndomLetraChanging(string value);
-    partial void OndomLetraChanged();
-    partial void OnidEscuelaChanging(int value);
-    partial void OnidEscuelaChanged();
-    partial void OnpapaPrimerApellidoChanging(string value);
-    partial void OnpapaPrimerApellidoChanged();
-    partial void OnpapaSegundoApellidoChanging(string value);
-    partial void OnpapaSegundoApellidoChanged();
-    partial void OnpapaNombresChanging(string value);
-    partial void OnpapaNombresChanged();
-    partial void OnmamaPrimerApellidoChanging(string value);
-    partial void OnmamaPrimerApellidoChanged();
-    partial void OnmamaSegundoApellidoChanging(string value);
-    partial void OnmamaSegundoApellidoChanged();
-    partial void OnmamaNombresChanging(string value);
-    partial void OnmamaNombresChanged();
-    partial void OnidDomDescChanging(System.Nullable<int> value);
-    partial void OnidDomDescChanged();
-    partial void OnidUsuarioChanging(int value);
-    partial void OnidUsuarioChanged();
-    partial void OnfInsChanging(System.DateTime value);
-    partial void OnfInsChanged();
-    partial void OnfActChanging(System.Nullable<System.DateTime> value);
-    partial void OnfActChanged();
-    #endregion
-		
-		public maSolicitantes()
-		{
-			this._caEdad = default(EntityRef<caEdad>);
-			this._caEscuelas = default(EntityRef<caEscuelas>);
-			this._caSexo = default(EntityRef<caSexo>);
-			this._caUsuarios = default(EntityRef<caUsuarios>);
-			this._tblDomDesc = default(EntityRef<tblDomDesc>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_curp", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string curp
-		{
-			get
-			{
-				return this._curp;
-			}
-			set
-			{
-				if ((this._curp != value))
-				{
-					this.OncurpChanging(value);
-					this.SendPropertyChanging();
-					this._curp = value;
-					this.SendPropertyChanged("curp");
-					this.OncurpChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_primerApellido", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string primerApellido
-		{
-			get
-			{
-				return this._primerApellido;
-			}
-			set
-			{
-				if ((this._primerApellido != value))
-				{
-					this.OnprimerApellidoChanging(value);
-					this.SendPropertyChanging();
-					this._primerApellido = value;
-					this.SendPropertyChanged("primerApellido");
-					this.OnprimerApellidoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_segundoApellido", DbType="VarChar(50)")]
-		public string segundoApellido
-		{
-			get
-			{
-				return this._segundoApellido;
-			}
-			set
-			{
-				if ((this._segundoApellido != value))
-				{
-					this.OnsegundoApellidoChanging(value);
-					this.SendPropertyChanging();
-					this._segundoApellido = value;
-					this.SendPropertyChanged("segundoApellido");
-					this.OnsegundoApellidoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombres", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string nombres
-		{
-			get
-			{
-				return this._nombres;
-			}
-			set
-			{
-				if ((this._nombres != value))
-				{
-					this.OnnombresChanging(value);
-					this.SendPropertyChanging();
-					this._nombres = value;
-					this.SendPropertyChanged("nombres");
-					this.OnnombresChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edad", DbType="Int NOT NULL")]
-		public int edad
-		{
-			get
-			{
-				return this._edad;
-			}
-			set
-			{
-				if ((this._edad != value))
-				{
-					if (this._caEdad.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnedadChanging(value);
-					this.SendPropertyChanging();
-					this._edad = value;
-					this.SendPropertyChanged("edad");
-					this.OnedadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idSexo", DbType="Int NOT NULL")]
-		public int idSexo
-		{
-			get
-			{
-				return this._idSexo;
-			}
-			set
-			{
-				if ((this._idSexo != value))
-				{
-					if (this._caSexo.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidSexoChanging(value);
-					this.SendPropertyChanging();
-					this._idSexo = value;
-					this.SendPropertyChanged("idSexo");
-					this.OnidSexoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_correo", DbType="VarChar(50)")]
-		public string correo
-		{
-			get
-			{
-				return this._correo;
-			}
-			set
-			{
-				if ((this._correo != value))
-				{
-					this.OncorreoChanging(value);
-					this.SendPropertyChanging();
-					this._correo = value;
-					this.SendPropertyChanged("correo");
-					this.OncorreoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telCel", DbType="VarChar(50)")]
-		public string telCel
-		{
-			get
-			{
-				return this._telCel;
-			}
-			set
-			{
-				if ((this._telCel != value))
-				{
-					this.OntelCelChanging(value);
-					this.SendPropertyChanging();
-					this._telCel = value;
-					this.SendPropertyChanged("telCel");
-					this.OntelCelChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telPart", DbType="VarChar(50)")]
-		public string telPart
-		{
-			get
-			{
-				return this._telPart;
-			}
-			set
-			{
-				if ((this._telPart != value))
-				{
-					this.OntelPartChanging(value);
-					this.SendPropertyChanging();
-					this._telPart = value;
-					this.SendPropertyChanged("telPart");
-					this.OntelPartChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domIdMpio", DbType="VarChar(50)")]
-		public string domIdMpio
-		{
-			get
-			{
-				return this._domIdMpio;
-			}
-			set
-			{
-				if ((this._domIdMpio != value))
-				{
-					this.OndomIdMpioChanging(value);
-					this.SendPropertyChanging();
-					this._domIdMpio = value;
-					this.SendPropertyChanged("domIdMpio");
-					this.OndomIdMpioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domIdLocalidad", DbType="VarChar(50)")]
-		public string domIdLocalidad
-		{
-			get
-			{
-				return this._domIdLocalidad;
-			}
-			set
-			{
-				if ((this._domIdLocalidad != value))
-				{
-					this.OndomIdLocalidadChanging(value);
-					this.SendPropertyChanging();
-					this._domIdLocalidad = value;
-					this.SendPropertyChanged("domIdLocalidad");
-					this.OndomIdLocalidadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domIdColonia", DbType="VarChar(50)")]
-		public string domIdColonia
-		{
-			get
-			{
-				return this._domIdColonia;
-			}
-			set
-			{
-				if ((this._domIdColonia != value))
-				{
-					this.OndomIdColoniaChanging(value);
-					this.SendPropertyChanging();
-					this._domIdColonia = value;
-					this.SendPropertyChanged("domIdColonia");
-					this.OndomIdColoniaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domIdCalle", DbType="VarChar(50)")]
-		public string domIdCalle
-		{
-			get
-			{
-				return this._domIdCalle;
-			}
-			set
-			{
-				if ((this._domIdCalle != value))
-				{
-					this.OndomIdCalleChanging(value);
-					this.SendPropertyChanging();
-					this._domIdCalle = value;
-					this.SendPropertyChanged("domIdCalle");
-					this.OndomIdCalleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domNumExt", DbType="Int")]
-		public System.Nullable<int> domNumExt
-		{
-			get
-			{
-				return this._domNumExt;
-			}
-			set
-			{
-				if ((this._domNumExt != value))
-				{
-					this.OndomNumExtChanging(value);
-					this.SendPropertyChanging();
-					this._domNumExt = value;
-					this.SendPropertyChanged("domNumExt");
-					this.OndomNumExtChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domNumInt", DbType="Int")]
-		public System.Nullable<int> domNumInt
-		{
-			get
-			{
-				return this._domNumInt;
-			}
-			set
-			{
-				if ((this._domNumInt != value))
-				{
-					this.OndomNumIntChanging(value);
-					this.SendPropertyChanging();
-					this._domNumInt = value;
-					this.SendPropertyChanged("domNumInt");
-					this.OndomNumIntChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domLetra", DbType="NVarChar(2)")]
-		public string domLetra
-		{
-			get
-			{
-				return this._domLetra;
-			}
-			set
-			{
-				if ((this._domLetra != value))
-				{
-					this.OndomLetraChanging(value);
-					this.SendPropertyChanging();
-					this._domLetra = value;
-					this.SendPropertyChanged("domLetra");
-					this.OndomLetraChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idEscuela", DbType="Int NOT NULL")]
-		public int idEscuela
-		{
-			get
-			{
-				return this._idEscuela;
-			}
-			set
-			{
-				if ((this._idEscuela != value))
-				{
-					if (this._caEscuelas.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidEscuelaChanging(value);
-					this.SendPropertyChanging();
-					this._idEscuela = value;
-					this.SendPropertyChanged("idEscuela");
-					this.OnidEscuelaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_papaPrimerApellido", DbType="VarChar(50)")]
-		public string papaPrimerApellido
-		{
-			get
-			{
-				return this._papaPrimerApellido;
-			}
-			set
-			{
-				if ((this._papaPrimerApellido != value))
-				{
-					this.OnpapaPrimerApellidoChanging(value);
-					this.SendPropertyChanging();
-					this._papaPrimerApellido = value;
-					this.SendPropertyChanged("papaPrimerApellido");
-					this.OnpapaPrimerApellidoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_papaSegundoApellido", DbType="VarChar(50)")]
-		public string papaSegundoApellido
-		{
-			get
-			{
-				return this._papaSegundoApellido;
-			}
-			set
-			{
-				if ((this._papaSegundoApellido != value))
-				{
-					this.OnpapaSegundoApellidoChanging(value);
-					this.SendPropertyChanging();
-					this._papaSegundoApellido = value;
-					this.SendPropertyChanged("papaSegundoApellido");
-					this.OnpapaSegundoApellidoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_papaNombres", DbType="VarChar(50)")]
-		public string papaNombres
-		{
-			get
-			{
-				return this._papaNombres;
-			}
-			set
-			{
-				if ((this._papaNombres != value))
-				{
-					this.OnpapaNombresChanging(value);
-					this.SendPropertyChanging();
-					this._papaNombres = value;
-					this.SendPropertyChanged("papaNombres");
-					this.OnpapaNombresChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mamaPrimerApellido", DbType="VarChar(50)")]
-		public string mamaPrimerApellido
-		{
-			get
-			{
-				return this._mamaPrimerApellido;
-			}
-			set
-			{
-				if ((this._mamaPrimerApellido != value))
-				{
-					this.OnmamaPrimerApellidoChanging(value);
-					this.SendPropertyChanging();
-					this._mamaPrimerApellido = value;
-					this.SendPropertyChanged("mamaPrimerApellido");
-					this.OnmamaPrimerApellidoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mamaSegundoApellido", DbType="VarChar(50)")]
-		public string mamaSegundoApellido
-		{
-			get
-			{
-				return this._mamaSegundoApellido;
-			}
-			set
-			{
-				if ((this._mamaSegundoApellido != value))
-				{
-					this.OnmamaSegundoApellidoChanging(value);
-					this.SendPropertyChanging();
-					this._mamaSegundoApellido = value;
-					this.SendPropertyChanged("mamaSegundoApellido");
-					this.OnmamaSegundoApellidoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mamaNombres", DbType="VarChar(50)")]
-		public string mamaNombres
-		{
-			get
-			{
-				return this._mamaNombres;
-			}
-			set
-			{
-				if ((this._mamaNombres != value))
-				{
-					this.OnmamaNombresChanging(value);
-					this.SendPropertyChanging();
-					this._mamaNombres = value;
-					this.SendPropertyChanged("mamaNombres");
-					this.OnmamaNombresChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idDomDesc", DbType="Int")]
-		public System.Nullable<int> idDomDesc
-		{
-			get
-			{
-				return this._idDomDesc;
-			}
-			set
-			{
-				if ((this._idDomDesc != value))
-				{
-					if (this._tblDomDesc.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidDomDescChanging(value);
-					this.SendPropertyChanging();
-					this._idDomDesc = value;
-					this.SendPropertyChanged("idDomDesc");
-					this.OnidDomDescChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUsuario", DbType="Int NOT NULL")]
-		public int idUsuario
-		{
-			get
-			{
-				return this._idUsuario;
-			}
-			set
-			{
-				if ((this._idUsuario != value))
-				{
-					if (this._caUsuarios.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidUsuarioChanging(value);
-					this.SendPropertyChanging();
-					this._idUsuario = value;
-					this.SendPropertyChanged("idUsuario");
-					this.OnidUsuarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL", IsDbGenerated=true)]
-		public System.DateTime fIns
-		{
-			get
-			{
-				return this._fIns;
-			}
-			set
-			{
-				if ((this._fIns != value))
-				{
-					this.OnfInsChanging(value);
-					this.SendPropertyChanging();
-					this._fIns = value;
-					this.SendPropertyChanged("fIns");
-					this.OnfInsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fAct", DbType="DateTime")]
-		public System.Nullable<System.DateTime> fAct
-		{
-			get
-			{
-				return this._fAct;
-			}
-			set
-			{
-				if ((this._fAct != value))
-				{
-					this.OnfActChanging(value);
-					this.SendPropertyChanging();
-					this._fAct = value;
-					this.SendPropertyChanged("fAct");
-					this.OnfActChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caEdad_maSolicitantes", Storage="_caEdad", ThisKey="edad", OtherKey="id", IsForeignKey=true)]
-		public caEdad caEdad
-		{
-			get
-			{
-				return this._caEdad.Entity;
-			}
-			set
-			{
-				caEdad previousValue = this._caEdad.Entity;
-				if (((previousValue != value) 
-							|| (this._caEdad.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._caEdad.Entity = null;
-						previousValue.maSolicitantes.Remove(this);
-					}
-					this._caEdad.Entity = value;
-					if ((value != null))
-					{
-						value.maSolicitantes.Add(this);
-						this._edad = value.id;
-					}
-					else
-					{
-						this._edad = default(int);
-					}
-					this.SendPropertyChanged("caEdad");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caEscuelas_maSolicitantes", Storage="_caEscuelas", ThisKey="idEscuela", OtherKey="id", IsForeignKey=true)]
-		public caEscuelas caEscuelas
-		{
-			get
-			{
-				return this._caEscuelas.Entity;
-			}
-			set
-			{
-				caEscuelas previousValue = this._caEscuelas.Entity;
-				if (((previousValue != value) 
-							|| (this._caEscuelas.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._caEscuelas.Entity = null;
-						previousValue.maSolicitantes.Remove(this);
-					}
-					this._caEscuelas.Entity = value;
-					if ((value != null))
-					{
-						value.maSolicitantes.Add(this);
-						this._idEscuela = value.id;
-					}
-					else
-					{
-						this._idEscuela = default(int);
-					}
-					this.SendPropertyChanged("caEscuelas");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caSexo_maSolicitantes", Storage="_caSexo", ThisKey="idSexo", OtherKey="id", IsForeignKey=true)]
-		public caSexo caSexo
-		{
-			get
-			{
-				return this._caSexo.Entity;
-			}
-			set
-			{
-				caSexo previousValue = this._caSexo.Entity;
-				if (((previousValue != value) 
-							|| (this._caSexo.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._caSexo.Entity = null;
-						previousValue.maSolicitantes.Remove(this);
-					}
-					this._caSexo.Entity = value;
-					if ((value != null))
-					{
-						value.maSolicitantes.Add(this);
-						this._idSexo = value.id;
-					}
-					else
-					{
-						this._idSexo = default(int);
-					}
-					this.SendPropertyChanged("caSexo");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="caUsuarios_maSolicitantes", Storage="_caUsuarios", ThisKey="idUsuario", OtherKey="id", IsForeignKey=true)]
-		public caUsuarios caUsuarios
-		{
-			get
-			{
-				return this._caUsuarios.Entity;
-			}
-			set
-			{
-				caUsuarios previousValue = this._caUsuarios.Entity;
-				if (((previousValue != value) 
-							|| (this._caUsuarios.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._caUsuarios.Entity = null;
-						previousValue.maSolicitantes.Remove(this);
-					}
-					this._caUsuarios.Entity = value;
-					if ((value != null))
-					{
-						value.maSolicitantes.Add(this);
-						this._idUsuario = value.id;
-					}
-					else
-					{
-						this._idUsuario = default(int);
-					}
-					this.SendPropertyChanged("caUsuarios");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblDomDesc_maSolicitantes", Storage="_tblDomDesc", ThisKey="idDomDesc", OtherKey="id", IsForeignKey=true)]
-		public tblDomDesc tblDomDesc
-		{
-			get
-			{
-				return this._tblDomDesc.Entity;
-			}
-			set
-			{
-				tblDomDesc previousValue = this._tblDomDesc.Entity;
-				if (((previousValue != value) 
-							|| (this._tblDomDesc.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblDomDesc.Entity = null;
-						previousValue.maSolicitantes.Remove(this);
-					}
-					this._tblDomDesc.Entity = value;
-					if ((value != null))
-					{
-						value.maSolicitantes.Add(this);
-						this._idDomDesc = value.id;
-					}
-					else
-					{
-						this._idDomDesc = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("tblDomDesc");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 }

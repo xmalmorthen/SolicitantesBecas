@@ -182,6 +182,21 @@ namespace SolicitantesBecas.Models
         }
     }
 
+    public class Inserted
+    {
+        private Boolean _inserted;
+        public Boolean inserted { get { return _inserted; } set { _inserted = value; } }
+
+        private string _message;
+        public string message { get { return _message; } set { _message = value; } }
+
+        private string _CURP;
+        public string CURP { get { return _CURP; } set { _CURP = value; } }
+
+        private int _idUsuario;
+        public int idUsuario { get { return _idUsuario; } set { _idUsuario = value; } }
+    }
+
     public class strMaSolicitantes
     {
         private string _curp;
@@ -189,14 +204,18 @@ namespace SolicitantesBecas.Models
         private string _segundoApellido;
         private string _nombres;
         private int _edad;
-        private int _idSexo;
+        private string _sexo;
         private string _correo;
         private string _telCel;
         private string _telPart;
         private string _domIdMpio;
+        private string _domMpio;
         private string _domIdLocalidad;
+        private string _domLocalidad;
         private string _domIdColonia;
+        private string _domColonia;
         private string _domIdCalle;
+        private string _domCalle;
         private System.Nullable<int> _domNumExt;
         private System.Nullable<int> _domNumInt;
         private string _domLetra;
@@ -285,17 +304,17 @@ namespace SolicitantesBecas.Models
             }
         }
 
-        public int idSexo
+        public string sexo
         {
             get
             {
-                return this._idSexo;
+                return this._sexo;
             }
             set
             {
-                if ((this._idSexo != value))
+                if ((this._sexo != value))
                 {
-                    this._idSexo = value;
+                    this._sexo = value;
                 }
             }
         }
@@ -360,6 +379,21 @@ namespace SolicitantesBecas.Models
             }
         }
 
+        public string domMpio
+        {
+            get
+            {
+                return this._domMpio;
+            }
+            set
+            {
+                if ((this._domMpio != value))
+                {
+                    this._domMpio = value;
+                }
+            }
+        }
+
         public string domIdLocalidad
         {
             get
@@ -371,6 +405,21 @@ namespace SolicitantesBecas.Models
                 if ((this._domIdLocalidad != value))
                 {
                     this._domIdLocalidad = value;
+                }
+            }
+        }
+
+        public string domLocalidad
+        {
+            get
+            {
+                return this._domLocalidad;
+            }
+            set
+            {
+                if ((this._domLocalidad != value))
+                {
+                    this._domLocalidad = value;
                 }
             }
         }
@@ -390,6 +439,21 @@ namespace SolicitantesBecas.Models
             }
         }
 
+        public string domColonia
+        {
+            get
+            {
+                return this._domColonia;
+            }
+            set
+            {
+                if ((this._domColonia != value))
+                {
+                    this._domColonia = value;
+                }
+            }
+        }
+
         public string domIdCalle
         {
             get
@@ -401,6 +465,21 @@ namespace SolicitantesBecas.Models
                 if ((this._domIdCalle != value))
                 {
                     this._domIdCalle = value;
+                }
+            }
+        }
+
+        public string domCalle
+        {
+            get
+            {
+                return this._domCalle;
+            }
+            set
+            {
+                if ((this._domCalle != value))
+                {
+                    this._domCalle = value;
                 }
             }
         }

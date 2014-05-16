@@ -80,6 +80,29 @@ namespace SolicitantesBecas.Models
             }            
         }
 
+        public static Boolean? isCURPInserted(int idUsuario, string CURP)
+        {
+            try
+            {
+                servicio.Url = SolicitantesBecas.Properties.Settings.Default.wsSolicitantesBecas;
+
+                var request = servicio.verificaCURPInsertado(idUsuario,CURP);
+
+                if (request.statusResponse.statusOper == false)
+                {
+                    err.setError = "SolicitantesBecas.Models.getData.isCURPInserted() - " + request.statusResponse.message;
+                    return null;
+                }
+
+                return request.data.inserted;
+            }
+            catch (Exception e)
+            {
+                err.setError = "SolicitantesBecas.Models.getData.isCURPInserted() - " + e.Message;
+                return null;
+            }
+        }
+
         public static strCURP getInfoCURP(string CURP)
         {
             try
@@ -142,6 +165,13 @@ namespace SolicitantesBecas.Models
                 }
 
                 List<strMpios> data = JsonConvert.DeserializeObject<List<strMpios>>(content);
+                data.Insert(0, new strMpios() { 
+                    cve_Municipios = null,
+                    cveEntidades_Municipios = null,
+                    descrip_Entidades = null,
+                    descrip_Municipios = " "
+                });
+
                 error = false;
                 return data;
             }
@@ -177,6 +207,12 @@ namespace SolicitantesBecas.Models
                 }
 
                 List<strLoc> data = JsonConvert.DeserializeObject<List<strLoc>>(content);
+                data.Insert(0, new strLoc()
+                {
+                    cve_Localidades = null,
+                    cveMunicipios_Localidades = null,
+                    nombre_Localidades = " "
+                });
                 error = false;
                 return data;
             }
@@ -212,6 +248,10 @@ namespace SolicitantesBecas.Models
                 }
 
                 List<strCol> data = JsonConvert.DeserializeObject<List<strCol>>(content);
+                data.Insert(0, new strCol()
+                {
+                    nombre_Localidades = " "
+                });
                 error = false;
                 return data;
             }
@@ -221,7 +261,6 @@ namespace SolicitantesBecas.Models
                 return null;
             }
         }
-
 
         public static List<strCall> getCall(string idCol, ref Boolean error)
         {
@@ -248,6 +287,10 @@ namespace SolicitantesBecas.Models
                 }
 
                 List<strCall> data = JsonConvert.DeserializeObject<List<strCall>>(content);
+                data.Insert(0, new strCall()
+                {
+                    nombre_NombresCalles = " "
+                });
                 error = false;
                 return data;
             }

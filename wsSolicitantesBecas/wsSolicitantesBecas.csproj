@@ -62,6 +62,7 @@
       <DependentUpon>CapturaBECAS.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Modelos\insertData.cs" />
     <Compile Include="Modelos\BdCapturaBECAS.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

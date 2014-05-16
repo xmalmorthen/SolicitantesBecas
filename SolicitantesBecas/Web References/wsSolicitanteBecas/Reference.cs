@@ -33,6 +33,10 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         
         private System.Threading.SendOrPostCallback caUsuariosOperationCompleted;
         
+        private System.Threading.SendOrPostCallback verificaCURPInsertadoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback instertaSolicitudOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -76,6 +80,12 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         
         /// <remarks/>
         public event caUsuariosCompletedEventHandler caUsuariosCompleted;
+        
+        /// <remarks/>
+        public event verificaCURPInsertadoCompletedEventHandler verificaCURPInsertadoCompleted;
+        
+        /// <remarks/>
+        public event instertaSolicitudCompletedEventHandler instertaSolicitudCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/caEscuelas", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -128,6 +138,68 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
             if ((this.caUsuariosCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.caUsuariosCompleted(this, new caUsuariosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/verificaCURPInsertado", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public StcisInserted verificaCURPInsertado(int idUsuario, string CURP) {
+            object[] results = this.Invoke("verificaCURPInsertado", new object[] {
+                        idUsuario,
+                        CURP});
+            return ((StcisInserted)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void verificaCURPInsertadoAsync(int idUsuario, string CURP) {
+            this.verificaCURPInsertadoAsync(idUsuario, CURP, null);
+        }
+        
+        /// <remarks/>
+        public void verificaCURPInsertadoAsync(int idUsuario, string CURP, object userState) {
+            if ((this.verificaCURPInsertadoOperationCompleted == null)) {
+                this.verificaCURPInsertadoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnverificaCURPInsertadoOperationCompleted);
+            }
+            this.InvokeAsync("verificaCURPInsertado", new object[] {
+                        idUsuario,
+                        CURP}, this.verificaCURPInsertadoOperationCompleted, userState);
+        }
+        
+        private void OnverificaCURPInsertadoOperationCompleted(object arg) {
+            if ((this.verificaCURPInsertadoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.verificaCURPInsertadoCompleted(this, new verificaCURPInsertadoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/instertaSolicitud", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public StcInsertaSolicitud instertaSolicitud(int idUsuario, string xmlData) {
+            object[] results = this.Invoke("instertaSolicitud", new object[] {
+                        idUsuario,
+                        xmlData});
+            return ((StcInsertaSolicitud)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void instertaSolicitudAsync(int idUsuario, string xmlData) {
+            this.instertaSolicitudAsync(idUsuario, xmlData, null);
+        }
+        
+        /// <remarks/>
+        public void instertaSolicitudAsync(int idUsuario, string xmlData, object userState) {
+            if ((this.instertaSolicitudOperationCompleted == null)) {
+                this.instertaSolicitudOperationCompleted = new System.Threading.SendOrPostCallback(this.OninstertaSolicitudOperationCompleted);
+            }
+            this.InvokeAsync("instertaSolicitud", new object[] {
+                        idUsuario,
+                        xmlData}, this.instertaSolicitudOperationCompleted, userState);
+        }
+        
+        private void OninstertaSolicitudOperationCompleted(object arg) {
+            if ((this.instertaSolicitudCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.instertaSolicitudCompleted(this, new instertaSolicitudCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -212,6 +284,117 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
             }
             set {
                 this.messageField = value;
+            }
+        }
+    }
+    
+    /// <comentarios/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18408")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class StcInsertaSolicitud {
+        
+        private structBase statusResponseField;
+        
+        /// <comentarios/>
+        public structBase statusResponse {
+            get {
+                return this.statusResponseField;
+            }
+            set {
+                this.statusResponseField = value;
+            }
+        }
+    }
+    
+    /// <comentarios/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18408")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Inserted {
+        
+        private bool insertedField;
+        
+        private string messageField;
+        
+        private string cURPField;
+        
+        private int idUsuarioField;
+        
+        /// <comentarios/>
+        public bool inserted {
+            get {
+                return this.insertedField;
+            }
+            set {
+                this.insertedField = value;
+            }
+        }
+        
+        /// <comentarios/>
+        public string message {
+            get {
+                return this.messageField;
+            }
+            set {
+                this.messageField = value;
+            }
+        }
+        
+        /// <comentarios/>
+        public string CURP {
+            get {
+                return this.cURPField;
+            }
+            set {
+                this.cURPField = value;
+            }
+        }
+        
+        /// <comentarios/>
+        public int idUsuario {
+            get {
+                return this.idUsuarioField;
+            }
+            set {
+                this.idUsuarioField = value;
+            }
+        }
+    }
+    
+    /// <comentarios/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18408")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class StcisInserted {
+        
+        private structBase statusResponseField;
+        
+        private Inserted dataField;
+        
+        /// <comentarios/>
+        public structBase statusResponse {
+            get {
+                return this.statusResponseField;
+            }
+            set {
+                this.statusResponseField = value;
+            }
+        }
+        
+        /// <comentarios/>
+        public Inserted data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
             }
         }
     }
@@ -351,7 +534,7 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         
         private int edadField;
         
-        private int idSexoField;
+        private string sexoField;
         
         private string correoField;
         
@@ -387,7 +570,7 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         
         private string mamaNombresField;
         
-        private System.Nullable<int> idDomDescField;
+        private string domDescField;
         
         private int idUsuarioField;
         
@@ -395,15 +578,9 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         
         private System.Nullable<System.DateTime> fActField;
         
-        private caEdad caEdadField;
-        
         private caEscuelas caEscuelasField;
         
-        private caSexo caSexoField;
-        
         private caUsuarios caUsuariosField;
-        
-        private tblDomDesc tblDomDescField;
         
         /// <comentarios/>
         public int id {
@@ -466,12 +643,12 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         }
         
         /// <comentarios/>
-        public int idSexo {
+        public string sexo {
             get {
-                return this.idSexoField;
+                return this.sexoField;
             }
             set {
-                this.idSexoField = value;
+                this.sexoField = value;
             }
         }
         
@@ -648,13 +825,12 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<int> idDomDesc {
+        public string domDesc {
             get {
-                return this.idDomDescField;
+                return this.domDescField;
             }
             set {
-                this.idDomDescField = value;
+                this.domDescField = value;
             }
         }
         
@@ -690,16 +866,6 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         }
         
         /// <comentarios/>
-        public caEdad caEdad {
-            get {
-                return this.caEdadField;
-            }
-            set {
-                this.caEdadField = value;
-            }
-        }
-        
-        /// <comentarios/>
         public caEscuelas caEscuelas {
             get {
                 return this.caEscuelasField;
@@ -710,102 +876,12 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         }
         
         /// <comentarios/>
-        public caSexo caSexo {
-            get {
-                return this.caSexoField;
-            }
-            set {
-                this.caSexoField = value;
-            }
-        }
-        
-        /// <comentarios/>
         public caUsuarios caUsuarios {
             get {
                 return this.caUsuariosField;
             }
             set {
                 this.caUsuariosField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        public tblDomDesc tblDomDesc {
-            get {
-                return this.tblDomDescField;
-            }
-            set {
-                this.tblDomDescField = value;
-            }
-        }
-    }
-    
-    /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18408")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class caEdad {
-        
-        private int idField;
-        
-        private int edadField;
-        
-        private System.DateTime fInsField;
-        
-        private System.Nullable<System.DateTime> fActField;
-        
-        private maSolicitantes[] maSolicitantesField;
-        
-        /// <comentarios/>
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        public int edad {
-            get {
-                return this.edadField;
-            }
-            set {
-                this.edadField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        public System.DateTime fIns {
-            get {
-                return this.fInsField;
-            }
-            set {
-                this.fInsField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> fAct {
-            get {
-                return this.fActField;
-            }
-            set {
-                this.fActField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        public maSolicitantes[] maSolicitantes {
-            get {
-                return this.maSolicitantesField;
-            }
-            set {
-                this.maSolicitantesField = value;
             }
         }
     }
@@ -916,182 +992,6 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         }
     }
     
-    /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18408")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class caSexo {
-        
-        private int idField;
-        
-        private string sexoField;
-        
-        private System.DateTime fInsField;
-        
-        private System.Nullable<System.DateTime> fActField;
-        
-        private maSolicitantes[] maSolicitantesField;
-        
-        /// <comentarios/>
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        public string sexo {
-            get {
-                return this.sexoField;
-            }
-            set {
-                this.sexoField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        public System.DateTime fIns {
-            get {
-                return this.fInsField;
-            }
-            set {
-                this.fInsField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> fAct {
-            get {
-                return this.fActField;
-            }
-            set {
-                this.fActField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        public maSolicitantes[] maSolicitantes {
-            get {
-                return this.maSolicitantesField;
-            }
-            set {
-                this.maSolicitantesField = value;
-            }
-        }
-    }
-    
-    /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18408")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class tblDomDesc {
-        
-        private int idField;
-        
-        private string municipioField;
-        
-        private string localidadField;
-        
-        private string coloniaField;
-        
-        private string calleField;
-        
-        private System.DateTime fInsField;
-        
-        private System.Nullable<System.DateTime> factField;
-        
-        private maSolicitantes[] maSolicitantesField;
-        
-        /// <comentarios/>
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        public string municipio {
-            get {
-                return this.municipioField;
-            }
-            set {
-                this.municipioField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        public string localidad {
-            get {
-                return this.localidadField;
-            }
-            set {
-                this.localidadField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        public string colonia {
-            get {
-                return this.coloniaField;
-            }
-            set {
-                this.coloniaField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        public string calle {
-            get {
-                return this.calleField;
-            }
-            set {
-                this.calleField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        public System.DateTime fIns {
-            get {
-                return this.fInsField;
-            }
-            set {
-                this.fInsField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> fact {
-            get {
-                return this.factField;
-            }
-            set {
-                this.factField = value;
-            }
-        }
-        
-        /// <comentarios/>
-        public maSolicitantes[] maSolicitantes {
-            get {
-                return this.maSolicitantesField;
-            }
-            set {
-                this.maSolicitantesField = value;
-            }
-        }
-    }
-    
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
     public delegate void caEscuelasCompletedEventHandler(object sender, caEscuelasCompletedEventArgs e);
@@ -1140,6 +1040,58 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((StcCaUsuarios)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void verificaCURPInsertadoCompletedEventHandler(object sender, verificaCURPInsertadoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class verificaCURPInsertadoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal verificaCURPInsertadoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public StcisInserted Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((StcisInserted)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void instertaSolicitudCompletedEventHandler(object sender, instertaSolicitudCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class instertaSolicitudCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal instertaSolicitudCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public StcInsertaSolicitud Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((StcInsertaSolicitud)(this.results[0]));
             }
         }
     }

@@ -52,14 +52,23 @@
     <Setting Name="errWSCURP" Type="System.String" Scope="User">
       <Value Profile="(Default)">Servicio de CURP</Value>
     </Setting>
-    <Setting Name="wsSolicitantesBecas" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:3313/CapturaBECAS.asmx</Value>
-    </Setting>
     <Setting Name="wsFwrkDom" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://proveedores.col.gob.mx/REST_Services/FrameWork/index.php/localizacion/serverlocalizacion</Value>
     </Setting>
     <Setting Name="errWSFwrkDomicilios" Type="System.String" Scope="User">
       <Value Profile="(Default)">Servicio de Framework de Domicilios</Value>
+    </Setting>
+    <Setting Name="tituloVentana" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Formulario de captura de solicitantes</Value>
+    </Setting>
+    <Setting Name="wsSolicitantesBecas" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:3313/CapturaBECAS.asmx</Value>
+    </Setting>
+    <Setting Name="errWSSolicitantesBecas" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Servicio de Solicitantes de Becas</Value>
+    </Setting>
+    <Setting Name="sendEmailErrors" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

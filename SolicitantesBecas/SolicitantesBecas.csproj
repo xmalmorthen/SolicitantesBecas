@@ -77,6 +77,7 @@
     <Compile Include="frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\setData.cs" />
     <Compile Include="Models\err.cs" />
     <Compile Include="Models\getData.cs" />
     <Compile Include="Models\structures.cs" />
@@ -134,10 +135,16 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\wsSolicitanteBecas\StcCaEscuelas1.datasource">
+    <None Include="Web References\wsSolicitanteBecas\StcCaEscuelas.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\wsSolicitanteBecas\StcCaUsuarios1.datasource">
+    <None Include="Web References\wsSolicitanteBecas\StcCaUsuarios.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsSolicitanteBecas\StcInsertaSolicitud.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsSolicitanteBecas\StcisInserted.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
   </ItemGroup>

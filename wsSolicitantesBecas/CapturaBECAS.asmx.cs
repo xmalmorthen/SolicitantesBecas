@@ -28,5 +28,18 @@ namespace wsSolicitantesBecas
         {
             return getData.getCaUsuarios();
         }
+
+        [WebMethod]
+        public StcisInserted verificaCURPInsertado(int idUsuario, string CURP)
+        {
+            return getData.isInserted(idUsuario, CURP);
+        }
+
+        [WebMethod]
+        public StcInsertaSolicitud instertaSolicitud(int idUsuario, string xmlData)
+        {
+            return insertData.Solicitud(idUsuario, xmlData);
+        }
+
     }
 }

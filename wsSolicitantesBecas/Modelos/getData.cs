@@ -8,10 +8,11 @@ namespace wsSolicitantesBecas.Modelos
     public static class getData
     {
         private static string errMesagge = "Error al obtener información de la base de datos";
-        private static BdCapturaBECASDataContext bd = new BdCapturaBECASDataContext();
 
         public static StcCaEscuelas getCaEscuelas()
         {
+            BdCapturaBECASDataContext bd = new BdCapturaBECASDataContext();
+
             StcCaEscuelas response = new StcCaEscuelas();
             
             response.statusResponse.statusOper = false;
@@ -36,6 +37,8 @@ namespace wsSolicitantesBecas.Modelos
 
         public static StcCaUsuarios getCaUsuarios()
         {
+            BdCapturaBECASDataContext bd = new BdCapturaBECASDataContext();
+
             StcCaUsuarios response = new StcCaUsuarios();
 
             response.statusResponse.statusOper = false;
@@ -58,5 +61,34 @@ namespace wsSolicitantesBecas.Modelos
             }
         }
 
+        public static StcisInserted isInserted(int idUsuario, string CURP)
+        {
+            BdCapturaBECASDataContext bd = new BdCapturaBECASDataContext();
+
+            StcisInserted response = new StcisInserted();
+            response.statusResponse.statusOper = false;
+            response.statusResponse.message = messages.fallo;
+            
+            try
+            {
+                maSolicitantes query = bd.maSolicitantes.SingleOrDefault(e => e.curp == CURP && e.idUsuario == idUsuario);
+
+                response.statusResponse.statusOper = true;
+                response.statusResponse.message = messages.exito;
+                
+                response.data.CURP = CURP;
+                response.data.idUsuario = idUsuario;
+                response.data.inserted = query == null ? false : true;
+                response.data.message = query == null ? "CURP no encontrada" : "CURP encontrada";
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.data = null;
+                return response;
+            }
+
+        }
     }
 }

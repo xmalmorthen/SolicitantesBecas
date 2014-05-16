@@ -21,11 +21,12 @@ namespace SolicitantesBecas
 
             if (loginresult == DialogResult.OK) {
                 int? idUsuario = frmusuario.idUsuario;
+                string usuario = frmusuario.usuario;
 
                 frmusuario.Dispose();
                 frmusuario = null;
 
-                Application.Run(new frmMain() { idUsuario = idUsuario });
+                Application.Run(new frmMain(idUsuario, usuario));
             }
         }
     }

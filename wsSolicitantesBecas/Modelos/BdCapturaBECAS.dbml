@@ -1,12 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BdCapturaBECAS" Class="BdCapturaBECASDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=10.10.20.17;Initial Catalog=BdCapturaBECAS;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BdCapturaBECASConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.caEdad" Member="caEdad">
-    <Type Name="caEdad">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="edad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=XMALMORTHEN\MSSQLSERVER12;Initial Catalog=BdCapturaBECAS;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BdCapturaBECASConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.caCalles" Member="caCalles">
+    <Type Name="caCalles">
+      <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="calles" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="caEdad_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="edad" Type="maSolicitantes" />
+      <Association Name="caCalles_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="domIdCalle" Type="maSolicitantes" />
+    </Type>
+  </Table>
+  <Table Name="dbo.maSolicitantes" Member="maSolicitantes">
+    <Type Name="maSolicitantes">
+      <Column Name="curp" Type="System.String" DbType="VarChar(18) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="primerApellido" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segundoApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nombres" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="edad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sexo" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="telCel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="telPart" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="domIdMpio" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="domIdLocalidad" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="domIdColonia" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="domIdCalle" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="domNumExt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="domNumInt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="domLetra" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="idEscuela" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="papaPrimerApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="papaSegundoApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="papaNombres" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mamaPrimerApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mamaSegundoApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mamaNombres" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="domDesc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="caCalles_maSolicitantes" Member="caCalles" ThisKey="domIdCalle" OtherKey="id" Type="caCalles" IsForeignKey="true" />
+      <Association Name="caColonias_maSolicitantes" Member="caColonias" ThisKey="domIdColonia" OtherKey="id" Type="caColonias" IsForeignKey="true" />
+      <Association Name="caEscuelas_maSolicitantes" Member="caEscuelas" ThisKey="idEscuela" OtherKey="id" Type="caEscuelas" IsForeignKey="true" />
+      <Association Name="caLocalidades_maSolicitantes" Member="caLocalidades" ThisKey="domIdLocalidad" OtherKey="id" Type="caLocalidades" IsForeignKey="true" />
+      <Association Name="caMunicipios_maSolicitantes" Member="caMunicipios" ThisKey="domIdMpio" OtherKey="id" Type="caMunicipios" IsForeignKey="true" />
+      <Association Name="caUsuarios_maSolicitantes" Member="caUsuarios" ThisKey="idUsuario" OtherKey="id" Type="caUsuarios" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.caColonias" Member="caColonias">
+    <Type Name="caColonias">
+      <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="colonia" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="caColonias_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="domIdColonia" Type="maSolicitantes" />
     </Type>
   </Table>
   <Table Name="dbo.caEscuelas" Member="caEscuelas">
@@ -21,13 +67,22 @@
       <Association Name="caEscuelas_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="idEscuela" Type="maSolicitantes" />
     </Type>
   </Table>
-  <Table Name="dbo.caSexo" Member="caSexo">
-    <Type Name="caSexo">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="sexo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+  <Table Name="dbo.caLocalidades" Member="caLocalidades">
+    <Type Name="caLocalidades">
+      <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="localidad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="caSexo_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="idSexo" Type="maSolicitantes" />
+      <Association Name="caLocalidades_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="domIdLocalidad" Type="maSolicitantes" />
+    </Type>
+  </Table>
+  <Table Name="dbo.caMunicipios" Member="caMunicipios">
+    <Type Name="caMunicipios">
+      <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="municipio" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="caMunicipios_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="domIdMpio" Type="maSolicitantes" />
     </Type>
   </Table>
   <Table Name="dbo.caUsuarios" Member="caUsuarios">
@@ -38,55 +93,6 @@
       <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="caUsuarios_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="idUsuario" Type="maSolicitantes" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblDomDesc" Member="tblDomDesc">
-    <Type Name="tblDomDesc">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="municipio" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="localidad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="colonia" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="calle" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="fact" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="tblDomDesc_maSolicitantes" Member="maSolicitantes" ThisKey="id" OtherKey="idDomDesc" Type="maSolicitantes" />
-    </Type>
-  </Table>
-  <Table Name="dbo.maSolicitantes" Member="maSolicitantes">
-    <Type Name="maSolicitantes">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="curp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="primerApellido" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="segundoApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="nombres" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="edad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="idSexo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="telCel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="telPart" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="domIdMpio" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="domIdLocalidad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="domIdColonia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="domIdCalle" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="domNumExt" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="domNumInt" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="domLetra" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
-      <Column Name="idEscuela" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="papaPrimerApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="papaSegundoApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="papaNombres" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="mamaPrimerApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="mamaSegundoApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="mamaNombres" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="idDomDesc" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="fIns" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="caEdad_maSolicitantes" Member="caEdad" ThisKey="edad" OtherKey="id" Type="caEdad" IsForeignKey="true" />
-      <Association Name="caEscuelas_maSolicitantes" Member="caEscuelas" ThisKey="idEscuela" OtherKey="id" Type="caEscuelas" IsForeignKey="true" />
-      <Association Name="caSexo_maSolicitantes" Member="caSexo" ThisKey="idSexo" OtherKey="id" Type="caSexo" IsForeignKey="true" />
-      <Association Name="caUsuarios_maSolicitantes" Member="caUsuarios" ThisKey="idUsuario" OtherKey="id" Type="caUsuarios" IsForeignKey="true" />
-      <Association Name="tblDomDesc_maSolicitantes" Member="tblDomDesc" ThisKey="idDomDesc" OtherKey="id" Type="tblDomDesc" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

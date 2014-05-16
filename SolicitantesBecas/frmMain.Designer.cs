@@ -65,12 +65,16 @@
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.cmbMpio = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsMpios = new System.Windows.Forms.BindingSource(this.components);
             this.cmbLoc = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsLoc = new System.Windows.Forms.BindingSource(this.components);
             this.cmbCol = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsCol = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.cmbCalle = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsCall = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.txtNumExt = new DevExpress.XtraEditors.TextEdit();
             this.txtNumInt = new DevExpress.XtraEditors.TextEdit();
@@ -90,6 +94,7 @@
             this.btnBucarCURP = new System.Windows.Forms.Button();
             this.btnCambiarUsuario = new System.Windows.Forms.Button();
             this.cmbEscuelas = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.bsPlanteles = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmunicipio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colinstitucion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -101,11 +106,6 @@
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
-            this.bsPlanteles = new System.Windows.Forms.BindingSource(this.components);
-            this.bsCall = new System.Windows.Forms.BindingSource(this.components);
-            this.bsCol = new System.Windows.Forms.BindingSource(this.components);
-            this.bsLoc = new System.Windows.Forms.BindingSource(this.components);
-            this.bsMpios = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtCURP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
@@ -119,25 +119,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAp2Madre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAp1Madre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbMpio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMpios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbLoc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsLoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCol.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCalle.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumExt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumInt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDomDesc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbEscuelas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.pnlProc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCall)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCol)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsLoc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMpios)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCURP
@@ -155,6 +155,7 @@
             this.txtCURP.Properties.Appearance.Options.UseTextOptions = true;
             this.txtCURP.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtCURP.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtCURP.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCURP.Properties.Mask.BeepOnError = true;
             this.txtCURP.Properties.Mask.EditMask = ">LLLL000000LLLLLL00";
             this.txtCURP.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
@@ -260,10 +261,12 @@
             this.txtCel.Properties.Appearance.Options.UseBackColor = true;
             this.txtCel.Properties.Appearance.Options.UseFont = true;
             this.txtCel.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtCel.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCel.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
             this.txtCel.Properties.Mask.BeepOnError = true;
             this.txtCel.Properties.Mask.EditMask = "(000) 000 00 00";
             this.txtCel.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+            this.txtCel.Properties.Mask.SaveLiteral = false;
             this.txtCel.Properties.Mask.ShowPlaceHolders = false;
             this.txtCel.Properties.MaxLength = 13;
             this.txtCel.Size = new System.Drawing.Size(173, 22);
@@ -303,10 +306,12 @@
             this.txtTel.Properties.Appearance.Options.UseBackColor = true;
             this.txtTel.Properties.Appearance.Options.UseFont = true;
             this.txtTel.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtTel.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTel.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
             this.txtTel.Properties.Mask.BeepOnError = true;
             this.txtTel.Properties.Mask.EditMask = "(000) 000 00 00";
             this.txtTel.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+            this.txtTel.Properties.Mask.SaveLiteral = false;
             this.txtTel.Properties.Mask.ShowPlaceHolders = false;
             this.txtTel.Properties.MaxLength = 13;
             this.txtTel.Size = new System.Drawing.Size(173, 22);
@@ -336,6 +341,7 @@
             this.txtAp1Padre.Properties.Appearance.Options.UseBackColor = true;
             this.txtAp1Padre.Properties.Appearance.Options.UseFont = true;
             this.txtAp1Padre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtAp1Padre.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAp1Padre.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
             this.txtAp1Padre.Properties.Mask.BeepOnError = true;
             this.txtAp1Padre.Properties.Mask.IgnoreMaskBlank = false;
@@ -368,6 +374,7 @@
             this.txtAp2Padre.Properties.Appearance.Options.UseBackColor = true;
             this.txtAp2Padre.Properties.Appearance.Options.UseFont = true;
             this.txtAp2Padre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtAp2Padre.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAp2Padre.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
             this.txtAp2Padre.Properties.Mask.BeepOnError = true;
             this.txtAp2Padre.Properties.Mask.IgnoreMaskBlank = false;
@@ -400,6 +407,7 @@
             this.txtNomPadre.Properties.Appearance.Options.UseBackColor = true;
             this.txtNomPadre.Properties.Appearance.Options.UseFont = true;
             this.txtNomPadre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtNomPadre.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNomPadre.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
             this.txtNomPadre.Properties.Mask.BeepOnError = true;
             this.txtNomPadre.Properties.Mask.IgnoreMaskBlank = false;
@@ -520,6 +528,7 @@
             this.txtNomMadre.Properties.Appearance.Options.UseBackColor = true;
             this.txtNomMadre.Properties.Appearance.Options.UseFont = true;
             this.txtNomMadre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtNomMadre.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNomMadre.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
             this.txtNomMadre.Properties.Mask.BeepOnError = true;
             this.txtNomMadre.Properties.Mask.IgnoreMaskBlank = false;
@@ -552,6 +561,7 @@
             this.txtAp2Madre.Properties.Appearance.Options.UseBackColor = true;
             this.txtAp2Madre.Properties.Appearance.Options.UseFont = true;
             this.txtAp2Madre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtAp2Madre.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAp2Madre.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
             this.txtAp2Madre.Properties.Mask.BeepOnError = true;
             this.txtAp2Madre.Properties.Mask.IgnoreMaskBlank = false;
@@ -584,6 +594,7 @@
             this.txtAp1Madre.Properties.Appearance.Options.UseBackColor = true;
             this.txtAp1Madre.Properties.Appearance.Options.UseFont = true;
             this.txtAp1Madre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtAp1Madre.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAp1Madre.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
             this.txtAp1Madre.Properties.Mask.BeepOnError = true;
             this.txtAp1Madre.Properties.Mask.IgnoreMaskBlank = false;
@@ -641,6 +652,7 @@
             this.cmbMpio.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cmbMpio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbMpio.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cmbMpio.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cve_Municipios", "cve_Municipios", 135, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("descrip_Municipios", "Municipio", 154, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.Ascending),
@@ -652,7 +664,11 @@
             this.cmbMpio.Properties.ValueMember = "cve_Municipios";
             this.cmbMpio.Size = new System.Drawing.Size(214, 22);
             this.cmbMpio.TabIndex = 31;
-            this.cmbMpio.EditValueChanged += new System.EventHandler(this.cmbMpio_EditValueChanged);
+            this.cmbMpio.Leave += new System.EventHandler(this.cmbMpio_Leave);
+            // 
+            // bsMpios
+            // 
+            this.bsMpios.DataSource = typeof(SolicitantesBecas.Models.strMpios);
             // 
             // cmbLoc
             // 
@@ -667,6 +683,7 @@
             this.cmbLoc.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cmbLoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbLoc.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cmbLoc.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cve_Localidades", "cve_Localidades", 143, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cveMunicipios_Localidades", "cve Municipios_Localidades", 218, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
@@ -677,7 +694,11 @@
             this.cmbLoc.Properties.ValueMember = "cve_Localidades";
             this.cmbLoc.Size = new System.Drawing.Size(214, 22);
             this.cmbLoc.TabIndex = 32;
-            this.cmbLoc.EditValueChanged += new System.EventHandler(this.cmbLoc_EditValueChanged);
+            this.cmbLoc.Leave += new System.EventHandler(this.cmbLoc_Leave);
+            // 
+            // bsLoc
+            // 
+            this.bsLoc.DataSource = typeof(SolicitantesBecas.Models.strLoc);
             // 
             // cmbCol
             // 
@@ -692,6 +713,7 @@
             this.cmbCol.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cmbCol.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbCol.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cmbCol.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cve_Colonias", "cve_Colonias", 119, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cveLocalidad_Colonias", "cve Localidad_Colonias", 186, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
@@ -705,7 +727,11 @@
             this.cmbCol.Properties.ValueMember = "cve_Colonias";
             this.cmbCol.Size = new System.Drawing.Size(214, 22);
             this.cmbCol.TabIndex = 33;
-            this.cmbCol.EditValueChanged += new System.EventHandler(this.cmbCol_EditValueChanged);
+            this.cmbCol.Leave += new System.EventHandler(this.cmbCol_Leave);
+            // 
+            // bsCol
+            // 
+            this.bsCol.DataSource = typeof(SolicitantesBecas.Models.strCol);
             // 
             // labelControl15
             // 
@@ -756,6 +782,7 @@
             this.cmbCalle.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cmbCalle.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbCalle.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cmbCalle.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cve_Calles", "cve_Calles", 103, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cveColonias_Calles", "cve Colonias_Calles", 162, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
@@ -768,6 +795,10 @@
             this.cmbCalle.Properties.ValueMember = "cve_Calles";
             this.cmbCalle.Size = new System.Drawing.Size(434, 22);
             this.cmbCalle.TabIndex = 34;
+            // 
+            // bsCall
+            // 
+            this.bsCall.DataSource = typeof(SolicitantesBecas.Models.strCall);
             // 
             // labelControl18
             // 
@@ -793,6 +824,7 @@
             this.txtNumExt.Properties.Appearance.Options.UseBackColor = true;
             this.txtNumExt.Properties.Appearance.Options.UseFont = true;
             this.txtNumExt.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtNumExt.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumExt.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
             this.txtNumExt.Properties.Mask.BeepOnError = true;
             this.txtNumExt.Properties.Mask.EditMask = "9999";
@@ -815,6 +847,7 @@
             this.txtNumInt.Properties.Appearance.Options.UseBackColor = true;
             this.txtNumInt.Properties.Appearance.Options.UseFont = true;
             this.txtNumInt.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtNumInt.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumInt.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
             this.txtNumInt.Properties.Mask.BeepOnError = true;
             this.txtNumInt.Properties.Mask.EditMask = "99";
@@ -837,6 +870,7 @@
             this.txtLet.Properties.Appearance.Options.UseBackColor = true;
             this.txtLet.Properties.Appearance.Options.UseFont = true;
             this.txtLet.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtLet.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLet.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
             this.txtLet.Properties.Mask.BeepOnError = true;
             this.txtLet.Properties.Mask.IgnoreMaskBlank = false;
@@ -918,6 +952,7 @@
             this.txtDomDesc.Properties.Appearance.Options.UseBackColor = true;
             this.txtDomDesc.Properties.Appearance.Options.UseFont = true;
             this.txtDomDesc.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtDomDesc.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDomDesc.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
             this.txtDomDesc.Properties.Mask.BeepOnError = true;
             this.txtDomDesc.Properties.Mask.IgnoreMaskBlank = false;
@@ -969,7 +1004,7 @@
             this.btnLista.Location = new System.Drawing.Point(561, 683);
             this.btnLista.Name = "btnLista";
             this.btnLista.Size = new System.Drawing.Size(22, 22);
-            this.btnLista.TabIndex = 54;
+            this.btnLista.TabIndex = 42;
             this.toolTip.SetTitle(this.btnLista, "Registros");
             this.toolTip.SetToolTip(this.btnLista, "Click para mostrar lista de registros capturados...");
             this.toolTip.SetToolTipIconType(this.btnLista, DevExpress.Utils.ToolTipIconType.Information);
@@ -991,11 +1026,12 @@
             this.btnLimpiar.Location = new System.Drawing.Point(561, 655);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(22, 22);
-            this.btnLimpiar.TabIndex = 53;
+            this.btnLimpiar.TabIndex = 41;
             this.toolTip.SetTitle(this.btnLimpiar, "Limpiar");
             this.toolTip.SetToolTip(this.btnLimpiar, "Click para limpiar formulario de captura...");
             this.toolTip.SetToolTipIconType(this.btnLimpiar, DevExpress.Utils.ToolTipIconType.Information);
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnGuardar
             // 
@@ -1013,7 +1049,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(496, 654);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(54, 54);
-            this.btnGuardar.TabIndex = 51;
+            this.btnGuardar.TabIndex = 40;
             this.toolTip.SetTitle(this.btnGuardar, "Guardar");
             this.toolTip.SetToolTip(this.btnGuardar, "Click para guardar la información capturada...");
             this.toolTip.SetToolTipIconType(this.btnGuardar, DevExpress.Utils.ToolTipIconType.Information);
@@ -1036,7 +1072,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(617, 655);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(54, 54);
-            this.btnCerrar.TabIndex = 50;
+            this.btnCerrar.TabIndex = 44;
             this.toolTip.SetTitle(this.btnCerrar, "Cerrar");
             this.toolTip.SetToolTip(this.btnCerrar, "Click para cerrar formulario de captura...");
             this.toolTip.SetToolTipIconType(this.btnCerrar, DevExpress.Utils.ToolTipIconType.Information);
@@ -1060,6 +1096,7 @@
             this.btnBucarCURP.Name = "btnBucarCURP";
             this.btnBucarCURP.Size = new System.Drawing.Size(38, 38);
             this.btnBucarCURP.TabIndex = 1;
+            this.btnBucarCURP.TabStop = false;
             this.toolTip.SetTitle(this.btnBucarCURP, "Buscar");
             this.toolTip.SetToolTip(this.btnBucarCURP, "Click para buscar los datos de la CURP...");
             this.toolTip.SetToolTipIconType(this.btnBucarCURP, DevExpress.Utils.ToolTipIconType.Information);
@@ -1082,11 +1119,12 @@
             this.btnCambiarUsuario.Location = new System.Drawing.Point(389, 650);
             this.btnCambiarUsuario.Name = "btnCambiarUsuario";
             this.btnCambiarUsuario.Size = new System.Drawing.Size(22, 22);
-            this.btnCambiarUsuario.TabIndex = 52;
+            this.btnCambiarUsuario.TabIndex = 43;
             this.toolTip.SetTitle(this.btnCambiarUsuario, "Cambiar usuario");
             this.toolTip.SetToolTip(this.btnCambiarUsuario, "Click para cambiar de usuario...");
             this.toolTip.SetToolTipIconType(this.btnCambiarUsuario, DevExpress.Utils.ToolTipIconType.Information);
             this.btnCambiarUsuario.UseVisualStyleBackColor = false;
+            this.btnCambiarUsuario.Click += new System.EventHandler(this.btnCambiarUsuario_Click);
             // 
             // cmbEscuelas
             // 
@@ -1108,14 +1146,20 @@
             this.cmbEscuelas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.cmbEscuelas.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.cmbEscuelas.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cmbEscuelas.Properties.DataSource = this.bsPlanteles;
             this.cmbEscuelas.Properties.DisplayMember = "plantel";
             this.cmbEscuelas.Properties.NullText = "Seleccionar centro de estudios";
             this.cmbEscuelas.Properties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.Simple;
+            this.cmbEscuelas.Properties.PopupFormMinSize = new System.Drawing.Size(650, 0);
             this.cmbEscuelas.Properties.ValueMember = "id";
             this.cmbEscuelas.Properties.View = this.searchLookUpEdit1View;
             this.cmbEscuelas.Size = new System.Drawing.Size(655, 22);
-            this.cmbEscuelas.TabIndex = 55;
+            this.cmbEscuelas.TabIndex = 39;
+            // 
+            // bsPlanteles
+            // 
+            this.bsPlanteles.DataSource = typeof(SolicitantesBecas.Models.strCaEscuelas);
             // 
             // searchLookUpEdit1View
             // 
@@ -1132,31 +1176,39 @@
             // 
             // colmunicipio
             // 
+            this.colmunicipio.Caption = "Municipio";
             this.colmunicipio.FieldName = "municipio";
             this.colmunicipio.Name = "colmunicipio";
             this.colmunicipio.Visible = true;
             this.colmunicipio.VisibleIndex = 0;
+            this.colmunicipio.Width = 90;
             // 
             // colinstitucion
             // 
+            this.colinstitucion.Caption = "Institución";
             this.colinstitucion.FieldName = "institucion";
             this.colinstitucion.Name = "colinstitucion";
             this.colinstitucion.Visible = true;
             this.colinstitucion.VisibleIndex = 1;
+            this.colinstitucion.Width = 130;
             // 
             // colnivel
             // 
+            this.colnivel.Caption = "Nivel";
             this.colnivel.FieldName = "nivel";
             this.colnivel.Name = "colnivel";
             this.colnivel.Visible = true;
             this.colnivel.VisibleIndex = 2;
+            this.colnivel.Width = 100;
             // 
             // colplantel
             // 
+            this.colplantel.Caption = "Plantel";
             this.colplantel.FieldName = "plantel";
             this.colplantel.Name = "colplantel";
             this.colplantel.Visible = true;
             this.colplantel.VisibleIndex = 3;
+            this.colplantel.Width = 150;
             // 
             // pnlProc
             // 
@@ -1205,28 +1257,9 @@
             // 
             this.dxErrorProvider.ContainerControl = this;
             // 
-            // bsPlanteles
-            // 
-            this.bsPlanteles.DataSource = typeof(SolicitantesBecas.Models.strCaEscuelas);
-            // 
-            // bsCall
-            // 
-            this.bsCall.DataSource = typeof(SolicitantesBecas.Models.strCall);
-            // 
-            // bsCol
-            // 
-            this.bsCol.DataSource = typeof(SolicitantesBecas.Models.strCol);
-            // 
-            // bsLoc
-            // 
-            this.bsLoc.DataSource = typeof(SolicitantesBecas.Models.strLoc);
-            // 
-            // bsMpios
-            // 
-            this.bsMpios.DataSource = typeof(SolicitantesBecas.Models.strMpios);
-            // 
             // frmMain
             // 
+            this.AcceptButton = this.btnGuardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
@@ -1289,7 +1322,6 @@
             this.MinimumSize = new System.Drawing.Size(690, 749);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Usuario seleccionado - Formulario de captura de solicitantes";
             ((System.ComponentModel.ISupportInitialize)(this.txtCURP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
@@ -1303,26 +1335,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAp2Madre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAp1Madre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbMpio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMpios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbLoc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsLoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCol.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCalle.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCall)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumExt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumInt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDomDesc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbEscuelas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
             this.pnlProc.ResumeLayout(false);
             this.pnlProc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCall)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCol)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsLoc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMpios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -12,7 +12,9 @@ namespace SolicitantesBecas
 {
     public partial class frmUsuario : Form
     {
+        public Boolean errorInit = false;
         public int? idUsuario = null;
+        public string usuario = "";
         public Boolean close = false;
 
         public frmUsuario()
@@ -23,6 +25,7 @@ namespace SolicitantesBecas
                 MessageBox.Show(SolicitantesBecas.Properties.Settings.Default.errGeneral + " " + Environment.NewLine +
                                 SolicitantesBecas.Properties.Settings.Default.errBD + " " + Environment.NewLine +
                                 SolicitantesBecas.Properties.Settings.Default.errAdmin, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorInit = true;
             }
         }
         
@@ -37,6 +40,8 @@ namespace SolicitantesBecas
             try
             {
                 idUsuario = (int)cmbUsuarios.EditValue;
+                usuario = cmbUsuarios.Text;
+
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
             }
             catch (Exception)
@@ -50,6 +55,11 @@ namespace SolicitantesBecas
             if (close == false) {                
                 if (idUsuario == null) e.Cancel = true;
             }
+        }
+
+        private void frmUsuario_Load(object sender, EventArgs e)
+        {
+            if (errorInit) button1_Click(null,null);
         }
 
     }

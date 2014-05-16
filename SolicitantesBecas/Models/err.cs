@@ -22,6 +22,7 @@ namespace SolicitantesBecas.Models
         }
 
         public static void sendEmail() {
+            if (!SolicitantesBecas.Properties.Settings.Default.sendEmailErrors) return;
             try
             {
                 MailMessage mail = new MailMessage();

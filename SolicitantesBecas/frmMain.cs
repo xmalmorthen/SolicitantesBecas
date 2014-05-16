@@ -12,17 +12,23 @@ namespace SolicitantesBecas
 {
     public partial class frmMain : Form
     {
-        public int? idUsuario = null;
-        private int? idMpio = null;
-        private int? idLoc = null;
-        private int? idCol = null;
-        private int? idCall = null;
+        private int? idUsuario {get; set;}
+        private string usuario {get; set;}
+        private string idMpio = null;
+        private string idLoc = null;
+        private string idCol = null;
+        private string idCall = null;
         private int? idEscuela = null;
 
-        public frmMain()
+        public frmMain(int? idUsuario, string usuario)
         {
             InitializeComponent();
-            
+
+            this.idUsuario = idUsuario;
+            this.usuario = usuario;
+
+            estableceTituloVentana();
+
             Boolean error = false;
             bsMpios.DataSource = getData.getMpios(ref error,6);
 
@@ -39,53 +45,74 @@ namespace SolicitantesBecas
             Close();
         }
 
+        Boolean CURPValidada = false;
         private Boolean validateForm() {
             dxErrorProvider.ClearErrors();
 
             if (request == null)
             {
                 dxErrorProvider.SetError(txtCURP, "Falta indicar la CURP...");
+                CURPValidada = false;
             }
             else
             {
                 if (request.Response.statusOper == "NO EXITOSO")
                 {
                     dxErrorProvider.SetError(txtCURP, "No se encontró información de la CURP...");
+                    CURPValidada = false;
+                }
+                else 
+                {
+                    if (!CURPValidada)
+                    {
+                        try
+                        {
+                            if ((Boolean)getData.isCURPInserted((int)idUsuario, request.CURP))
+                            {
+                                dxErrorProvider.SetError(txtCURP, "La CURP ya se encuentra registrada, favor de revisar...");
+                                CURPValidada = false;
+                            }
+                            else
+                            {
+                                CURPValidada = true;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Proc(false);
+                            MessageBox.Show(SolicitantesBecas.Properties.Settings.Default.errGeneral + " " + Environment.NewLine +
+                                            SolicitantesBecas.Properties.Settings.Default.errWSSolicitantesBecas + " " + Environment.NewLine +
+                                            "Es necesario revisar su conexión a internet e intentarlo de nuevo, si el problema persiste " +
+                                            SolicitantesBecas.Properties.Settings.Default.errAdmin, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            dxErrorProvider.SetError(txtCURP, "No fué posible validar duplicidad de la CURP, favor de intentarlo de nuevo...", DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning);
+                            CURPValidada = false;
+                        }
+                    }
                 }
             }
 
-            try
+            if (cmbMpio.EditValue != null)
             {
-                idMpio = (int)cmbMpio.EditValue;
+                idMpio = (string)cmbMpio.EditValue;
             }
-            catch (Exception)
+            else
             {
                 dxErrorProvider.SetError(cmbMpio, "Debe seleccionar el municipio...");
             }
 
-            try
+            if (cmbLoc.EditValue != null)
             {
-                idLoc = (int)cmbLoc.EditValue;
+                idLoc = (string)cmbLoc.EditValue;
             }
-            catch (Exception)
+            else
             {
                 dxErrorProvider.SetError(cmbLoc, "Debe seleccionar el municipio...");
             }
 
-            try
-            {
-                idCol = (int)cmbCol.EditValue;
-            }
-            catch (Exception)
-            {}
-
-            try
-            {
-                idCall = (int)cmbCalle.EditValue;
-            }
-            catch (Exception)
-            { }
-
+            
+            idCol = (string)cmbCol.EditValue;            
+            idCall = (string)cmbCalle.EditValue;
+            
             if (idCol == null)
             {
                 if (idCall == null)
@@ -126,53 +153,111 @@ namespace SolicitantesBecas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (!validateForm()) return;
+            Proc();
+            Application.DoEvents();
 
+            if (validateForm())
+            {
 
-            strMaSolicitantes dataToSave = new strMaSolicitantes();
+                try
+                {
+                    strMaSolicitantes dataToSave = new strMaSolicitantes();
 
-            dataToSave.curp = txtCURP.Text;
-            dataToSave.primerApellido = request.Apellido1;
-            dataToSave.segundoApellido = request.Apellido2;
-            dataToSave.nombres = request.Nombre;
-            dataToSave.correo = txtEmail.Text;
-            dataToSave.telCel = txtCel.Text;
-            dataToSave.telPart = txtTel.Text;
+                    dataToSave.curp = txtCURP.Text.Trim();
+                    dataToSave.primerApellido = request.Apellido1;
+                    dataToSave.segundoApellido = request.Apellido2;
+                    dataToSave.nombres = request.Nombre;
+                    dataToSave.edad = request.Edad;
+                    dataToSave.sexo = request.Sexo;
+                    dataToSave.correo = txtEmail.Text.Trim();
+                    dataToSave.telCel = txtCel.Text.Trim();
+                    dataToSave.telPart = txtTel.Text.Trim();
 
-            dataToSave.papaPrimerApellido = txtAp1Padre.Text;
-            dataToSave.papaSegundoApellido = txtAp2Padre.Text;
-            dataToSave.papaNombres = txtNomPadre.Text;
+                    dataToSave.papaPrimerApellido = txtAp1Padre.Text.Trim();
+                    dataToSave.papaSegundoApellido = txtAp2Padre.Text.Trim();
+                    dataToSave.papaNombres = txtNomPadre.Text.Trim();
 
-            dataToSave.mamaPrimerApellido = txtAp1Madre.Text;
-            dataToSave.mamaSegundoApellido = txtAp2Madre.Text;
-            dataToSave.mamaNombres = txtNomMadre.Text;
+                    dataToSave.mamaPrimerApellido = txtAp1Madre.Text.Trim();
+                    dataToSave.mamaSegundoApellido = txtAp2Madre.Text.Trim();
+                    dataToSave.mamaNombres = txtNomMadre.Text.Trim();
 
-            dataToSave.domIdMpio = "";
-            dataToSave.domIdLocalidad = "";
-            dataToSave.domIdColonia = "";
-            dataToSave.domIdCalle = "";
-            dataToSave.domNumExt = 0;
-            dataToSave.domNumInt = 0;
-            dataToSave.domLetra = "";
-            dataToSave.domDesc = "";
+                    dataToSave.domIdMpio = idMpio;
+                    dataToSave.domMpio = cmbMpio.Text.Trim();
+                    dataToSave.domIdLocalidad = idLoc;
+                    dataToSave.domLocalidad = cmbLoc.Text.Trim();
+                    dataToSave.domIdColonia = idCol;
+                    dataToSave.domColonia = cmbCol.Text.Trim();
+                    dataToSave.domIdCalle = idCall;
+                    dataToSave.domCalle = cmbCalle.Text.Trim();
+                    if (!string.IsNullOrEmpty(txtNumExt.Text.Trim())) {
+                        dataToSave.domNumExt = Convert.ToInt32(txtNumExt.Text.Trim());
+                    } else {
+                        dataToSave.domNumExt = null;
+                    }
+                    if (!string.IsNullOrEmpty(txtNumInt.Text.Trim())) {
+                        dataToSave.domNumInt = Convert.ToInt32(txtNumInt.Text.Trim());
+                    } else {
+                        dataToSave.domNumInt = null;
+                    }
+                    dataToSave.domLetra = txtLet.Text.Trim();
+                    dataToSave.domDesc = txtDomDesc.Text.Trim();
 
-            dataToSave.idEscuela = (int)idEscuela;
-            dataToSave.idUsuario = (int)idUsuario;
+                    dataToSave.idEscuela = (int)this.idEscuela;
+                    dataToSave.idUsuario = (int)this.idUsuario;
+
+                    string error = null;
+                    Boolean? respuesta = setData.inserSolicitud(dataToSave,ref error);
+
+                    if (respuesta == null)
+                    {
+                        if (!string.IsNullOrEmpty(error)) {
+                            string msg = "La CURP ya se encuentra registrada, favor de revisar...";
+                            dxErrorProvider.SetError(txtCURP, msg);
+                            CURPValidada = false;
+                            MessageBox.Show(msg, "Guardar registro", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        } else {
+                            throw new Exception("Ocurrió un problema al intentar conectar con el servicio web...");
+                        }
+                    }
+                    else if ((Boolean)respuesta == false)
+                    {
+                        MessageBox.Show("No fué posible guardar el registro, favor de intentarlo de nuevo", "Guardar registro", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registro guardado con EXITO", "Guardar registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limpiarFormulario();
+                    }
+
+                }
+                catch (Exception err)
+                {
+                    Proc(false);
+                    MessageBox.Show(SolicitantesBecas.Properties.Settings.Default.errGeneral + " " + Environment.NewLine +
+                                    SolicitantesBecas.Properties.Settings.Default.errWSSolicitantesBecas + " " + Environment.NewLine +
+                                    "Es necesario revisar su conexión a internet e intentarlo de nuevo, si el problema persiste " + Environment.NewLine +
+                                    err.Message + Environment.NewLine +
+                                    SolicitantesBecas.Properties.Settings.Default.errAdmin, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+            Application.DoEvents();
+            Proc(false);
         }
 
         strCURP request = null;
-        private void btnBucarCURP_Click(object sender, EventArgs e)
-        {
+        private void buscarCURP() {
             string CURP = txtCURP.Text.Trim('_');
-            if (string.IsNullOrEmpty(CURP)) 
+            if (string.IsNullOrEmpty(CURP))
             {
                 //MessageBox.Show("Favor de introducir la CURP a buscar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 //txtCURP.Focus();
                 return;
             }
 
-            if (request != null) {
-                if (request.CURP == txtCURP.Text) return;
+            if (request != null)
+            {
+                if (request.CURP == CURP) return;
             }
 
 
@@ -182,12 +267,13 @@ namespace SolicitantesBecas
             Proc();
             Application.DoEvents();
 
-            request = getData.getInfoCURP(txtCURP.Text);
-            
+            request = getData.getInfoCURP(CURP);
+
             Application.DoEvents();
             Proc(false);
 
-            if (request == null) {
+            if (request == null)
+            {
                 MessageBox.Show(SolicitantesBecas.Properties.Settings.Default.errGeneral + " " + Environment.NewLine +
                                 SolicitantesBecas.Properties.Settings.Default.errWSCURP + " " + Environment.NewLine +
                                 SolicitantesBecas.Properties.Settings.Default.errAdmin, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -201,39 +287,119 @@ namespace SolicitantesBecas
                 txtSexoEdad.Text = request.SexoCompleto + " - " + request.Edad.ToString() + " Años cumplidos";
                 txtSexoEdad.ForeColor = Color.DimGray;
             }
-            else {
+            else
+            {                
                 txtNombre.Text = "";
                 txtSexoEdad.Text = request.Response.message;
                 txtSexoEdad.ForeColor = Color.Red;
+                dxErrorProvider.SetError(txtCURP, request.Response.message + "...");
                 MessageBox.Show(request.Response.message, "Servicio de CURP", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }            
+            }
+        }
+        
+        private void btnBucarCURP_Click(object sender, EventArgs e)
+        {
+            dxErrorProvider.ClearErrors();
+            string CURP = txtCURP.Text.Trim('_');
+            if (string.IsNullOrEmpty(CURP))
+            {
+                dxErrorProvider.SetError(txtCURP, "Falta indicar la CURP...");
+                txtCURP.Focus();
+                return;
+            }
+            buscarCURP();
         }   
 
         private void txtCURP_Validated(object sender, EventArgs e)
         {
-           btnBucarCURP_Click(null, null);
+            dxErrorProvider.ClearErrors();
+            buscarCURP();           
         }
 
-        private void cmbMpio_EditValueChanged(object sender, EventArgs e)
+        private void btnCambiarUsuario_Click(object sender, EventArgs e)
+        {
+            frmUsuario frmusuario = new frmUsuario();
+            DialogResult loginresult = frmusuario.ShowDialog();
+
+            if (loginresult == DialogResult.OK)
+            {
+                this.idUsuario = frmusuario.idUsuario;
+                this.usuario = frmusuario.usuario;
+
+                frmusuario.Dispose();
+                frmusuario = null;
+
+                estableceTituloVentana();
+            }
+        }
+
+        private void estableceTituloVentana() {
+            this.Text = "Usuario: " + usuario + " - " + SolicitantesBecas.Properties.Settings.Default.tituloVentana;
+        }
+
+        private void limpiarFormulario() {
+            Proc();
+            Application.DoEvents();
+
+            dxErrorProvider.ClearErrors();
+            txtCURP.Text = "";
+            txtEmail.Text = "";
+            txtCel.Text = "";
+            txtTel.Text = "";
+            txtAp1Padre.Text = "";
+            txtAp2Padre.Text = "";
+            txtNomPadre.Text = "";
+            txtAp1Madre.Text = "";
+            txtAp2Madre.Text = "";
+            txtNomMadre.Text = "";
+            cmbMpio.EditValue = null;
+            cmbLoc.EditValue = null;
+            cmbCol.EditValue = null;
+            cmbCalle.EditValue = null;
+            txtNumExt.Text = "";
+            txtNumInt.Text = "";
+            txtLet.Text = "";
+            txtDomDesc.Text = "";
+            cmbEscuelas.EditValue = null;
+
+            bsCall.Clear();
+            bsCol.Clear();
+            bsLoc.Clear();
+
+            Application.DoEvents();
+            Proc(false);
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Limpoar formulario...", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+            {
+                limpiarFormulario();
+            }
+        }
+
+        private void cmbMpio_Leave(object sender, EventArgs e)
         {
             try
             {
                 Proc();
                 Application.DoEvents();
 
-                string idMpio = (string)cmbMpio.EditValue;
-                if (idMpio == null) return;
+                if (idMpio != (string)cmbMpio.EditValue) {
+                    idMpio = (string)cmbMpio.EditValue;
+                    if (idMpio != null)
+                    {
+                        Boolean error = false;
+                        bsLoc.DataSource = getData.getLoc(idMpio, ref error);
+                        if (error) throw new Exception("No se pudo obtener la lista de Colonias");
 
-                Boolean error = false;
-                bsLoc.DataSource = getData.getLoc(idMpio, ref error);
-                if (error) throw new Exception("No se pudo obtener la lista de Colonias");
-
-                cmbLoc.EditValue = null;
-                bsCol.Clear();
-                cmbCol.EditValue = null;
-                bsCall.Clear();
-                cmbCalle.EditValue = null;
-                
+                        cmbLoc.EditValue = null;
+                        bsCol.Clear();
+                        cmbCol.EditValue = null;
+                        bsCall.Clear();
+                        cmbCalle.EditValue = null;
+                    }
+                }
 
                 Application.DoEvents();
                 Proc(false);
@@ -243,29 +409,33 @@ namespace SolicitantesBecas
                 Proc(false);
                 MessageBox.Show(SolicitantesBecas.Properties.Settings.Default.errGeneral + " " + Environment.NewLine +
                                 SolicitantesBecas.Properties.Settings.Default.errWSFwrkDomicilios + " " + Environment.NewLine +
-                                "Es necesario revisar su conexión a internet, si el problema persiste " +
+                                "Es necesario revisar su conexión a internet e intentarlo de nuevo, si el problema persiste " +
                                 SolicitantesBecas.Properties.Settings.Default.errAdmin, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void cmbLoc_EditValueChanged(object sender, EventArgs e)
+        private void cmbLoc_Leave(object sender, EventArgs e)
         {
             try
             {
                 Proc();
                 Application.DoEvents();
 
-                string idLoc = (string)cmbLoc.EditValue;
-                if (idLoc == null) return;
+                if (idLoc != (string)cmbLoc.EditValue)
+                {
+                    idLoc = (string)cmbLoc.EditValue;
+                    if (idLoc != null)
+                    {
 
-                Boolean error = false;
-                bsCol.DataSource = getData.getCol(idLoc, ref error);
-                if (error) throw new Exception("No se pudo obtener la lista de Colonias");
+                        Boolean error = false;
+                        bsCol.DataSource = getData.getCol(idLoc, ref error);
+                        if (error) throw new Exception("No se pudo obtener la lista de Colonias");
 
-                cmbCol.EditValue = null;
-                bsCall.Clear();
-                cmbCalle.EditValue = null;
-
+                        cmbCol.EditValue = null;
+                        bsCall.Clear();
+                        cmbCalle.EditValue = null;
+                    }
+                }
                 Application.DoEvents();
                 Proc(false);
             }
@@ -274,27 +444,30 @@ namespace SolicitantesBecas
                 Proc(false);
                 MessageBox.Show(SolicitantesBecas.Properties.Settings.Default.errGeneral + " " + Environment.NewLine +
                                 SolicitantesBecas.Properties.Settings.Default.errWSFwrkDomicilios + " " + Environment.NewLine +
-                                "Es necesario revisar su conexión a internet, si el problema persiste " +
+                                "Es necesario revisar su conexión a internet e intentarlo de nuevo, si el problema persiste " +
                                 SolicitantesBecas.Properties.Settings.Default.errAdmin, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void cmbCol_EditValueChanged(object sender, EventArgs e)
+        private void cmbCol_Leave(object sender, EventArgs e)
         {
             try
             {
                 Proc();
                 Application.DoEvents();
 
-                string idCol = (string)cmbCol.EditValue;
-                if (idCol == null) return;
+                if (idCol != (string)cmbCol.EditValue)
+                {
+                    idCol = (string)cmbCol.EditValue;
+                    if (idCol != null)
+                    {
+                        Boolean error = false;
+                        bsCall.DataSource = getData.getCall(idCol, ref error);
+                        if (error) throw new Exception("No se pudo obtener la lista de Colonias");
 
-                Boolean error = false;
-                bsCall.DataSource = getData.getCall(idCol, ref error);
-                if (error) throw new Exception("No se pudo obtener la lista de Colonias");
-
-                cmbCalle.EditValue = null;
-
+                        cmbCalle.EditValue = null;
+                    }
+                }
                 Application.DoEvents();
                 Proc(false);
             }
@@ -303,7 +476,7 @@ namespace SolicitantesBecas
                 Proc(false);
                 MessageBox.Show(SolicitantesBecas.Properties.Settings.Default.errGeneral + " " + Environment.NewLine +
                                 SolicitantesBecas.Properties.Settings.Default.errWSFwrkDomicilios + " " + Environment.NewLine +
-                                "Es necesario revisar su conexión a internet, si el problema persiste " +
+                                "Es necesario revisar su conexión a internet e intentarlo de nuevo, si el problema persiste " +
                                 SolicitantesBecas.Properties.Settings.Default.errAdmin, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
