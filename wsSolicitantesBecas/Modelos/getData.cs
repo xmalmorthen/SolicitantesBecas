@@ -61,7 +61,7 @@ namespace wsSolicitantesBecas.Modelos
             }
         }
 
-        public static StcisInserted isInserted(int idUsuario, string CURP)
+        public static StcisInserted isInserted(int idUsuario, string CURP, int idEscuela)
         {
             BdCapturaBECASDataContext bd = new BdCapturaBECASDataContext();
 
@@ -71,7 +71,7 @@ namespace wsSolicitantesBecas.Modelos
             
             try
             {
-                maSolicitantes query = bd.maSolicitantes.SingleOrDefault(e => e.curp == CURP && e.idUsuario == idUsuario);
+                maSolicitantes query = bd.maSolicitantes.SingleOrDefault(e => e.curp == CURP && e.idUsuario == idUsuario && e.idEscuela == idEscuela);
 
                 response.statusResponse.statusOper = true;
                 response.statusResponse.message = messages.exito;

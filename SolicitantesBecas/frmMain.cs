@@ -29,10 +29,9 @@ namespace SolicitantesBecas
 
             estableceTituloVentana();
 
-            Boolean error = false;
-            bsMpios.DataSource = getData.getMpios(ref error,6);
+            this.BackColor = Color.WhiteSmoke;
 
-            bsPlanteles.DataSource = getData.caEscuelas();
+            this.Paint += new PaintEventHandler(frmMain_Paint);
         }
 
         private void Proc(Boolean show = true) {            
@@ -48,6 +47,15 @@ namespace SolicitantesBecas
         Boolean CURPValidada = false;
         private Boolean validateForm() {
             dxErrorProvider.ClearErrors();
+
+            try
+            {
+                idEscuela = (int)cmbEscuelas.EditValue;
+            }
+            catch (Exception)
+            {
+                dxErrorProvider.SetError(cmbEscuelas, "Debe indicar el centro de estudios...");
+            }
 
             if (request == null)
             {
@@ -65,27 +73,30 @@ namespace SolicitantesBecas
                 {
                     if (!CURPValidada)
                     {
-                        try
+                        if (idEscuela != null)
                         {
-                            if ((Boolean)getData.isCURPInserted((int)idUsuario, request.CURP))
+                            try
                             {
-                                dxErrorProvider.SetError(txtCURP, "La CURP ya se encuentra registrada, favor de revisar...");
+                                if ((Boolean)getData.isCURPInserted((int)idUsuario, request.CURP, (int)idEscuela))
+                                {
+                                    dxErrorProvider.SetError(txtCURP, "La CURP ya se encuentra registrada, favor de revisar...");
+                                    CURPValidada = false;
+                                }
+                                else
+                                {
+                                    CURPValidada = true;
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                Proc(false);
+                                MessageBox.Show(SolicitantesBecas.Properties.Settings.Default.errGeneral + " " + Environment.NewLine +
+                                                SolicitantesBecas.Properties.Settings.Default.errWSSolicitantesBecas + " " + Environment.NewLine +
+                                                "Es necesario revisar su conexión a internet e intentarlo de nuevo, si el problema persiste " +
+                                                SolicitantesBecas.Properties.Settings.Default.errAdmin, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                dxErrorProvider.SetError(txtCURP, "No fué posible validar duplicidad de la CURP, favor de intentarlo de nuevo...", DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning);
                                 CURPValidada = false;
                             }
-                            else
-                            {
-                                CURPValidada = true;
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Proc(false);
-                            MessageBox.Show(SolicitantesBecas.Properties.Settings.Default.errGeneral + " " + Environment.NewLine +
-                                            SolicitantesBecas.Properties.Settings.Default.errWSSolicitantesBecas + " " + Environment.NewLine +
-                                            "Es necesario revisar su conexión a internet e intentarlo de nuevo, si el problema persiste " +
-                                            SolicitantesBecas.Properties.Settings.Default.errAdmin, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            dxErrorProvider.SetError(txtCURP, "No fué posible validar duplicidad de la CURP, favor de intentarlo de nuevo...", DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning);
-                            CURPValidada = false;
                         }
                     }
                 }
@@ -137,16 +148,7 @@ namespace SolicitantesBecas
                         dxErrorProvider.SetError(txtNumExt, "Debe indicar el número exterior...");
                     }                
                 }
-            }
-
-            try
-            {
-                idEscuela = (int)cmbEscuelas.EditValue;
-            }
-            catch (Exception)
-            {
-                dxErrorProvider.SetError(cmbEscuelas, "Debe indicar el centro de estudios...");
-            }
+            }            
 
             return dxErrorProvider.GetControlsWithError().Count == 0 ? true : false;
         }
@@ -319,6 +321,7 @@ namespace SolicitantesBecas
         private void btnCambiarUsuario_Click(object sender, EventArgs e)
         {
             frmUsuario frmusuario = new frmUsuario();
+            frmusuario.StartPosition = FormStartPosition.CenterParent;
             DialogResult loginresult = frmusuario.ShowDialog();
 
             if (loginresult == DialogResult.OK)
@@ -365,6 +368,14 @@ namespace SolicitantesBecas
             bsCall.Clear();
             bsCol.Clear();
             bsLoc.Clear();
+
+            idMpio = null;
+            idLoc = null;
+            idCol = null;
+            idCall = null;
+            idEscuela = null;
+            CURPValidada = false;
+            request = null;
 
             Application.DoEvents();
             Proc(false);
@@ -492,6 +503,28 @@ namespace SolicitantesBecas
             Proc(false);
 
             FrmRegistros.ShowDialog(this);
+        }
+
+        private void frmMain_Paint(object sender, PaintEventArgs e)
+        {
+            this.Paint -= new PaintEventHandler(frmMain_Paint);
+
+            Proc();
+            Application.DoEvents();
+
+            Boolean error = false;
+            bsMpios.DataSource = getData.getMpios(ref error, 6);
+            bsPlanteles.DataSource = getData.caEscuelas();
+            
+            Application.DoEvents();
+            Proc(false);
+
+            lineShape1.Refresh();
+            lineShape2.Refresh();
+            lineShape3.Refresh();
+            lineShape4.Refresh();
+            rectangleShape1.Refresh();
+            rectangleShape2.Refresh();
         }
 
     }

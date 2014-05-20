@@ -120,13 +120,13 @@ namespace SolicitantesBecas.Models
             }
         }
 
-        public static Boolean? isCURPInserted(int idUsuario, string CURP)
+        public static Boolean? isCURPInserted(int idUsuario, string CURP, int idEscuela)
         {
             try
             {
                 servicio.Url = SolicitantesBecas.Properties.Settings.Default.wsSolicitantesBecas;
 
-                var request = servicio.verificaCURPInsertado(idUsuario,CURP);
+                var request = servicio.verificaCURPInsertado(idUsuario, CURP, idEscuela);
 
                 if (request.statusResponse.statusOper == false)
                 {

@@ -73,9 +73,27 @@
             // 
             this.gridView1.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.Transparent;
             this.gridView1.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("Courier New", 10F);
+            this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView1.Appearance.GroupFooter.Font = new System.Drawing.Font("Courier New", 10F);
+            this.gridView1.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridView1.Appearance.GroupPanel.Font = new System.Drawing.Font("Courier New", 10F);
+            this.gridView1.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
+            this.gridView1.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView1.Appearance.GroupPanel.Options.UseForeColor = true;
+            this.gridView1.Appearance.GroupRow.Font = new System.Drawing.Font("Courier New", 10F);
+            this.gridView1.Appearance.GroupRow.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Bold);
+            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gridView1.Appearance.Preview.Font = new System.Drawing.Font("Courier New", 10F);
+            this.gridView1.Appearance.Preview.Options.UseFont = true;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Courier New", 10F);
+            this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Appearance.ViewCaption.BackColor = System.Drawing.Color.Transparent;
             this.gridView1.Appearance.ViewCaption.Options.UseBackColor = true;
-            this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colcurp,
             this.colprimerApellido,
@@ -88,9 +106,14 @@
             this.colplantel,
             this.colfIns});
             this.gridView1.GridControl = this.gdLista;
+            this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.PaintStyleName = "Flat";
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colfIns, DevExpress.Data.ColumnSortOrder.Descending)});
+            this.gridView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             // 
             // colcurp
             // 
@@ -99,6 +122,7 @@
             this.colcurp.Name = "colcurp";
             this.colcurp.Visible = true;
             this.colcurp.VisibleIndex = 0;
+            this.colcurp.Width = 96;
             // 
             // colprimerApellido
             // 
@@ -107,6 +131,7 @@
             this.colprimerApellido.Name = "colprimerApellido";
             this.colprimerApellido.Visible = true;
             this.colprimerApellido.VisibleIndex = 1;
+            this.colprimerApellido.Width = 134;
             // 
             // colsegundoApellido
             // 
@@ -115,6 +140,7 @@
             this.colsegundoApellido.Name = "colsegundoApellido";
             this.colsegundoApellido.Visible = true;
             this.colsegundoApellido.VisibleIndex = 2;
+            this.colsegundoApellido.Width = 142;
             // 
             // colnombres
             // 
@@ -123,6 +149,7 @@
             this.colnombres.Name = "colnombres";
             this.colnombres.Visible = true;
             this.colnombres.VisibleIndex = 3;
+            this.colnombres.Width = 153;
             // 
             // colidEscuela
             // 
@@ -141,6 +168,7 @@
             this.colinstitucion.Name = "colinstitucion";
             this.colinstitucion.Visible = true;
             this.colinstitucion.VisibleIndex = 4;
+            this.colinstitucion.Width = 236;
             // 
             // colnivel
             // 
@@ -154,6 +182,7 @@
             this.colplantel.Name = "colplantel";
             this.colplantel.Visible = true;
             this.colplantel.VisibleIndex = 5;
+            this.colplantel.Width = 174;
             // 
             // colfIns
             // 
@@ -162,6 +191,7 @@
             this.colfIns.Name = "colfIns";
             this.colfIns.Visible = true;
             this.colfIns.VisibleIndex = 6;
+            this.colfIns.Width = 169;
             // 
             // lineShape4
             // 

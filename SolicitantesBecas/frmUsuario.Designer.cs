@@ -38,9 +38,15 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.toolTip = new DevExpress.Utils.ToolTipController(this.components);
             this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.pnlProc = new System.Windows.Forms.Panel();
+            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.cmbUsuarios.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
+            this.pnlProc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbUsuarios
@@ -150,6 +156,50 @@
             // 
             this.dxErrorProvider.ContainerControl = this;
             // 
+            // pnlProc
+            // 
+            this.pnlProc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlProc.Controls.Add(this.labelControl25);
+            this.pnlProc.Controls.Add(this.labelControl24);
+            this.pnlProc.Controls.Add(this.pictureBox1);
+            this.pnlProc.Location = new System.Drawing.Point(3, 53);
+            this.pnlProc.Name = "pnlProc";
+            this.pnlProc.Size = new System.Drawing.Size(309, 59);
+            this.pnlProc.TabIndex = 60;
+            this.pnlProc.Visible = false;
+            // 
+            // labelControl25
+            // 
+            this.labelControl25.Appearance.Font = new System.Drawing.Font("Courier New", 12F);
+            this.labelControl25.Location = new System.Drawing.Point(61, 32);
+            this.labelControl25.Margin = new System.Windows.Forms.Padding(1);
+            this.labelControl25.Name = "labelControl25";
+            this.labelControl25.Size = new System.Drawing.Size(190, 18);
+            this.labelControl25.TabIndex = 59;
+            this.labelControl25.Text = "Favor de esperar...";
+            // 
+            // labelControl24
+            // 
+            this.labelControl24.Appearance.Font = new System.Drawing.Font("Courier New", 14F, System.Drawing.FontStyle.Bold);
+            this.labelControl24.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl24.Location = new System.Drawing.Point(61, 11);
+            this.labelControl24.Margin = new System.Windows.Forms.Padding(1);
+            this.labelControl24.Name = "labelControl24";
+            this.labelControl24.Size = new System.Drawing.Size(242, 22);
+            this.labelControl24.TabIndex = 58;
+            this.labelControl24.Text = "Procesando información";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SolicitantesBecas.Properties.Resources.clock;
+            this.pictureBox1.Location = new System.Drawing.Point(7, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 57;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmUsuario
             // 
             this.AcceptButton = this.btnAceptar;
@@ -157,6 +207,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(549, 111);
+            this.Controls.Add(this.pnlProc);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.cmbUsuarios);
@@ -171,9 +222,13 @@
             this.Text = "Seleccionár usuario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmUsuario_FormClosing);
             this.Load += new System.EventHandler(this.frmUsuario_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmUsuario_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.cmbUsuarios.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).EndInit();
+            this.pnlProc.ResumeLayout(false);
+            this.pnlProc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,5 +244,9 @@
         private System.Windows.Forms.BindingSource bsUsuarios;
         private DevExpress.Utils.ToolTipController toolTip;
         private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider;
+        private System.Windows.Forms.Panel pnlProc;
+        private DevExpress.XtraEditors.LabelControl labelControl25;
+        private DevExpress.XtraEditors.LabelControl labelControl24;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -20,13 +20,8 @@ namespace SolicitantesBecas
         public frmUsuario()
         {
             InitializeComponent();
-            bsUsuarios.DataSource = getData.caUsuarios();
-            if (bsUsuarios.Count == 0) {
-                MessageBox.Show(SolicitantesBecas.Properties.Settings.Default.errGeneral + " " + Environment.NewLine +
-                                SolicitantesBecas.Properties.Settings.Default.errBD + " " + Environment.NewLine +
-                                SolicitantesBecas.Properties.Settings.Default.errAdmin, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                errorInit = true;
-            }
+            this.Paint += new PaintEventHandler(frmUsuario_Paint);
+
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -60,6 +55,32 @@ namespace SolicitantesBecas
         private void frmUsuario_Load(object sender, EventArgs e)
         {
             if (errorInit) button1_Click(null,null);
+        }
+
+        private void Proc(Boolean show = true)
+        {
+            pnlProc.Visible = show;
+            this.Enabled = !show;
+        }
+
+        private void frmUsuario_Paint(object sender, PaintEventArgs e)
+        {
+            this.Paint -= new PaintEventHandler(frmUsuario_Paint);
+
+            Proc();
+            Application.DoEvents();
+
+            bsUsuarios.DataSource = getData.caUsuarios();
+            if (bsUsuarios.Count == 0)
+            {
+                MessageBox.Show(SolicitantesBecas.Properties.Settings.Default.errGeneral + " " + Environment.NewLine +
+                                SolicitantesBecas.Properties.Settings.Default.errBD + " " + Environment.NewLine +
+                                SolicitantesBecas.Properties.Settings.Default.errAdmin, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorInit = true;
+            }
+            
+            Application.DoEvents();
+            Proc(false);
         }
 
     }

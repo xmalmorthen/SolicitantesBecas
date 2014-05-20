@@ -30,9 +30,9 @@ namespace wsSolicitantesBecas
         }
 
         [WebMethod]
-        public StcisInserted verificaCURPInsertado(int idUsuario, string CURP)
+        public StcisInserted verificaCURPInsertado(int idUsuario, string CURP, int idEscuela)
         {
-            return getData.isInserted(idUsuario, CURP);
+            return getData.isInserted(idUsuario, CURP, idEscuela);
         }
 
         [WebMethod]

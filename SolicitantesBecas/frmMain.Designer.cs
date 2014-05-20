@@ -65,16 +65,12 @@
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.cmbMpio = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsMpios = new System.Windows.Forms.BindingSource(this.components);
             this.cmbLoc = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsLoc = new System.Windows.Forms.BindingSource(this.components);
             this.cmbCol = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsCol = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.cmbCalle = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsCall = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.txtNumExt = new DevExpress.XtraEditors.TextEdit();
             this.txtNumInt = new DevExpress.XtraEditors.TextEdit();
@@ -94,7 +90,6 @@
             this.btnBucarCURP = new System.Windows.Forms.Button();
             this.btnCambiarUsuario = new System.Windows.Forms.Button();
             this.cmbEscuelas = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.bsPlanteles = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmunicipio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colinstitucion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -106,6 +101,11 @@
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.bsPlanteles = new System.Windows.Forms.BindingSource(this.components);
+            this.bsCall = new System.Windows.Forms.BindingSource(this.components);
+            this.bsCol = new System.Windows.Forms.BindingSource(this.components);
+            this.bsLoc = new System.Windows.Forms.BindingSource(this.components);
+            this.bsMpios = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtCURP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
@@ -119,25 +119,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAp2Madre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAp1Madre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbMpio.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMpios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbLoc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsLoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCol.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCalle.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumExt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumInt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDomDesc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbEscuelas.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.pnlProc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCall)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCol)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsLoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMpios)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCURP
@@ -666,10 +666,6 @@
             this.cmbMpio.TabIndex = 31;
             this.cmbMpio.Leave += new System.EventHandler(this.cmbMpio_Leave);
             // 
-            // bsMpios
-            // 
-            this.bsMpios.DataSource = typeof(SolicitantesBecas.Models.strMpios);
-            // 
             // cmbLoc
             // 
             this.cmbLoc.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -695,10 +691,6 @@
             this.cmbLoc.Size = new System.Drawing.Size(214, 22);
             this.cmbLoc.TabIndex = 32;
             this.cmbLoc.Leave += new System.EventHandler(this.cmbLoc_Leave);
-            // 
-            // bsLoc
-            // 
-            this.bsLoc.DataSource = typeof(SolicitantesBecas.Models.strLoc);
             // 
             // cmbCol
             // 
@@ -728,10 +720,6 @@
             this.cmbCol.Size = new System.Drawing.Size(214, 22);
             this.cmbCol.TabIndex = 33;
             this.cmbCol.Leave += new System.EventHandler(this.cmbCol_Leave);
-            // 
-            // bsCol
-            // 
-            this.bsCol.DataSource = typeof(SolicitantesBecas.Models.strCol);
             // 
             // labelControl15
             // 
@@ -795,10 +783,6 @@
             this.cmbCalle.Properties.ValueMember = "cve_Calles";
             this.cmbCalle.Size = new System.Drawing.Size(434, 22);
             this.cmbCalle.TabIndex = 34;
-            // 
-            // bsCall
-            // 
-            this.bsCall.DataSource = typeof(SolicitantesBecas.Models.strCall);
             // 
             // labelControl18
             // 
@@ -1158,10 +1142,6 @@
             this.cmbEscuelas.Size = new System.Drawing.Size(655, 22);
             this.cmbEscuelas.TabIndex = 39;
             // 
-            // bsPlanteles
-            // 
-            this.bsPlanteles.DataSource = typeof(SolicitantesBecas.Models.strCaEscuelas);
-            // 
             // searchLookUpEdit1View
             // 
             this.searchLookUpEdit1View.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
@@ -1259,6 +1239,26 @@
             // 
             this.dxErrorProvider.ContainerControl = this;
             // 
+            // bsPlanteles
+            // 
+            this.bsPlanteles.DataSource = typeof(SolicitantesBecas.Models.strCaEscuelas);
+            // 
+            // bsCall
+            // 
+            this.bsCall.DataSource = typeof(SolicitantesBecas.Models.strCall);
+            // 
+            // bsCol
+            // 
+            this.bsCol.DataSource = typeof(SolicitantesBecas.Models.strCol);
+            // 
+            // bsLoc
+            // 
+            this.bsLoc.DataSource = typeof(SolicitantesBecas.Models.strLoc);
+            // 
+            // bsMpios
+            // 
+            this.bsMpios.DataSource = typeof(SolicitantesBecas.Models.strMpios);
+            // 
             // frmMain
             // 
             this.AcceptButton = this.btnGuardar;
@@ -1326,6 +1326,7 @@
             this.MinimumSize = new System.Drawing.Size(690, 749);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMain_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.txtCURP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
@@ -1339,26 +1340,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAp2Madre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAp1Madre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbMpio.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMpios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbLoc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsLoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCol.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCalle.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCall)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumExt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumInt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDomDesc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbEscuelas.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
             this.pnlProc.ResumeLayout(false);
             this.pnlProc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCall)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCol)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsLoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMpios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

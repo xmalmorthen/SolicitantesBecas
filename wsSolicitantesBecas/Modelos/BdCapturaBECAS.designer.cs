@@ -54,7 +54,7 @@ namespace wsSolicitantesBecas.Modelos
     #endregion
 		
 		public BdCapturaBECASDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["BdCapturaBECASConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["BdCapturaBECASConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

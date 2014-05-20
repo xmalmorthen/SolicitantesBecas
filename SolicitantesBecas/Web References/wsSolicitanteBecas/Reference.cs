@@ -153,26 +153,28 @@ namespace SolicitantesBecas.wsSolicitanteBecas {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://wsSolicitantesBecas.net/verificaCURPInsertado", RequestNamespace="http://wsSolicitantesBecas.net/", ResponseNamespace="http://wsSolicitantesBecas.net/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public StcisInserted verificaCURPInsertado(int idUsuario, string CURP) {
+        public StcisInserted verificaCURPInsertado(int idUsuario, string CURP, int idEscuela) {
             object[] results = this.Invoke("verificaCURPInsertado", new object[] {
                         idUsuario,
-                        CURP});
+                        CURP,
+                        idEscuela});
             return ((StcisInserted)(results[0]));
         }
         
         /// <remarks/>
-        public void verificaCURPInsertadoAsync(int idUsuario, string CURP) {
-            this.verificaCURPInsertadoAsync(idUsuario, CURP, null);
+        public void verificaCURPInsertadoAsync(int idUsuario, string CURP, int idEscuela) {
+            this.verificaCURPInsertadoAsync(idUsuario, CURP, idEscuela, null);
         }
         
         /// <remarks/>
-        public void verificaCURPInsertadoAsync(int idUsuario, string CURP, object userState) {
+        public void verificaCURPInsertadoAsync(int idUsuario, string CURP, int idEscuela, object userState) {
             if ((this.verificaCURPInsertadoOperationCompleted == null)) {
                 this.verificaCURPInsertadoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnverificaCURPInsertadoOperationCompleted);
             }
             this.InvokeAsync("verificaCURPInsertado", new object[] {
                         idUsuario,
-                        CURP}, this.verificaCURPInsertadoOperationCompleted, userState);
+                        CURP,
+                        idEscuela}, this.verificaCURPInsertadoOperationCompleted, userState);
         }
         
         private void OnverificaCURPInsertadoOperationCompleted(object arg) {
