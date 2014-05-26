@@ -72,7 +72,7 @@ namespace SolicitantesBecas.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("xmal.morthen@gmail.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("erroresdevelopc@gmail.com")]
         public string emailFrom {
             get {
                 return ((string)(this["emailFrom"]));
@@ -84,7 +84,7 @@ namespace SolicitantesBecas.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("malditamater")]
+        [global::System.Configuration.DefaultSettingValueAttribute("..121212qw")]
         public string password {
             get {
                 return ((string)(this["password"]));
@@ -96,7 +96,7 @@ namespace SolicitantesBecas.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("xmal.morthen@gmail.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("erroresdevelopc@gmail.com")]
         public string emailTo {
             get {
                 return ((string)(this["emailTo"]));
@@ -275,13 +275,15 @@ namespace SolicitantesBecas.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:4866/CapturaBECAS.asmx")]
         public string wsSolicitantesBecas {
             get {
                 return ((string)(this["wsSolicitantesBecas"]));
+            }
+            set {
+                this["wsSolicitantesBecas"] = value;
             }
         }
     }

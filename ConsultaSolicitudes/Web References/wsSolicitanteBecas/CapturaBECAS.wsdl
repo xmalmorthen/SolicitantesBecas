@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://wsSolicitantesBecas.net/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://wsSolicitantesBecas.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://wsSolicitantesBecas.net/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="caEscuelas">
+        <s:complexType />
+      </s:element>
+      <s:element name="caEscuelasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="caEscuelasResult" type="tns:StcCaEscuelas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StcCaEscuelas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="statusResponse" type="tns:structBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ArrayOfCaEscuelas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="structBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="statusOper" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCaEscuelas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="caEscuelas" nillable="true" type="tns:caEscuelas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="caEscuelas">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="municipio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="institucion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nivel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="plantel" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fIns" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fAct" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="caUsuarios">
+        <s:complexType />
+      </s:element>
+      <s:element name="caUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="caUsuariosResult" type="tns:StcCaUsuarios" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StcCaUsuarios">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="statusResponse" type="tns:structBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ArrayOfCaUsuarios" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCaUsuarios">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="caUsuarios" nillable="true" type="tns:caUsuarios" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="caUsuarios">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cveUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fIns" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fAct" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="verificaCURPInsertado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idUsuario" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CURP" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEscuela" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="verificaCURPInsertadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="verificaCURPInsertadoResult" type="tns:StcisInserted" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StcisInserted">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="statusResponse" type="tns:structBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:Inserted" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Inserted">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="inserted" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CURP" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idUsuario" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="instertaSolicitud">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idUsuario" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instertaSolicitudResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instertaSolicitudResult" type="tns:StcInsertaSolicitud" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StcInsertaSolicitud">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="statusResponse" type="tns:structBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listaReducida">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idUsuario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaReducidaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaReducidaResult" type="tns:StcListaRegistrosReducida" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StcListaRegistrosReducida">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="statusResponse" type="tns:structBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ArrayOfPaListaRegistrosReducidaResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPaListaRegistrosReducidaResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="paListaRegistrosReducidaResult" nillable="true" type="tns:paListaRegistrosReducidaResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="paListaRegistrosReducidaResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="curp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="primerApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="segundoApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombres" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idEscuela" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fIns" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="municipio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="institucion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nivel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="plantel" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listaExtendida">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idUsuario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listaExtendidaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaExtendidaResult" type="tns:StcListaRegistrosExtendida" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StcListaRegistrosExtendida">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="statusResponse" type="tns:structBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ArrayOfPaListaRegistrosExtendidaResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPaListaRegistrosExtendidaResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="paListaRegistrosExtendidaResult" nillable="true" type="tns:paListaRegistrosExtendidaResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="paListaRegistrosExtendidaResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="curp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="primerApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="segundoApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombres" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idEscuela" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="municipio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="institucion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nivel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="plantel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="domDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="edad" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sexo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="telCel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="telPart" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="domIdMpio" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="domIdLocalidad" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="domIdColonia" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="domIdCalle" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="domNumExt" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="domNumInt" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="domLetra" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fIns" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listaCompleta">
+        <s:complexType />
+      </s:element>
+      <s:element name="listaCompletaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaCompletaResult" type="tns:StcListaRegistrosCompleta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StcListaRegistrosCompleta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="statusResponse" type="tns:structBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ArrayOfVwSolicitudes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVwSolicitudes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="vwSolicitudes" nillable="true" type="tns:vwSolicitudes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="vwSolicitudes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="curp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="primerApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="segundoApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombres" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="edad" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sexo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="telCel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="telPart" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="domIdMpio" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="municipio" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="domIdLocalidad" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="localidad" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="domIdColonia" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="colonia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="domIdCalle" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="calles" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="domNumExt" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="domNumInt" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="domLetra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="papaPrimerApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="papaSegundoApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="papaNombres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mamaPrimerApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mamaSegundoApellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mamaNombres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="domDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fIns" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="idEscuela" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="institucion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nivel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="plantel" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idUsuario" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="caEscuelasSoapIn">
+    <wsdl:part name="parameters" element="tns:caEscuelas" />
+  </wsdl:message>
+  <wsdl:message name="caEscuelasSoapOut">
+    <wsdl:part name="parameters" element="tns:caEscuelasResponse" />
+  </wsdl:message>
+  <wsdl:message name="caUsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:caUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="caUsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:caUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="verificaCURPInsertadoSoapIn">
+    <wsdl:part name="parameters" element="tns:verificaCURPInsertado" />
+  </wsdl:message>
+  <wsdl:message name="verificaCURPInsertadoSoapOut">
+    <wsdl:part name="parameters" element="tns:verificaCURPInsertadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="instertaSolicitudSoapIn">
+    <wsdl:part name="parameters" element="tns:instertaSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="instertaSolicitudSoapOut">
+    <wsdl:part name="parameters" element="tns:instertaSolicitudResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaReducidaSoapIn">
+    <wsdl:part name="parameters" element="tns:listaReducida" />
+  </wsdl:message>
+  <wsdl:message name="listaReducidaSoapOut">
+    <wsdl:part name="parameters" element="tns:listaReducidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaExtendidaSoapIn">
+    <wsdl:part name="parameters" element="tns:listaExtendida" />
+  </wsdl:message>
+  <wsdl:message name="listaExtendidaSoapOut">
+    <wsdl:part name="parameters" element="tns:listaExtendidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="listaCompletaSoapIn">
+    <wsdl:part name="parameters" element="tns:listaCompleta" />
+  </wsdl:message>
+  <wsdl:message name="listaCompletaSoapOut">
+    <wsdl:part name="parameters" element="tns:listaCompletaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SolicitantesBecasSoap">
+    <wsdl:operation name="caEscuelas">
+      <wsdl:input message="tns:caEscuelasSoapIn" />
+      <wsdl:output message="tns:caEscuelasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="caUsuarios">
+      <wsdl:input message="tns:caUsuariosSoapIn" />
+      <wsdl:output message="tns:caUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="verificaCURPInsertado">
+      <wsdl:input message="tns:verificaCURPInsertadoSoapIn" />
+      <wsdl:output message="tns:verificaCURPInsertadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="instertaSolicitud">
+      <wsdl:input message="tns:instertaSolicitudSoapIn" />
+      <wsdl:output message="tns:instertaSolicitudSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaReducida">
+      <wsdl:input message="tns:listaReducidaSoapIn" />
+      <wsdl:output message="tns:listaReducidaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaExtendida">
+      <wsdl:input message="tns:listaExtendidaSoapIn" />
+      <wsdl:output message="tns:listaExtendidaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaCompleta">
+      <wsdl:input message="tns:listaCompletaSoapIn" />
+      <wsdl:output message="tns:listaCompletaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SolicitantesBecasSoap" type="tns:SolicitantesBecasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="caEscuelas">
+      <soap:operation soapAction="http://wsSolicitantesBecas.net/caEscuelas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="caUsuarios">
+      <soap:operation soapAction="http://wsSolicitantesBecas.net/caUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaCURPInsertado">
+      <soap:operation soapAction="http://wsSolicitantesBecas.net/verificaCURPInsertado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instertaSolicitud">
+      <soap:operation soapAction="http://wsSolicitantesBecas.net/instertaSolicitud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaReducida">
+      <soap:operation soapAction="http://wsSolicitantesBecas.net/listaReducida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaExtendida">
+      <soap:operation soapAction="http://wsSolicitantesBecas.net/listaExtendida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaCompleta">
+      <soap:operation soapAction="http://wsSolicitantesBecas.net/listaCompleta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SolicitantesBecasSoap12" type="tns:SolicitantesBecasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="caEscuelas">
+      <soap12:operation soapAction="http://wsSolicitantesBecas.net/caEscuelas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="caUsuarios">
+      <soap12:operation soapAction="http://wsSolicitantesBecas.net/caUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaCURPInsertado">
+      <soap12:operation soapAction="http://wsSolicitantesBecas.net/verificaCURPInsertado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instertaSolicitud">
+      <soap12:operation soapAction="http://wsSolicitantesBecas.net/instertaSolicitud" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaReducida">
+      <soap12:operation soapAction="http://wsSolicitantesBecas.net/listaReducida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaExtendida">
+      <soap12:operation soapAction="http://wsSolicitantesBecas.net/listaExtendida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaCompleta">
+      <soap12:operation soapAction="http://wsSolicitantesBecas.net/listaCompleta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SolicitantesBecas">
+    <wsdl:port name="SolicitantesBecasSoap" binding="tns:SolicitantesBecasSoap">
+      <soap:address location="http://localhost:4866/CapturaBECAS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SolicitantesBecasSoap12" binding="tns:SolicitantesBecasSoap12">
+      <soap12:address location="http://localhost:4866/CapturaBECAS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -139,6 +139,14 @@ namespace wsSolicitantesBecas.Modelos
 			}
 		}
 		
+		public System.Data.Linq.Table<vwSolicitudes> vwSolicitudes
+		{
+			get
+			{
+				return this.GetTable<vwSolicitudes>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.paListaRegistrosExtendida")]
 		public ISingleResult<paListaRegistrosExtendidaResult> paListaRegistrosExtendida([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idUsuario)
 		{
@@ -1736,6 +1744,627 @@ namespace wsSolicitantesBecas.Modelos
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vwSolicitudes")]
+	public partial class vwSolicitudes
+	{
+		
+		private string _curp;
+		
+		private string _primerApellido;
+		
+		private string _segundoApellido;
+		
+		private string _nombres;
+		
+		private int _edad;
+		
+		private string _sexo;
+		
+		private string _correo;
+		
+		private string _telCel;
+		
+		private string _telPart;
+		
+		private System.Nullable<System.Guid> _domIdMpio;
+		
+		private string _municipio;
+		
+		private System.Nullable<System.Guid> _domIdLocalidad;
+		
+		private string _localidad;
+		
+		private System.Nullable<System.Guid> _domIdColonia;
+		
+		private string _colonia;
+		
+		private System.Nullable<System.Guid> _domIdCalle;
+		
+		private string _calles;
+		
+		private System.Nullable<int> _domNumExt;
+		
+		private System.Nullable<int> _domNumInt;
+		
+		private string _domLetra;
+		
+		private string _papaPrimerApellido;
+		
+		private string _papaSegundoApellido;
+		
+		private string _papaNombres;
+		
+		private string _mamaPrimerApellido;
+		
+		private string _mamaSegundoApellido;
+		
+		private string _mamaNombres;
+		
+		private string _domDesc;
+		
+		private System.DateTime _fIns;
+		
+		private int _idEscuela;
+		
+		private string _institucion;
+		
+		private string _nivel;
+		
+		private string _plantel;
+		
+		private int _idUsuario;
+		
+		private string _usuario;
+		
+		public vwSolicitudes()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_curp", DbType="VarChar(18) NOT NULL", CanBeNull=false)]
+		public string curp
+		{
+			get
+			{
+				return this._curp;
+			}
+			set
+			{
+				if ((this._curp != value))
+				{
+					this._curp = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_primerApellido", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string primerApellido
+		{
+			get
+			{
+				return this._primerApellido;
+			}
+			set
+			{
+				if ((this._primerApellido != value))
+				{
+					this._primerApellido = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_segundoApellido", DbType="VarChar(50)")]
+		public string segundoApellido
+		{
+			get
+			{
+				return this._segundoApellido;
+			}
+			set
+			{
+				if ((this._segundoApellido != value))
+				{
+					this._segundoApellido = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombres", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string nombres
+		{
+			get
+			{
+				return this._nombres;
+			}
+			set
+			{
+				if ((this._nombres != value))
+				{
+					this._nombres = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edad", DbType="Int NOT NULL")]
+		public int edad
+		{
+			get
+			{
+				return this._edad;
+			}
+			set
+			{
+				if ((this._edad != value))
+				{
+					this._edad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sexo", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string sexo
+		{
+			get
+			{
+				return this._sexo;
+			}
+			set
+			{
+				if ((this._sexo != value))
+				{
+					this._sexo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_correo", DbType="VarChar(50)")]
+		public string correo
+		{
+			get
+			{
+				return this._correo;
+			}
+			set
+			{
+				if ((this._correo != value))
+				{
+					this._correo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telCel", DbType="VarChar(50)")]
+		public string telCel
+		{
+			get
+			{
+				return this._telCel;
+			}
+			set
+			{
+				if ((this._telCel != value))
+				{
+					this._telCel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telPart", DbType="VarChar(50)")]
+		public string telPart
+		{
+			get
+			{
+				return this._telPart;
+			}
+			set
+			{
+				if ((this._telPart != value))
+				{
+					this._telPart = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domIdMpio", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> domIdMpio
+		{
+			get
+			{
+				return this._domIdMpio;
+			}
+			set
+			{
+				if ((this._domIdMpio != value))
+				{
+					this._domIdMpio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_municipio", DbType="VarChar(50)")]
+		public string municipio
+		{
+			get
+			{
+				return this._municipio;
+			}
+			set
+			{
+				if ((this._municipio != value))
+				{
+					this._municipio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domIdLocalidad", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> domIdLocalidad
+		{
+			get
+			{
+				return this._domIdLocalidad;
+			}
+			set
+			{
+				if ((this._domIdLocalidad != value))
+				{
+					this._domIdLocalidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_localidad", DbType="VarChar(50)")]
+		public string localidad
+		{
+			get
+			{
+				return this._localidad;
+			}
+			set
+			{
+				if ((this._localidad != value))
+				{
+					this._localidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domIdColonia", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> domIdColonia
+		{
+			get
+			{
+				return this._domIdColonia;
+			}
+			set
+			{
+				if ((this._domIdColonia != value))
+				{
+					this._domIdColonia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_colonia", DbType="VarChar(50)")]
+		public string colonia
+		{
+			get
+			{
+				return this._colonia;
+			}
+			set
+			{
+				if ((this._colonia != value))
+				{
+					this._colonia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domIdCalle", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> domIdCalle
+		{
+			get
+			{
+				return this._domIdCalle;
+			}
+			set
+			{
+				if ((this._domIdCalle != value))
+				{
+					this._domIdCalle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_calles", DbType="VarChar(50)")]
+		public string calles
+		{
+			get
+			{
+				return this._calles;
+			}
+			set
+			{
+				if ((this._calles != value))
+				{
+					this._calles = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domNumExt", DbType="Int")]
+		public System.Nullable<int> domNumExt
+		{
+			get
+			{
+				return this._domNumExt;
+			}
+			set
+			{
+				if ((this._domNumExt != value))
+				{
+					this._domNumExt = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domNumInt", DbType="Int")]
+		public System.Nullable<int> domNumInt
+		{
+			get
+			{
+				return this._domNumInt;
+			}
+			set
+			{
+				if ((this._domNumInt != value))
+				{
+					this._domNumInt = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domLetra", DbType="NVarChar(2)")]
+		public string domLetra
+		{
+			get
+			{
+				return this._domLetra;
+			}
+			set
+			{
+				if ((this._domLetra != value))
+				{
+					this._domLetra = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_papaPrimerApellido", DbType="VarChar(50)")]
+		public string papaPrimerApellido
+		{
+			get
+			{
+				return this._papaPrimerApellido;
+			}
+			set
+			{
+				if ((this._papaPrimerApellido != value))
+				{
+					this._papaPrimerApellido = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_papaSegundoApellido", DbType="VarChar(50)")]
+		public string papaSegundoApellido
+		{
+			get
+			{
+				return this._papaSegundoApellido;
+			}
+			set
+			{
+				if ((this._papaSegundoApellido != value))
+				{
+					this._papaSegundoApellido = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_papaNombres", DbType="VarChar(50)")]
+		public string papaNombres
+		{
+			get
+			{
+				return this._papaNombres;
+			}
+			set
+			{
+				if ((this._papaNombres != value))
+				{
+					this._papaNombres = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mamaPrimerApellido", DbType="VarChar(50)")]
+		public string mamaPrimerApellido
+		{
+			get
+			{
+				return this._mamaPrimerApellido;
+			}
+			set
+			{
+				if ((this._mamaPrimerApellido != value))
+				{
+					this._mamaPrimerApellido = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mamaSegundoApellido", DbType="VarChar(50)")]
+		public string mamaSegundoApellido
+		{
+			get
+			{
+				return this._mamaSegundoApellido;
+			}
+			set
+			{
+				if ((this._mamaSegundoApellido != value))
+				{
+					this._mamaSegundoApellido = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mamaNombres", DbType="VarChar(50)")]
+		public string mamaNombres
+		{
+			get
+			{
+				return this._mamaNombres;
+			}
+			set
+			{
+				if ((this._mamaNombres != value))
+				{
+					this._mamaNombres = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_domDesc", DbType="VarChar(MAX)")]
+		public string domDesc
+		{
+			get
+			{
+				return this._domDesc;
+			}
+			set
+			{
+				if ((this._domDesc != value))
+				{
+					this._domDesc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIns", DbType="DateTime NOT NULL")]
+		public System.DateTime fIns
+		{
+			get
+			{
+				return this._fIns;
+			}
+			set
+			{
+				if ((this._fIns != value))
+				{
+					this._fIns = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idEscuela", DbType="Int NOT NULL")]
+		public int idEscuela
+		{
+			get
+			{
+				return this._idEscuela;
+			}
+			set
+			{
+				if ((this._idEscuela != value))
+				{
+					this._idEscuela = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_institucion", DbType="VarChar(60)")]
+		public string institucion
+		{
+			get
+			{
+				return this._institucion;
+			}
+			set
+			{
+				if ((this._institucion != value))
+				{
+					this._institucion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nivel", DbType="VarChar(50)")]
+		public string nivel
+		{
+			get
+			{
+				return this._nivel;
+			}
+			set
+			{
+				if ((this._nivel != value))
+				{
+					this._nivel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_plantel", DbType="VarChar(100)")]
+		public string plantel
+		{
+			get
+			{
+				return this._plantel;
+			}
+			set
+			{
+				if ((this._plantel != value))
+				{
+					this._plantel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUsuario", DbType="Int NOT NULL")]
+		public int idUsuario
+		{
+			get
+			{
+				return this._idUsuario;
+			}
+			set
+			{
+				if ((this._idUsuario != value))
+				{
+					this._idUsuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuario", DbType="NVarChar(100)")]
+		public string usuario
+		{
+			get
+			{
+				return this._usuario;
+			}
+			set
+			{
+				if ((this._usuario != value))
+				{
+					this._usuario = value;
+				}
 			}
 		}
 	}

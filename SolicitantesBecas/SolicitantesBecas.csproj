@@ -83,12 +83,15 @@
     <Compile Include="frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Libs\correoElectronico.cs" />
+    <Compile Include="Libs\Verifica.cs" />
     <Compile Include="Models\setData.cs" />
     <Compile Include="Models\err.cs" />
     <Compile Include="Models\getData.cs" />
     <Compile Include="Models\structures.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Web References\wsSolicitanteBecas\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -194,6 +197,7 @@
   <ItemGroup>
     <None Include="Web References\wsSolicitanteBecas\CapturaBECAS.disco" />
     <None Include="assets\images\clock.png" />
+    <None Include="assets\images\info.png" />
     <Content Include="Libs\RestSharp.dll" />
   </ItemGroup>
   <ItemGroup>

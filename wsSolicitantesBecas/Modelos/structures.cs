@@ -551,6 +551,13 @@ namespace wsSolicitantesBecas.Modelos
         public List<paListaRegistrosExtendidaResult> data { get { return _data; } set { _data = value; } }
     }
 
+    public class StcListaRegistrosCompleta
+    {
+        private structBase _statusResponse = new structBase();
+        public structBase statusResponse { get { return _statusResponse; } set { _statusResponse = value; } }
 
+        private List<vwSolicitudes> _data = new List<vwSolicitudes>();
+        public List<vwSolicitudes> data { get { return _data; } set { _data = value; } }
+    }
 
 }

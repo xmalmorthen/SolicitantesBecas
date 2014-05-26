@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using SolicitantesBecas.Libs;
 
 namespace SolicitantesBecas
 {
@@ -16,17 +17,25 @@ namespace SolicitantesBecas
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            frmUsuario frmusuario = new frmUsuario();
-            DialogResult loginresult = frmusuario.ShowDialog();
+            if (!Verifica.hayInternet())
+            {
+                MessageBox.Show("No se detectó conexión a internet...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                frmUsuario frmusuario = new frmUsuario();
+                DialogResult loginresult = frmusuario.ShowDialog();
 
-            if (loginresult == DialogResult.OK) {
-                int? idUsuario = frmusuario.idUsuario;
-                string usuario = frmusuario.usuario;
+                if (loginresult == DialogResult.OK)
+                {
+                    int? idUsuario = frmusuario.idUsuario;
+                    string usuario = frmusuario.usuario;
 
-                frmusuario.Dispose();
-                frmusuario = null;
+                    frmusuario.Dispose();
+                    frmusuario = null;
 
-                Application.Run(new frmMain(idUsuario, usuario));
+                    Application.Run(new frmMain(idUsuario, usuario));
+                }    
             }
         }
     }

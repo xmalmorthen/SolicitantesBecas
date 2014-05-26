@@ -20,13 +20,13 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="emailFrom" Type="System.String" Scope="User">
-      <Value Profile="(Default)">xmal.morthen@gmail.com</Value>
+      <Value Profile="(Default)">erroresdevelopc@gmail.com</Value>
     </Setting>
     <Setting Name="password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">malditamater</Value>
+      <Value Profile="(Default)">..121212qw</Value>
     </Setting>
     <Setting Name="emailTo" Type="System.String" Scope="User">
-      <Value Profile="(Default)">xmal.morthen@gmail.com</Value>
+      <Value Profile="(Default)">erroresdevelopc@gmail.com</Value>
     </Setting>
     <Setting Name="numErrAntesdeEnviarCorreo" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
@@ -70,7 +70,7 @@
     <Setting Name="tituloVentanaLista" Type="System.String" Scope="User">
       <Value Profile="(Default)">Lista de registros capturados</Value>
     </Setting>
-    <Setting Name="wsSolicitantesBecas" Type="(Web Service URL)" Scope="Application">
+    <Setting Name="wsSolicitantesBecas" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://localhost:4866/CapturaBECAS.asmx</Value>
     </Setting>
   </Settings>

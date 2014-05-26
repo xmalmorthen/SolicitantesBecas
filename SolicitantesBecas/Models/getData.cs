@@ -108,7 +108,7 @@ namespace SolicitantesBecas.Models
                         nombres = item.nombres,
                         plantel = item.plantel,
                         primerApellido = item.primerApellido,
-                        segundoApellido = item.primerApellido
+                        segundoApellido = item.segundoApellido
                     });
                 }
                 return Lista;

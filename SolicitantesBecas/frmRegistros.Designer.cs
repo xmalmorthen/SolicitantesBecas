@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistros));
             this.gdLista = new DevExpress.XtraGrid.GridControl();
-            this.bsListaReducida = new System.Windows.Forms.BindingSource(this.components);
+            this.bsListaReducida = new System.Windows.Forms.BindingSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colcurp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colprimerApellido = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -110,6 +110,7 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.PaintStyleName = "Flat";
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colfIns, DevExpress.Data.ColumnSortOrder.Descending)});
@@ -122,7 +123,7 @@
             this.colcurp.Name = "colcurp";
             this.colcurp.Visible = true;
             this.colcurp.VisibleIndex = 0;
-            this.colcurp.Width = 96;
+            this.colcurp.Width = 164;
             // 
             // colprimerApellido
             // 
@@ -131,7 +132,7 @@
             this.colprimerApellido.Name = "colprimerApellido";
             this.colprimerApellido.Visible = true;
             this.colprimerApellido.VisibleIndex = 1;
-            this.colprimerApellido.Width = 134;
+            this.colprimerApellido.Width = 215;
             // 
             // colsegundoApellido
             // 
@@ -140,7 +141,7 @@
             this.colsegundoApellido.Name = "colsegundoApellido";
             this.colsegundoApellido.Visible = true;
             this.colsegundoApellido.VisibleIndex = 2;
-            this.colsegundoApellido.Width = 142;
+            this.colsegundoApellido.Width = 246;
             // 
             // colnombres
             // 
@@ -149,7 +150,7 @@
             this.colnombres.Name = "colnombres";
             this.colnombres.Visible = true;
             this.colnombres.VisibleIndex = 3;
-            this.colnombres.Width = 153;
+            this.colnombres.Width = 239;
             // 
             // colidEscuela
             // 
@@ -168,7 +169,7 @@
             this.colinstitucion.Name = "colinstitucion";
             this.colinstitucion.Visible = true;
             this.colinstitucion.VisibleIndex = 4;
-            this.colinstitucion.Width = 236;
+            this.colinstitucion.Width = 332;
             // 
             // colnivel
             // 
@@ -182,7 +183,7 @@
             this.colplantel.Name = "colplantel";
             this.colplantel.Visible = true;
             this.colplantel.VisibleIndex = 5;
-            this.colplantel.Width = 174;
+            this.colplantel.Width = 290;
             // 
             // colfIns
             // 
@@ -191,7 +192,7 @@
             this.colfIns.Name = "colfIns";
             this.colfIns.Visible = true;
             this.colfIns.VisibleIndex = 6;
-            this.colfIns.Width = 169;
+            this.colfIns.Width = 312;
             // 
             // lineShape4
             // 
@@ -220,7 +221,6 @@
             this.btnCerrar.AutoSize = true;
             this.btnCerrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.FlatAppearance.BorderSize = 0;
             this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -244,7 +244,7 @@
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.gdLista);
             this.Controls.Add(this.shapeContainer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRegistros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             ((System.ComponentModel.ISupportInitialize)(this.gdLista)).EndInit();

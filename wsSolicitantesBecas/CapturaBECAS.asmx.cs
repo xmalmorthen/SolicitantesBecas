@@ -53,6 +53,11 @@ namespace wsSolicitantesBecas
             return getData.getListaExtendida(idUsuario);
         }
 
+        [WebMethod]
+        public StcListaRegistrosCompleta listaCompleta()
+        {
+            return getData.getListaCompleta();
+        }
 
         
 

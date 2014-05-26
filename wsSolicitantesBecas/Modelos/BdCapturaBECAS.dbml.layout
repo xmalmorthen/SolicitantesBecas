@@ -2,22 +2,22 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 18.375" name="BdCapturaBECAS">
   <DataContextMoniker Name="/BdCapturaBECASDataContext" />
   <nestedChildShapes>
-    <classShape Id="c94d013e-0494-4c5f-b259-f6fd3e8203ae" absoluteBounds="0.75, 3.375, 2, 1.5785953776041666">
+    <classShape Id="c94d013e-0494-4c5f-b259-f6fd3e8203ae" absoluteBounds="0.5, 0.5, 2, 1.5785953776041666">
       <DataClassMoniker Name="/BdCapturaBECASDataContext/caCalles" />
       <nestedChildShapes>
-        <elementListCompartment Id="5b8e1139-f83e-4a5a-8537-1d3e02905a0d" absoluteBounds="0.765, 3.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5b8e1139-f83e-4a5a-8537-1d3e02905a0d" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="88912ccd-3d42-4ec7-aac9-3ef0c1c4ba5d" absoluteBounds="5.25, 6.375, 2, 6.0015283203124987">
+    <classShape Id="88912ccd-3d42-4ec7-aac9-3ef0c1c4ba5d" absoluteBounds="2.875, 0.5, 2, 6.0015283203124987">
       <DataClassMoniker Name="/BdCapturaBECASDataContext/maSolicitantes" />
       <nestedChildShapes>
-        <elementListCompartment Id="88931991-0593-4e5b-aa83-212a66016000" absoluteBounds="5.2650000000000006, 6.835, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="88931991-0593-4e5b-aa83-212a66016000" absoluteBounds="2.8900000000000006, 0.96, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2fcee3b6-56fb-4d2a-b843-4c48b7c1fb12" absoluteBounds="0.75, 6.5, 2, 1.5785953776041666">
+    <classShape Id="2fcee3b6-56fb-4d2a-b843-4c48b7c1fb12" absoluteBounds="0.5, 2.375, 2, 1.5785953776041666">
       <DataClassMoniker Name="/BdCapturaBECASDataContext/caColonias" />
       <nestedChildShapes>
-        <elementListCompartment Id="5b98b154-18e3-4843-86f7-1599d7c2656f" absoluteBounds="0.765, 6.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5b98b154-18e3-4843-86f7-1599d7c2656f" absoluteBounds="0.515, 2.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="a652420e-9b08-4cfd-9a62-45f434a3ef9b" absoluteBounds="0.75, 16, 2, 2.1554996744791666">
@@ -26,22 +26,28 @@
         <elementListCompartment Id="3b8d4e1a-f6b2-486a-bbd3-d0b2c1c739e1" absoluteBounds="0.765, 16.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f17abbd1-679b-4318-b3d9-334b5dbc204d" absoluteBounds="0.75, 8.75, 2, 1.5785953776041666">
+    <classShape Id="f17abbd1-679b-4318-b3d9-334b5dbc204d" absoluteBounds="0.5, 4.25, 2, 1.5785953776041666">
       <DataClassMoniker Name="/BdCapturaBECASDataContext/caLocalidades" />
       <nestedChildShapes>
-        <elementListCompartment Id="dce2f3c6-c66a-4996-8421-b3fba0d1fd9f" absoluteBounds="0.765, 9.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="dce2f3c6-c66a-4996-8421-b3fba0d1fd9f" absoluteBounds="0.515, 4.7100000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="08a6bf1e-07c5-424d-aef7-b485b53389c0" absoluteBounds="0.75, 11.125, 2, 1.5785953776041666">
+    <classShape Id="08a6bf1e-07c5-424d-aef7-b485b53389c0" absoluteBounds="0.5, 6.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/BdCapturaBECASDataContext/caMunicipios" />
       <nestedChildShapes>
-        <elementListCompartment Id="ebadf2e1-5b19-4be1-baa5-d79bcf5c3dd5" absoluteBounds="0.765, 11.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ebadf2e1-5b19-4be1-baa5-d79bcf5c3dd5" absoluteBounds="0.515, 6.5850000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="8791f056-3ea8-4c87-a6e1-080967950e11" absoluteBounds="0.75, 13.5, 2, 1.7708968098958344">
       <DataClassMoniker Name="/BdCapturaBECASDataContext/caUsuarios" />
       <nestedChildShapes>
         <elementListCompartment Id="a2f69764-ab20-489b-b81d-a50b52be088c" absoluteBounds="0.765, 13.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af474cf4-3f43-4eba-be69-71dd0247f93c" absoluteBounds="5.125, 0.5, 2, 7.3476383463541657">
+      <DataClassMoniker Name="/BdCapturaBECASDataContext/vwSolicitudes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2fe78aa4-49ca-4eef-a3ee-c333f8f2733c" absoluteBounds="5.14, 0.96, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

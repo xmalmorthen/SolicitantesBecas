@@ -143,6 +143,30 @@ namespace wsSolicitantesBecas.Modelos
             }
         }
 
+        public static StcListaRegistrosCompleta getListaCompleta()
+        {
+            BdCapturaBECASDataContext bd = new BdCapturaBECASDataContext();
 
+            StcListaRegistrosCompleta response = new StcListaRegistrosCompleta();
+
+            response.statusResponse.statusOper = false;
+            response.statusResponse.message = messages.fallo;
+            response.data = null;
+
+            try
+            {
+                List<vwSolicitudes> query = bd.vwSolicitudes.ToList();
+
+                response.statusResponse.statusOper = query.Count > 0 ? true : false;
+                response.statusResponse.message = query.Count > 0 ? messages.exito : messages.fallo;
+                response.data = query.Count > 0 ? query : null;
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;
+            }
+        }
     }
 }

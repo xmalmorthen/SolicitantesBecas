@@ -83,6 +83,44 @@
       <Column Name="fAct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.vwSolicitudes" Member="vwSolicitudes">
+    <Type Name="vwSolicitudes">
+      <Column Name="curp" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="primerApellido" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segundoApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nombres" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="edad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sexo" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="telCel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="telPart" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="domIdMpio" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="municipio" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="domIdLocalidad" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="localidad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="domIdColonia" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="colonia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="domIdCalle" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="calles" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="domNumExt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="domNumInt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="domLetra" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="papaPrimerApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="papaSegundoApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="papaNombres" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mamaPrimerApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mamaSegundoApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mamaNombres" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="domDesc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fIns" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="idEscuela" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="institucion" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="nivel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="plantel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usuario" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.paListaRegistrosExtendida" Method="paListaRegistrosExtendida">
     <Parameter Name="idUsuario" Type="System.Int32" DbType="Int" />
     <ElementType Name="paListaRegistrosExtendidaResult">

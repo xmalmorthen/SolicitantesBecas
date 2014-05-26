@@ -1,0 +1,77 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ConsultaSolicitudes.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="smtpAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">smtp.gmail.com</Value>
+    </Setting>
+    <Setting Name="portNumber" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">587</Value>
+    </Setting>
+    <Setting Name="enableSSL" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="emailFrom" Type="System.String" Scope="User">
+      <Value Profile="(Default)">erroresdevelopc@gmail.com</Value>
+    </Setting>
+    <Setting Name="password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">..121212qw</Value>
+    </Setting>
+    <Setting Name="emailTo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">erroresdevelopc@gmail.com</Value>
+    </Setting>
+    <Setting Name="numErrAntesdeEnviarCorreo" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="wsCURP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://wsrenapo.col.gob.mx/curp2/CURP</Value>
+    </Setting>
+    <Setting Name="usuarioCURP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xmalmorthen</Value>
+    </Setting>
+    <Setting Name="contraseniaCURP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">b16f550d147bf92e9455074d9edfe013</Value>
+    </Setting>
+    <Setting Name="errGeneral" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Ocurrió un problema relacionado a</Value>
+    </Setting>
+    <Setting Name="errBD" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Base de datos</Value>
+    </Setting>
+    <Setting Name="errAdmin" Type="System.String" Scope="User">
+      <Value Profile="(Default)">favor de ponerse en contacto con el administrador del sistema...</Value>
+    </Setting>
+    <Setting Name="errWSCURP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Servicio de CURP</Value>
+    </Setting>
+    <Setting Name="wsFwrkDom" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://proveedores.col.gob.mx/REST_Services/FrameWork/index.php/localizacion/serverlocalizacion</Value>
+    </Setting>
+    <Setting Name="errWSFwrkDomicilios" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Servicio de Framework de Domicilios</Value>
+    </Setting>
+    <Setting Name="tituloVentana" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Registro de solicitudes</Value>
+    </Setting>
+    <Setting Name="errWSSolicitantesBecas" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Servicio de Solicitantes de Becas</Value>
+    </Setting>
+    <Setting Name="sendEmailErrors" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="tituloVentanaLista" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Lista de registros capturados</Value>
+    </Setting>
+    <Setting Name="dbSolicitudesConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=|DataDirectory|\Modelos\dataBase\dbSolicitudes.sdf&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;Microsoft.SqlServerCe.Client.3.5&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=|DataDirectory|\Modelos\dataBase\dbSolicitudes.sdf</Value>
+    </Setting>
+    <Setting Name="wsSolicitantesBecas" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:4866/CapturaBECAS.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

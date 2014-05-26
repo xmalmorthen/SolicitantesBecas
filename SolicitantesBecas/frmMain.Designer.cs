@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.txtCURP = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtNombre = new DevExpress.XtraEditors.TextEdit();
@@ -83,29 +83,31 @@
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.toolTip = new DevExpress.Utils.ToolTipController(this.components);
-            this.btnLista = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnBucarCURP = new System.Windows.Forms.Button();
-            this.btnCambiarUsuario = new System.Windows.Forms.Button();
             this.cmbEscuelas = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmunicipio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colinstitucion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnivel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colplantel = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bsMain = new System.Windows.Forms.BindingSource(this.components);
             this.pnlProc = new System.Windows.Forms.Panel();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.bsPlanteles = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLista = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.bsCall = new System.Windows.Forms.BindingSource(this.components);
             this.bsCol = new System.Windows.Forms.BindingSource(this.components);
             this.bsLoc = new System.Windows.Forms.BindingSource(this.components);
             this.bsMpios = new System.Windows.Forms.BindingSource(this.components);
+            this.btnBucarCURP = new System.Windows.Forms.Button();
+            this.btnCambiarUsuario = new System.Windows.Forms.Button();
+            this.bsMain = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtCURP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
@@ -129,15 +131,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDomDesc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbEscuelas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.pnlProc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMpios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCURP
@@ -972,145 +974,6 @@
             this.labelControl23.TabIndex = 49;
             this.labelControl23.Text = "Centro de estudios";
             // 
-            // btnLista
-            // 
-            this.btnLista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLista.AutoSize = true;
-            this.btnLista.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnLista.BackColor = System.Drawing.Color.Transparent;
-            this.btnLista.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLista.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnLista.FlatAppearance.BorderSize = 0;
-            this.btnLista.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnLista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLista.Image = global::SolicitantesBecas.Properties.Resources.notepad;
-            this.btnLista.Location = new System.Drawing.Point(561, 683);
-            this.btnLista.Name = "btnLista";
-            this.btnLista.Size = new System.Drawing.Size(22, 22);
-            this.btnLista.TabIndex = 42;
-            this.toolTip.SetTitle(this.btnLista, "Registros");
-            this.toolTip.SetToolTip(this.btnLista, "Click para mostrar lista de registros capturados...");
-            this.toolTip.SetToolTipIconType(this.btnLista, DevExpress.Utils.ToolTipIconType.Information);
-            this.btnLista.UseVisualStyleBackColor = false;
-            this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpiar.AutoSize = true;
-            this.btnLimpiar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnLimpiar.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Image = global::SolicitantesBecas.Properties.Resources.app_window;
-            this.btnLimpiar.Location = new System.Drawing.Point(561, 655);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(22, 22);
-            this.btnLimpiar.TabIndex = 41;
-            this.toolTip.SetTitle(this.btnLimpiar, "Limpiar");
-            this.toolTip.SetToolTip(this.btnLimpiar, "Click para limpiar formulario de captura...");
-            this.toolTip.SetToolTipIconType(this.btnLimpiar, DevExpress.Utils.ToolTipIconType.Information);
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.AutoSize = true;
-            this.btnGuardar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnGuardar.BackColor = System.Drawing.Color.Transparent;
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Image = global::SolicitantesBecas.Properties.Resources.save;
-            this.btnGuardar.Location = new System.Drawing.Point(496, 654);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(54, 54);
-            this.btnGuardar.TabIndex = 40;
-            this.toolTip.SetTitle(this.btnGuardar, "Guardar");
-            this.toolTip.SetToolTip(this.btnGuardar, "Click para guardar la información capturada...");
-            this.toolTip.SetToolTipIconType(this.btnGuardar, DevExpress.Utils.ToolTipIconType.Information);
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.AutoSize = true;
-            this.btnCerrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = global::SolicitantesBecas.Properties.Resources.close;
-            this.btnCerrar.Location = new System.Drawing.Point(617, 655);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(54, 54);
-            this.btnCerrar.TabIndex = 44;
-            this.toolTip.SetTitle(this.btnCerrar, "Cerrar");
-            this.toolTip.SetToolTip(this.btnCerrar, "Click para cerrar formulario de captura...");
-            this.toolTip.SetToolTipIconType(this.btnCerrar, DevExpress.Utils.ToolTipIconType.Information);
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // btnBucarCURP
-            // 
-            this.btnBucarCURP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBucarCURP.AutoSize = true;
-            this.btnBucarCURP.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnBucarCURP.BackColor = System.Drawing.Color.Transparent;
-            this.btnBucarCURP.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBucarCURP.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnBucarCURP.FlatAppearance.BorderSize = 0;
-            this.btnBucarCURP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnBucarCURP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnBucarCURP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBucarCURP.Image = global::SolicitantesBecas.Properties.Resources._1399591130_zoom;
-            this.btnBucarCURP.Location = new System.Drawing.Point(631, 32);
-            this.btnBucarCURP.Name = "btnBucarCURP";
-            this.btnBucarCURP.Size = new System.Drawing.Size(38, 38);
-            this.btnBucarCURP.TabIndex = 1;
-            this.btnBucarCURP.TabStop = false;
-            this.toolTip.SetTitle(this.btnBucarCURP, "Buscar");
-            this.toolTip.SetToolTip(this.btnBucarCURP, "Click para buscar los datos de la CURP...");
-            this.toolTip.SetToolTipIconType(this.btnBucarCURP, DevExpress.Utils.ToolTipIconType.Information);
-            this.btnBucarCURP.UseVisualStyleBackColor = false;
-            this.btnBucarCURP.Click += new System.EventHandler(this.btnBucarCURP_Click);
-            // 
-            // btnCambiarUsuario
-            // 
-            this.btnCambiarUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCambiarUsuario.AutoSize = true;
-            this.btnCambiarUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCambiarUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.btnCambiarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCambiarUsuario.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCambiarUsuario.FlatAppearance.BorderSize = 0;
-            this.btnCambiarUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnCambiarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCambiarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambiarUsuario.Image = global::SolicitantesBecas.Properties.Resources.users;
-            this.btnCambiarUsuario.Location = new System.Drawing.Point(389, 650);
-            this.btnCambiarUsuario.Name = "btnCambiarUsuario";
-            this.btnCambiarUsuario.Size = new System.Drawing.Size(22, 22);
-            this.btnCambiarUsuario.TabIndex = 43;
-            this.toolTip.SetTitle(this.btnCambiarUsuario, "Cambiar usuario");
-            this.toolTip.SetToolTip(this.btnCambiarUsuario, "Click para cambiar de usuario...");
-            this.toolTip.SetToolTipIconType(this.btnCambiarUsuario, DevExpress.Utils.ToolTipIconType.Information);
-            this.btnCambiarUsuario.UseVisualStyleBackColor = false;
-            this.btnCambiarUsuario.Click += new System.EventHandler(this.btnCambiarUsuario_Click);
-            // 
             // cmbEscuelas
             // 
             this.cmbEscuelas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -1126,10 +989,10 @@
             this.cmbEscuelas.Properties.AppearanceFocused.Options.UseFont = true;
             this.cmbEscuelas.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
             this.cmbEscuelas.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            serializableAppearanceObject1.Font = new System.Drawing.Font("Courier New", 10F);
-            serializableAppearanceObject1.Options.UseFont = true;
+            serializableAppearanceObject2.Font = new System.Drawing.Font("Courier New", 10F);
+            serializableAppearanceObject2.Options.UseFont = true;
             this.cmbEscuelas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.cmbEscuelas.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.cmbEscuelas.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cmbEscuelas.Properties.DataSource = this.bsPlanteles;
@@ -1152,6 +1015,7 @@
             this.colplantel});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsBehavior.ReadOnly = true;
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
@@ -1224,6 +1088,73 @@
             this.labelControl24.TabIndex = 58;
             this.labelControl24.Text = "Procesando información";
             // 
+            // dxErrorProvider
+            // 
+            this.dxErrorProvider.ContainerControl = this;
+            // 
+            // labelControl26
+            // 
+            this.labelControl26.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelControl26.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.labelControl26.Appearance.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Bold);
+            this.labelControl26.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl26.Location = new System.Drawing.Point(376, 586);
+            this.labelControl26.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
+            this.labelControl26.Name = "labelControl26";
+            this.labelControl26.Size = new System.Drawing.Size(287, 14);
+            this.labelControl26.TabIndex = 58;
+            this.labelControl26.Text = "Presione la tecla F4 para desplegar lista";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.AutoSize = true;
+            this.btnGuardar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnGuardar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Image = global::SolicitantesBecas.Properties.Resources.save;
+            this.btnGuardar.Location = new System.Drawing.Point(496, 654);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(54, 54);
+            this.btnGuardar.TabIndex = 40;
+            this.toolTip.SetTitle(this.btnGuardar, "Guardar");
+            this.toolTip.SetToolTip(this.btnGuardar, "Click para guardar la información capturada...");
+            this.toolTip.SetToolTipIconType(this.btnGuardar, DevExpress.Utils.ToolTipIconType.Information);
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::SolicitantesBecas.Properties.Resources.info;
+            this.button1.Location = new System.Drawing.Point(418, 652);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(22, 22);
+            this.button1.TabIndex = 59;
+            this.toolTip.SetTitle(this.button1, "Cambiar usuario");
+            this.toolTip.SetToolTip(this.button1, "Click para cambiar de usuario...");
+            this.toolTip.SetToolTipIconType(this.button1, DevExpress.Utils.ToolTipIconType.Information);
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            // 
+            // bsPlanteles
+            // 
+            this.bsPlanteles.DataSource = typeof(SolicitantesBecas.Models.strCaEscuelas);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SolicitantesBecas.Properties.Resources.clock;
@@ -1235,13 +1166,74 @@
             this.pictureBox1.TabIndex = 57;
             this.pictureBox1.TabStop = false;
             // 
-            // dxErrorProvider
+            // btnLista
             // 
-            this.dxErrorProvider.ContainerControl = this;
+            this.btnLista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLista.AutoSize = true;
+            this.btnLista.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLista.BackColor = System.Drawing.Color.Transparent;
+            this.btnLista.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLista.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnLista.FlatAppearance.BorderSize = 0;
+            this.btnLista.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLista.Image = global::SolicitantesBecas.Properties.Resources.notepad;
+            this.btnLista.Location = new System.Drawing.Point(561, 683);
+            this.btnLista.Name = "btnLista";
+            this.btnLista.Size = new System.Drawing.Size(22, 22);
+            this.btnLista.TabIndex = 42;
+            this.toolTip.SetTitle(this.btnLista, "Registros");
+            this.toolTip.SetToolTip(this.btnLista, "Click para mostrar lista de registros capturados...");
+            this.toolTip.SetToolTipIconType(this.btnLista, DevExpress.Utils.ToolTipIconType.Information);
+            this.btnLista.UseVisualStyleBackColor = false;
+            this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
             // 
-            // bsPlanteles
+            // btnLimpiar
             // 
-            this.bsPlanteles.DataSource = typeof(SolicitantesBecas.Models.strCaEscuelas);
+            this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiar.AutoSize = true;
+            this.btnLimpiar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLimpiar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Image = global::SolicitantesBecas.Properties.Resources.app_window;
+            this.btnLimpiar.Location = new System.Drawing.Point(561, 655);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(22, 22);
+            this.btnLimpiar.TabIndex = 41;
+            this.toolTip.SetTitle(this.btnLimpiar, "Limpiar");
+            this.toolTip.SetToolTip(this.btnLimpiar, "Click para limpiar formulario de captura...");
+            this.toolTip.SetToolTipIconType(this.btnLimpiar, DevExpress.Utils.ToolTipIconType.Information);
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.AutoSize = true;
+            this.btnCerrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = global::SolicitantesBecas.Properties.Resources.close;
+            this.btnCerrar.Location = new System.Drawing.Point(617, 655);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(54, 54);
+            this.btnCerrar.TabIndex = 44;
+            this.toolTip.SetTitle(this.btnCerrar, "Cerrar");
+            this.toolTip.SetToolTip(this.btnCerrar, "Click para cerrar formulario de captura...");
+            this.toolTip.SetToolTipIconType(this.btnCerrar, DevExpress.Utils.ToolTipIconType.Information);
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // bsCall
             // 
@@ -1259,6 +1251,53 @@
             // 
             this.bsMpios.DataSource = typeof(SolicitantesBecas.Models.strMpios);
             // 
+            // btnBucarCURP
+            // 
+            this.btnBucarCURP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBucarCURP.AutoSize = true;
+            this.btnBucarCURP.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnBucarCURP.BackColor = System.Drawing.Color.Transparent;
+            this.btnBucarCURP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBucarCURP.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnBucarCURP.FlatAppearance.BorderSize = 0;
+            this.btnBucarCURP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBucarCURP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnBucarCURP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBucarCURP.Image = global::SolicitantesBecas.Properties.Resources._1399591130_zoom;
+            this.btnBucarCURP.Location = new System.Drawing.Point(631, 32);
+            this.btnBucarCURP.Name = "btnBucarCURP";
+            this.btnBucarCURP.Size = new System.Drawing.Size(38, 38);
+            this.btnBucarCURP.TabIndex = 1;
+            this.btnBucarCURP.TabStop = false;
+            this.toolTip.SetTitle(this.btnBucarCURP, "Buscar");
+            this.toolTip.SetToolTip(this.btnBucarCURP, "Click para buscar los datos de la CURP...");
+            this.toolTip.SetToolTipIconType(this.btnBucarCURP, DevExpress.Utils.ToolTipIconType.Information);
+            this.btnBucarCURP.UseVisualStyleBackColor = false;
+            this.btnBucarCURP.Click += new System.EventHandler(this.btnBucarCURP_Click);
+            // 
+            // btnCambiarUsuario
+            // 
+            this.btnCambiarUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCambiarUsuario.AutoSize = true;
+            this.btnCambiarUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCambiarUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.btnCambiarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCambiarUsuario.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCambiarUsuario.FlatAppearance.BorderSize = 0;
+            this.btnCambiarUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCambiarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCambiarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarUsuario.Image = global::SolicitantesBecas.Properties.Resources.users;
+            this.btnCambiarUsuario.Location = new System.Drawing.Point(389, 650);
+            this.btnCambiarUsuario.Name = "btnCambiarUsuario";
+            this.btnCambiarUsuario.Size = new System.Drawing.Size(22, 22);
+            this.btnCambiarUsuario.TabIndex = 43;
+            this.toolTip.SetTitle(this.btnCambiarUsuario, "Cambiar usuario");
+            this.toolTip.SetToolTip(this.btnCambiarUsuario, "Click para cambiar de usuario...");
+            this.toolTip.SetToolTipIconType(this.btnCambiarUsuario, DevExpress.Utils.ToolTipIconType.Information);
+            this.btnCambiarUsuario.UseVisualStyleBackColor = false;
+            this.btnCambiarUsuario.Click += new System.EventHandler(this.btnCambiarUsuario_Click);
+            // 
             // frmMain
             // 
             this.AcceptButton = this.btnGuardar;
@@ -1268,8 +1307,10 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(674, 711);
-            this.Controls.Add(this.pnlProc);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cmbEscuelas);
+            this.Controls.Add(this.labelControl26);
+            this.Controls.Add(this.pnlProc);
             this.Controls.Add(this.btnLista);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGuardar);
@@ -1350,16 +1391,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDomDesc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbEscuelas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
             this.pnlProc.ResumeLayout(false);
             this.pnlProc.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPlanteles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCall)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMpios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1442,6 +1483,8 @@
         private System.Windows.Forms.BindingSource bsLoc;
         private System.Windows.Forms.BindingSource bsCol;
         private System.Windows.Forms.BindingSource bsCall;
+        private DevExpress.XtraEditors.LabelControl labelControl26;
+        private System.Windows.Forms.Button button1;
     }
 }
 

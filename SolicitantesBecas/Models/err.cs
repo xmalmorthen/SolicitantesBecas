@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Net.Mail;
 using System.Net;
+using SolicitantesBecas.Libs;
 
 namespace SolicitantesBecas.Models
 {
@@ -15,20 +16,24 @@ namespace SolicitantesBecas.Models
                 _setError.Add(text);
 
                 if (_setError.Count >= SolicitantesBecas.Properties.Settings.Default.numErrAntesdeEnviarCorreo) {
-                    sendEmail();
-                    _setError.Clear();
+                    if (SolicitantesBecas.Properties.Settings.Default.sendEmailErrors)
+                    {
+                        sendEmail();
+                        _setError.Clear();
+                    }
                 }
             } 
         }
 
         public static void sendEmail() {
-            if (!SolicitantesBecas.Properties.Settings.Default.sendEmailErrors) return;
+            
             try
             {
-                MailMessage mail = new MailMessage();
-                mail.From = new MailAddress(SolicitantesBecas.Properties.Settings.Default.emailFrom);
-                mail.To.Add(SolicitantesBecas.Properties.Settings.Default.emailTo);
-                mail.Subject = "Errores [Formulario solicitantes becas]";
+                correoElectronico mail = new correoElectronico();
+
+                List<MailAddress> to = new List<MailAddress>();
+                MailAddress addrs = new MailAddress(SolicitantesBecas.Properties.Settings.Default.emailTo.ToString().Trim());
+                to.Add(addrs);
 
                 string body = "<b>Errores encontrados</b><br/>";
 
@@ -37,13 +42,17 @@ namespace SolicitantesBecas.Models
                     body += item + "</br>";
                 }
 
-                mail.Body = body;
-                mail.IsBodyHtml = true;
-
-                SmtpClient smtp = new SmtpClient(SolicitantesBecas.Properties.Settings.Default.smtpAddress, SolicitantesBecas.Properties.Settings.Default.portNumber);
-                smtp.Credentials = new NetworkCredential(SolicitantesBecas.Properties.Settings.Default.emailFrom, SolicitantesBecas.Properties.Settings.Default.password);
-                smtp.EnableSsl = SolicitantesBecas.Properties.Settings.Default.enableSSL;
-                smtp.Send(mail);
+                mail.enviar(to,
+                             new MailAddress(SolicitantesBecas.Properties.Settings.Default.emailFrom),
+                             "Errores [Formulario solicitantes becas]",
+                             body,
+                             null,
+                             SolicitantesBecas.Properties.Settings.Default.emailFrom,
+                             SolicitantesBecas.Properties.Settings.Default.password,
+                             SolicitantesBecas.Properties.Settings.Default.smtpAddress,
+                             SolicitantesBecas.Properties.Settings.Default.portNumber,
+                             true,
+                             false);
             }
             catch (Exception e)
             {

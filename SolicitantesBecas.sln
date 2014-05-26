@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolicitantesBecas", "Solici
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wsSolicitantesBecas", "wsSolicitantesBecas\wsSolicitantesBecas.csproj", "{B60D6D87-55E6-4EE2-B705-4B36213F866D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultaSolicitudes", "ConsultaSolicitudes\ConsultaSolicitudes.csproj", "{2DD2D1FC-1FFA-4A59-A8B8-82312E12B7F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,16 @@ Global
 		{B60D6D87-55E6-4EE2-B705-4B36213F866D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B60D6D87-55E6-4EE2-B705-4B36213F866D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B60D6D87-55E6-4EE2-B705-4B36213F866D}.Release|x86.ActiveCfg = Release|Any CPU
+		{2DD2D1FC-1FFA-4A59-A8B8-82312E12B7F4}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{2DD2D1FC-1FFA-4A59-A8B8-82312E12B7F4}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{2DD2D1FC-1FFA-4A59-A8B8-82312E12B7F4}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{2DD2D1FC-1FFA-4A59-A8B8-82312E12B7F4}.Debug|x86.ActiveCfg = Debug|x86
+		{2DD2D1FC-1FFA-4A59-A8B8-82312E12B7F4}.Debug|x86.Build.0 = Debug|x86
+		{2DD2D1FC-1FFA-4A59-A8B8-82312E12B7F4}.Release|Any CPU.ActiveCfg = Release|x86
+		{2DD2D1FC-1FFA-4A59-A8B8-82312E12B7F4}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{2DD2D1FC-1FFA-4A59-A8B8-82312E12B7F4}.Release|Mixed Platforms.Build.0 = Release|x86
+		{2DD2D1FC-1FFA-4A59-A8B8-82312E12B7F4}.Release|x86.ActiveCfg = Release|x86
+		{2DD2D1FC-1FFA-4A59-A8B8-82312E12B7F4}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
